@@ -1,4 +1,4 @@
-baseURL: "https://hivecluster901.github.io/mywebsite" 
+baseURL: "https://hivecluster901.github.io/" 
 languageCode: en-us
 title: Minjun Jeon
 theme: PaperMod
@@ -7,7 +7,7 @@ params:
   defaultTheme: dark
   homeInfoParams:
     Title: "Minjun Jeon"
-    imageURL: "ProfilePicturePhoto.jpg"
+    imageURL: "/assets/ProfilePicturePhoto.jpg"
     imageWidth: 200;
     imageHeight: 200;
     Content: >-
