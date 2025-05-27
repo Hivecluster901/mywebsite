@@ -18,4 +18,3 @@
     You can <a href="/assets/Minjun_Jeon_CV_DPhil_quantum.pdf" download>download it here</a>.
   </p>
 </object>
-

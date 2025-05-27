@@ -6,7 +6,14 @@
     <description>Recent content in DL on Minjun Jeon</description>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Mon, 26 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/posts/data_eng/dl/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DL1</title>
+      <link>http://localhost:1313/posts/data_eng/dl/dl1/</link>
+      <pubDate>Mon, 26 May 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/data_eng/dl/dl1/</guid>
+      <description>&lt;p&gt;Deep Learning 1&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

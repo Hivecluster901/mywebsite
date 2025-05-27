@@ -7,7 +7,7 @@ params:
   defaultTheme: dark
   homeInfoParams:
     Title: "Minjun Jeon"
-    imageURL: "/assets/ProfilePicturePhoto.jpg"
+    imageURL: "assets/ProfilePicturePhoto.jpg"
     imageWidth: 200;
     imageHeight: 200;
     Content: >-
