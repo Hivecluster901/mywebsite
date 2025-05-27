@@ -74,7 +74,7 @@ menu:
     url: /resume/
     weight: 6
 
-  caches:
+caches:
   images:
     dir: :cacheDir/images
   
