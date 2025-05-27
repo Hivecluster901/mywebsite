@@ -430,10 +430,10 @@ method=&#34;POST&#34;
         height: 70vh;
     }
 &lt;/style&gt;
-&lt;object data=&#34;/assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;100%&#34; class=&#34;resume&#34;&gt;
+&lt;object data=&#34;../assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;100%&#34; class=&#34;resume&#34;&gt;
   &lt;p&gt;
     This PDF cannot be displayed in your browser.
-    You can &lt;a href=&#34;http://localhost:1313/mywebsite/assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; download&gt;download it here&lt;/a&gt;.
+    You can &lt;a href=&#34;../assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; download&gt;download it here&lt;/a&gt;.
   &lt;/p&gt;
 &lt;/object&gt;</description>
     </item>
