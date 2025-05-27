@@ -1,6 +1,4 @@
 baseURL: "https://hivecluster901.github.io/mywebsite"
-relativeURLs: true
-canonifyURLs: true
 languageCode: en-us
 title: Minjun Jeon
 theme: PaperMod
