@@ -1,5 +1,5 @@
 # baseURL: "https://hivecluster901.github.io/mywebsite"
-baseURL: "/"
+baseURL: "/mywebsite/"
 relativeURLs: true
 canonifyURLs: true
 languageCode: en-us
