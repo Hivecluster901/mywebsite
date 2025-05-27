@@ -9,6 +9,422 @@
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title></title>
+      <link>http://localhost:1313/contact/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/contact/</guid>
+      <description>&lt;style&gt;
+    #theme-toggle,
+    .top-link {
+        display: none;
+    }
+         
+    @import url(&#34;https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&amp;family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap&#34;);
+
+    /** Variables **/
+
+    :root {
+    --color-background: #e7e7e7;
+    --color-background-alt: #888888;
+    --color-border-active: #da7105;
+    --color-border-default: #d1d1d1;
+    --color-highlight: #fdcf4c;
+    --color-primary: #b64e08;
+    --color-primary-active: #79320e;
+    --color-text-default: #262626;
+    --color-text-muted: #4f4f4f;
+
+    --font-family-body: &#34;Figtree&#34;, system-ui, sans-serif;
+    --font-family-display: &#34;Poppins&#34;, system-ui, sans-serif;
+    }
+
+    /** Base **/
+
+    *,
+    ::before,
+    ::after {
+    box-sizing: border-box;
+    }
+
+    * {
+    border: 0;
+    margin: 0;
+    padding: 0;
+    }
+
+    body {
+    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-family-body);
+    font-optical-sizing: auto;
+    font-style: normal;
+    }
+
+    button,
+    input,
+    optgroup,
+    select,
+    textarea {
+    font-family: inherit;
+    font-feature-settings: inherit;
+    font-variation-settings: inherit;
+    font-size: 100%;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    margin: 0;
+    padding: 0;
+    }
+
+    [type=&#34;checkbox&#34;],
+    [type=&#34;radio&#34;],
+    [type=&#34;range&#34;] {
+    appearance: none;
+    flex-shrink: 0;
+    padding: 0;
+    user-select: none;
+    }
+
+    [type=&#34;checkbox&#34;]:focus,
+    [type=&#34;radio&#34;]:focus,
+    [type=&#34;range&#34;]:focus {
+    outline: none;
+    }
+
+    /** Components **/
+
+    .fs-form {
+    display: grid;
+    row-gap: 1.5rem;
+    }
+
+    .fs-form:where(.fs-layout__2-column) {
+    column-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    }
+
+    fieldset {
+    display: grid;
+    margin: 1.5rem 0;
+    row-gap: 1.5rem;
+    }
+
+    .fs-form:where(.fs-layout__2-column) fieldset {
+    column-gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1 / -1;
+    }
+
+    .fs-fieldset-title {
+    color: var(--color-text-header);
+    font-family: var(--font-family-display);
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+    margin-bottom: 1.5rem;
+    grid-column: 1 / -1;
+    }
+
+    .fs-field {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.5rem;
+    }
+
+    .fs-label {
+    color: var(--color-text-default);
+    display: block;
+    font-family: var(--font-family-display);
+    font-size: 1rem;
+    line-height: 1.25rem;
+    }
+
+    .fs-description {
+    color: var(--color-text-header);
+    display: block;
+    font-size: 1rem;
+    line-height: 1.25rem;
+    }
+
+    .fs-button-group {
+    display: flex;
+    flex-direction: row-reverse;
+    column-gap: 1.5rem;
+    }
+
+    .fs-form:where(.fs-layout__2-column) .fs-button-group {
+    grid-column: 1 / -1;
+    }
+
+    .fs-button {
+    background-color: var(--color-primary);
+    border-radius: 9999px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.5rem;
+    padding: 0.75rem 2rem;
+    transition-duration: 200ms;
+    transition-property: background-color;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .fs-button:hover {
+    background-color: var(--color-primary-active);
+    }
+
+    .fs-button:focus-visible {
+    background-color: var(--color-primary-active);
+    outline: 4px solid var(--color-highlight);
+    }
+
+    .fs-input,
+    .fs-select {
+    appearance: none;
+    border-radius: 9999px;
+    border-width: 0;
+    box-shadow: var(--color-border-default) 0 0 0 1px inset;
+    color: var(--color-text-header);
+    font-size: 1rem;
+    height: 3rem;
+    line-height: 1.5rem;
+    outline: none;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    }
+
+    .fs-input:focus-visible,
+    .fs-select:focus-visible {
+    box-shadow: var(--color-border-active) 0 0 0 1px inset;
+    }
+
+    .fs-input::placeholder {
+    color: var(--color-text-muted);
+    }
+
+    .fs-checkbox-group,
+    .fs-radio-group {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    }
+
+    .fs-checkbox-field,
+    .fs-radio-field {
+    column-gap: 0.5rem;
+    display: flex;
+    }
+
+    :is(.fs-checkbox-field, .fs-radio-field) .fs-label + .fs-description {
+    margin-top: 0.25rem;
+    }
+
+    .fs-checkbox-wrapper,
+    .fs-radio-wrapper {
+    align-items: center;
+    display: flex;
+    height: 1.25rem;
+    }
+
+    .fs-checkbox,
+    .fs-radio {
+    background-color: #fff;
+    border: 1px solid var(--color-border-default);
+    height: 1.25rem;
+    width: 1.25rem;
+    }
+
+    .fs-checkbox {
+    border-radius: 0.25rem;
+    }
+
+    .fs-radio {
+    border-radius: 100%;
+    }
+
+    .fs-checkbox:checked,
+    .fs-radio:checked {
+    background-color: var(--color-primary);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-color: transparent;
+    }
+
+    .fs-checkbox:checked {
+    background-image: url(&#34;data:image/svg+xml,%3csvg viewBox=&#39;0 0 16 16&#39; fill=&#39;white&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3cpath d=&#39;M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z&#39;/%3e%3c/svg%3e&#34;);
+    }
+
+    .fs-radio:checked {
+    background-image: url(&#34;data:image/svg+xml,%3csvg viewBox=&#39;0 0 16 16&#39; fill=&#39;white&#39; xmlns=&#39;http://www.w3.org/2000/svg&#39;%3e%3ccircle cx=&#39;8&#39; cy=&#39;8&#39; r=&#39;3&#39;/%3e%3c/svg%3e&#34;);
+    }
+
+    .fs-checkbox:focus-visible,
+    .fs-radio:focus-visible {
+    border-color: var(--color-border-active);
+    outline: 4px solid var(--color-highlight);
+    outline-offset: 0;
+    }
+
+    .fs-checkbox:checked:focus-visible,
+    .fs-radio:checked:focus-visible {
+    border-color: transparent;
+    }
+
+    .fs-select {
+    background-color: #fff;
+    background-image: url(&#34;data:image/svg+xml,%3csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; fill=&#39;none&#39; viewBox=&#39;0 0 20 20&#39;%3e%3cpath stroke=&#39;%236b7280&#39; stroke-linecap=&#39;round&#39; stroke-linejoin=&#39;round&#39; stroke-width=&#39;1.5&#39; d=&#39;M6 8l4 4 4-4&#39;/%3e%3c/svg%3e&#34;);
+    background-position: right 0.75rem center;
+    background-repeat: no-repeat;
+    background-size: 1.625em 1.625em;
+    padding-right: 2.875rem;
+    }
+
+    .fs-slider {
+    background: transparent;
+    cursor: pointer;
+    height: 1.25rem;
+    width: 100%;
+    }
+
+    .fs-slider::-moz-range-track {
+    background-color: var(--color-background);
+    border-radius: 0.5rem;
+    height: 0.5rem;
+    }
+
+    .fs-slider::-webkit-slider-runnable-track {
+    background-color: var(--color-background);
+    border-radius: 0.5rem;
+    height: 0.5rem;
+    }
+
+    .fs-slider::-moz-range-thumb {
+    background-color: var(--color-primary);
+    border: none; /* Removes extra border that FF applies */
+    border-radius: 50%;
+    height: 1.25rem;
+    width: 1.25rem;
+    }
+
+    .fs-slider::-webkit-slider-thumb {
+    appearance: none;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    height: 1.25rem;
+    margin-top: -0.375rem; /* Centers thumb on the track */
+    width: 1.25rem;
+    }
+
+    .fs-slider:focus-visible::-moz-range-thumb {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    }
+
+    .fs-slider:focus-visible::-webkit-slider-thumb {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 2px;
+    }
+
+    .fs-switch {
+    background-color: var(--color-background-alt);
+    background-image: url(&#34;data:image/svg+xml,%3csvg xmlns=&#39;http://www.w3.org/2000/svg&#39; viewBox=&#39;-4 -4 8 8&#39;%3e%3ccircle r=&#39;2.75&#39; fill=&#39;white&#39;/%3e%3c/svg%3e&#34;);
+    background-position: left center;
+    background-repeat: no-repeat;
+    border-radius: 1.25rem;
+    cursor: pointer;
+    height: 1.25rem;
+    transition-duration: 200ms;
+    transition-property: background-color, background-position;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    width: 2.5rem;
+    }
+
+    .fs-switch:checked {
+    background-color: var(--color-primary);
+    background-position: right center;
+    }
+
+    .fs-switch:focus-visible {
+    outline: 4px solid var(--color-highlight);
+    outline-offset: 0;
+    }
+
+    .fs-textarea {
+    appearance: none;
+    border-radius: 0.75rem;
+    border-width: 0;
+    box-shadow: var(--color-border-default) 0 0 0 1px inset;
+    color: var(--color-text-header);
+    font-size: 1rem;
+    line-height: 1.5rem;
+    outline: none;
+    padding: 0.5rem 0.75rem;
+    resize: vertical;
+    }
+
+    .fs-textarea:focus-visible {
+    box-shadow: var(--color-border-active) 0 0 0 1px inset;
+    }
+
+    .fs-textarea::placeholder {
+    color: var(--color-text-muted);
+    }
+
+    /** Utilities **/
+
+    .col-span-full {
+    grid-column: 1 / -1;
+    }
+
+    .fs-textarea::placeholder {
+    color: var(--color-text-muted);
+    }
+
+    .slider-label-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 0.25rem;
+    }
+
+    .slider-label-text {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+    text-align: center;
+    white-space: nowrap;
+    }
+&lt;/style&gt;
+&lt;form
+action=&#34;https://formspree.io/f/xpwdvayq&#34;
+class=&#34;fs-form&#34;
+target=&#34;_top&#34;
+method=&#34;POST&#34;
+&gt;
+&lt;div class=&#34;fs-field&#34;&gt;
+  &lt;label class=&#34;fs-label&#34; for=&#34;name&#34;&gt;&lt;h3&gt;Your Name&lt;/h3&gt;&lt;/label&gt;
+  &lt;input class=&#34;fs-input&#34; id=&#34;name&#34; name=&#34;name&#34; required /&gt;
+&lt;/div&gt;
+&lt;div class=&#34;fs-field&#34;&gt;
+  &lt;label class=&#34;fs-label&#34; for=&#34;email&#34;&gt;&lt;h3&gt;Email&lt;/h3&gt;&lt;/label&gt;
+  &lt;input class=&#34;fs-input&#34; id=&#34;email&#34; name=&#34;email&#34; required /&gt;
+  &lt;p class=&#34;fs-description&#34;&gt;
+    This will help me respond to your query via an email.
+  &lt;/p&gt;</description>
+    </item>
+    <item>
+      <title></title>
+      <link>http://localhost:1313/resume/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/resume/</guid>
+      <description>&lt;!-- &lt;embed src=&#34;http://localhost:1313/assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; width=&#34;100%&#34; height=&#34;100%&#34; type=&#34;application/pdf&#34; style=&#34;height: 70vh&#34;&gt; --&gt;
+&lt;object data=&#34;/assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;100%&#34; style=&#34;height: 70vh&#34;&gt;
+  &lt;p&gt;
+    This PDF cannot be displayed in your browser.
+    You can &lt;a href=&#34;http://localhost:1313/assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; download&gt;download it here&lt;/a&gt;.
+  &lt;/p&gt;
+&lt;/object&gt;</description>
+    </item>
+    <item>
       <title>About me</title>
       <link>http://localhost:1313/about_me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
