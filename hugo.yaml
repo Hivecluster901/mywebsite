@@ -1,0 +1,76 @@
+baseURL: https://minjunjeon.io/
+languageCode: en-us
+title: Minjun Jeon
+theme: PaperMod
+
+params:
+  defaultTheme: dark
+  homeInfoParams:
+    Title: "Minjun Jeon"
+    imageURL: "/assets/ProfilePicturePhoto.jpg"
+    imageWidth: 200;
+    imageHeight: 200;
+    Content: >-
+      Quantum Physicist, ML Practitioner, Data Enthusiast.
+  socialIcons:
+    - name: email
+      url: 'mailto:minjun.jeon@materials.ox.ac.uk'
+    - name: linkedin
+      url: 'https://linkedin.com/in/minjun-jeon-074b6a25b'
+    - name: github
+      url: 'https://github.com/Hivecluster901'
+
+assets:
+  favicon16x16: /assets/favicon-16x16.png
+  favicon32x32: /assets/favicon-32x32.png
+  apple_touch_icon: /assets/apple-touch-icon.png
+
+favicon: /assets/favicon.ico
+
+menu:
+  main:
+  - identifier: home
+    name: Home
+    url: /
+    weight: 1
+  - identifier: about
+    name: About
+    url: /about_me/
+    weight: 2
+  - identifier: posts
+    name: Blog
+    pageRef: /posts/
+    weight: 3
+  - identifier: data_engineering
+    name: Data Engineering
+    parent: posts
+    pageRef: /data_eng/
+    weight: 1
+  - identifier: ds_algo
+    name: DS_algo
+    parent: posts
+    pageRef: /ds_algo/
+    weight: 2
+  - identifier: software_engineering
+    name: Software Engineering
+    parent: posts
+    pageRef: /software_eng/
+    weight: 3
+  - identifier: quantum
+    name: Quantum Computing
+    parent: posts
+    pageRef: /quantum/
+    weight: 4
+  - identifier: projects
+    name: Projects
+    url: /projects/
+    weight: 4
+  - identifier: contact
+    name: Contact
+    url: /contact/
+    weight: 5
+  - identifier: resume
+    name: Resume
+    url: /resume/
+    weight: 6
+  
