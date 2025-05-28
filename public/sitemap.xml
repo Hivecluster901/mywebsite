@@ -2,22 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>http://localhost:1313/posts/</loc>
+    <loc>https://www.minjunjeon.com/posts/</loc>
     <lastmod>2025-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://www.minjunjeon.com/</loc>
     <lastmod>2025-05-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>http://localhost:1313/contact/</loc>
+    <loc>https://www.minjunjeon.com/contact/</loc>
   </url><url>
-    <loc>http://localhost:1313/resume/</loc>
+    <loc>https://www.minjunjeon.com/resume/</loc>
   </url><url>
-    <loc>http://localhost:1313/about_me/</loc>
+    <loc>https://www.minjunjeon.com/about_me/</loc>
   </url><url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://www.minjunjeon.com/categories/</loc>
   </url><url>
-    <loc>http://localhost:1313/projects/</loc>
+    <loc>https://www.minjunjeon.com/projects/</loc>
   </url><url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://www.minjunjeon.com/tags/</loc>
   </url>
 </urlset>
