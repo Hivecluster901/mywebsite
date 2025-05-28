@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/</link>
+    <link>http://localhost:1313/</link>
     <description>Recent content on Minjun Jeon</description>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 01 Jan 0001 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title></title>
-      <link>https://www.minjunjeon.com/contact/</link>
+      <link>http://localhost:1313/contact/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/contact/</guid>
+      <guid>http://localhost:1313/contact/</guid>
       <description>&lt;style&gt;
     #theme-toggle,
     .top-link {
@@ -413,9 +413,9 @@ method=&#34;POST&#34;
     </item>
     <item>
       <title></title>
-      <link>https://www.minjunjeon.com/resume/</link>
+      <link>http://localhost:1313/resume/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/resume/</guid>
+      <guid>http://localhost:1313/resume/</guid>
       <description>&lt;style&gt;
     #theme-toggle,
     .top-link {
@@ -431,14 +431,14 @@ method=&#34;POST&#34;
     }
 &lt;/style&gt;
 &lt;object data=&#34;/assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; type=&#34;application/pdf&#34; width=&#34;100%&#34; height=&#34;100%&#34; class=&#34;resume&#34;&gt;
-    &lt;p&gt;This PDF cannot be displayed. &lt;a href=&#34;https://www.minjunjeon.com/assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; download&gt;Download it here&lt;/a&gt;.&lt;/p&gt;
+    &lt;p&gt;This PDF cannot be displayed. &lt;a href=&#34;http://localhost:1313/assets/Minjun_Jeon_CV_DPhil_quantum.pdf&#34; download&gt;Download it here&lt;/a&gt;.&lt;/p&gt;
   &lt;/object&gt;</description>
     </item>
     <item>
       <title>About me</title>
-      <link>https://www.minjunjeon.com/about_me/</link>
+      <link>http://localhost:1313/about_me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/about_me/</guid>
+      <guid>http://localhost:1313/about_me/</guid>
       <description>&lt;p&gt;Hi there! I&amp;rsquo;m currently in the third year of my DPhil (PhD) in Quantum Computing at the University of Oxford. Over the past few years, I&amp;rsquo;ve spent a lot of time writing Python code — from simulating quantum dots to building machine learning models for quantum devices. Through it all, I’ve realized how much I enjoy working with data and building software that actually &lt;em&gt;works&lt;/em&gt;.&lt;/p&gt;
 &lt;p&gt;I’m now shifting gears toward the world of &lt;strong&gt;data engineering&lt;/strong&gt; and &lt;strong&gt;data science&lt;/strong&gt;, where I hope to keep solving real problems with code, just in a different context.&lt;/p&gt;</description>
     </item>
