@@ -13,23 +13,17 @@ SELECT is used to select and return data.
 For a single column, the syntax is as below:
 SELECT
 column_name
-FROM table_name
+FROM table_name1
 For multiple columns, you just list the column names with ,.
 SELECT
 column_name1,
 column_name2
-FROM table_name
+FROM table_name1
 To select all columns, use *.
 SELECT
 *
-FROM table_name
-Note that the exact format doesn&rsquo;t matter, e.g. the two examples are the same:
-SELECT * FROM table_name
-SELECT 
-* 
-FROM table_name
-2. ORDER BY
-ORDER BY is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. ORDER BY can be used in conjunction with SELECT.">
+FROM table_name1
+Note that the exact format doesn&rsquo;t matter, e.g. the two examples are the same:">
 <meta name="author" content="">
 <link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql1/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.b262d2ece952a9e58c4e8747c08d105c6aaff71a7f3fd8e3010bf75efe15b5cb.css" integrity="sha256-smLS7OlSqeWMTodHwI0QXGqv9xp/P9jjAQv3Xv4Vtcs=" rel="preload stylesheet" as="style">
@@ -54,10 +48,9 @@ ORDER BY is used to order results based on a column. The criterion depends on th
   <meta property="og:title" content="Basic SQL Commands 1">
   <meta property="og:description" content="Here, we go through basic SQL commands:
 1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:
-SELECT column_name FROM table_name For multiple columns, you just list the column names with ,.
-SELECT column_name1, column_name2 FROM table_name To select all columns, use *.
-SELECT * FROM table_name Note that the exact format doesn’t matter, e.g. the two examples are the same:
-SELECT * FROM table_name SELECT * FROM table_name 2. ORDER BY ORDER BY is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. ORDER BY can be used in conjunction with SELECT.">
+SELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.
+SELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.
+SELECT * FROM table_name1 Note that the exact format doesn’t matter, e.g. the two examples are the same:">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -71,23 +64,17 @@ SELECT is used to select and return data.
 For a single column, the syntax is as below:
 SELECT
 column_name
-FROM table_name
+FROM table_name1
 For multiple columns, you just list the column names with ,.
 SELECT
 column_name1,
 column_name2
-FROM table_name
+FROM table_name1
 To select all columns, use *.
 SELECT
 *
-FROM table_name
-Note that the exact format doesn&rsquo;t matter, e.g. the two examples are the same:
-SELECT * FROM table_name
-SELECT 
-* 
-FROM table_name
-2. ORDER BY
-ORDER BY is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. ORDER BY can be used in conjunction with SELECT.">
+FROM table_name1
+Note that the exact format doesn&rsquo;t matter, e.g. the two examples are the same:">
 
 
 <script type="application/ld+json">
@@ -128,12 +115,12 @@ ORDER BY is used to order results based on a column. The criterion depends on th
   "@type": "BlogPosting",
   "headline": "Basic SQL Commands 1",
   "name": "Basic SQL Commands 1",
-  "description": "Here, we go through basic SQL commands:\n1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:\nSELECT column_name FROM table_name For multiple columns, you just list the column names with ,.\nSELECT column_name1, column_name2 FROM table_name To select all columns, use *.\nSELECT * FROM table_name Note that the exact format doesn\u0026rsquo;t matter, e.g. the two examples are the same:\nSELECT * FROM table_name SELECT * FROM table_name 2. ORDER BY ORDER BY is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. ORDER BY can be used in conjunction with SELECT.\n",
+  "description": "Here, we go through basic SQL commands:\n1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:\nSELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.\nSELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.\nSELECT * FROM table_name1 Note that the exact format doesn\u0026rsquo;t matter, e.g. the two examples are the same:\n",
   "keywords": [
     
   ],
-  "articleBody": "Here, we go through basic SQL commands:\n1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:\nSELECT column_name FROM table_name For multiple columns, you just list the column names with ,.\nSELECT column_name1, column_name2 FROM table_name To select all columns, use *.\nSELECT * FROM table_name Note that the exact format doesn’t matter, e.g. the two examples are the same:\nSELECT * FROM table_name SELECT * FROM table_name 2. ORDER BY ORDER BY is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. ORDER BY can be used in conjunction with SELECT.\nThe syntax is as follows:\nSELECT column_name1 column_name2 FROM table_name ORDER BY column_name1 You can order the table with multiple columns. Just list the column names with ,.\n3. DESC/ASC DESC and ASC are used to specify the orders.\nSELECT column_name1 column_name2 FROM table_name ORDER BY column_name1 DESC, column_name2 ASC Numbers can be used instead of column names to be specified. For example,\nSELECT column_name1 column_name2 FROM table_name ORDER BY 1 DESC, 2 ASC However, such is not a recommended practice.\n",
-  "wordCount" : "233",
+  "articleBody": "Here, we go through basic SQL commands:\n1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:\nSELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.\nSELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.\nSELECT * FROM table_name1 Note that the exact format doesn’t matter, e.g. the two examples are the same:\nSELECT * FROM table_name1 SELECT * FROM table_name1 2. ORDER BY ORDER BY is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. ORDER BY can be used in conjunction with SELECT.\nThe syntax is as follows:\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY column_name1 You can order the table with multiple columns. Just list the column names with ,.\n3. DESC/ASC DESC and ASC are used to specify the orders.\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY column_name1 DESC, column_name2 ASC Numbers can be used instead of column names to be specified. For example,\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY 1 DESC, 2 ASC However, such is not a recommended practice.\n4. DISTINCT DISTINCT is used to select distinct values in a table. The syntax is as follows:\nSELECT DISTINCT column_name1 FROM table_name1 Multiple columns can be selected distinctly.\nSELECT DISTINCT column_name1, column_name2 FROM table_name1 Then, there can be duplicate elements for column_name1 or column_name2 as long as the two rows have distinct values for the other columns. Thus, it selects distinct rows in terms of all selected rows.\n5. LIMIT LIMIT is used to limit the number of rows in the output. It is always at the very end of your query. The syntax is:\nSELECT column_name1, column_name2 FROM table_name1 LIMIT n It limits the output to n rows.\n6. COUNT COUNT is used to count the number of rows in the output. It is often used in combination with grouping and filtering. The syntax is:\nSELECT COUNT(*) FROM table_name1 The above counts all rows in the table. One can cout all rows of one column.\nSELECT COUNT(column_name1) FROM table_name1 The above two usuallt result in the same output. However, note that COUNT doesn’t count NULL’s. So, If there is NULL in column_name1, the results will be different.\nIf one wants to count the number of distinct values of a column, one can use this command:\nSELECT COUNT(DISTINCT column_name1) FROM table_name1 Be careful that DISTINCT is inside the parentheses.\n",
+  "wordCount" : "452",
   "inLanguage": "en",
   "datePublished": "2025-05-29T00:00:00Z",
   "dateModified": "2025-05-29T00:00:00Z",
@@ -245,7 +232,13 @@ ORDER BY is used to order results based on a column. The criterion depends on th
                 <li>
                     <a href="#2-order-by" aria-label="2. ORDER BY">2. ORDER BY</a></li>
                 <li>
-                    <a href="#3-descasc" aria-label="3. DESC/ASC">3. DESC/ASC</a>
+                    <a href="#3-descasc" aria-label="3. DESC/ASC">3. DESC/ASC</a></li>
+                <li>
+                    <a href="#4-distinct" aria-label="4. DISTINCT">4. DISTINCT</a></li>
+                <li>
+                    <a href="#5-limit" aria-label="5. LIMIT">5. LIMIT</a></li>
+                <li>
+                    <a href="#6-count" aria-label="6. COUNT">6. COUNT</a>
                 </li>
             </ul>
         </div>
@@ -258,28 +251,28 @@ ORDER BY is used to order results based on a column. The criterion depends on th
 For a single column, the syntax is as below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">column_name</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
 </span></span></code></pre></div><p>For multiple columns, you just list the column names with <code>,</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
 </span></span><span style="display:flex;"><span>column_name1,
 </span></span><span style="display:flex;"><span>column_name2
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
 </span></span></code></pre></div><p>To select all columns, use <code>*</code>.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
 </span></span></code></pre></div><p>Note that <strong>the exact format doesn&rsquo;t matter</strong>, e.g. the two examples are the same:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table_name</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> table_name1
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
 </span></span><span style="display:flex;"><span><span style="color:#f92672">*</span> 
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
 </span></span></code></pre></div><h2 id="2-order-by">2. ORDER BY<a hidden class="anchor" aria-hidden="true" href="#2-order-by">#</a></h2>
-<p><em>ORDER BY</em> is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered <em>alphabetically</em>. If the column consists of numbers, the table will be ordered <em>numerically</em>. If the column consists of dates or times, the table will be ordered <em>chronologically</em>. <em>ORDER BY</em> can be used in conjunction with <em>SELECT</em>.</p>
+<p><em>ORDER BY</em> is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. <em>ORDER BY</em> can be used in conjunction with <em>SELECT</em>.</p>
 <p>The syntax is as follows:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
 </span></span><span style="display:flex;"><span>column_name1
 </span></span><span style="display:flex;"><span>column_name2
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> column_name1
 </span></span></code></pre></div><p>You can order the table with multiple columns. Just list the column names with <code>,</code>.</p>
 <h2 id="3-descasc">3. DESC/ASC<a hidden class="anchor" aria-hidden="true" href="#3-descasc">#</a></h2>
@@ -287,15 +280,54 @@ For a single column, the syntax is as below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
 </span></span><span style="display:flex;"><span>column_name1
 </span></span><span style="display:flex;"><span>column_name2
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> column_name1 <span style="color:#66d9ef">DESC</span>, column_name2 <span style="color:#66d9ef">ASC</span>
 </span></span></code></pre></div><p>Numbers can be used instead of column names to be specified. For example,</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
 </span></span><span style="display:flex;"><span>column_name1
 </span></span><span style="display:flex;"><span>column_name2
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> <span style="color:#66d9ef">table_name</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span> <span style="color:#66d9ef">DESC</span>, <span style="color:#ae81ff">2</span> <span style="color:#66d9ef">ASC</span>
 </span></span></code></pre></div><p>However, such is not a recommended practice.</p>
+<h2 id="4-distinct">4. DISTINCT<a hidden class="anchor" aria-hidden="true" href="#4-distinct">#</a></h2>
+<p><em>DISTINCT</em> is used to select distinct values in a table. The syntax is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span>
+</span></span><span style="display:flex;"><span>column_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span></code></pre></div><p>Multiple columns can be selected distinctly.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#66d9ef">DISTINCT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span>column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span></code></pre></div><p>Then, there can be duplicate elements for <code>column_name1</code> or <code>column_name2</code> as long as the two rows have distinct values for the other columns.
+Thus, it selects distinct rows in terms of all selected rows.</p>
+<h2 id="5-limit">5. LIMIT<a hidden class="anchor" aria-hidden="true" href="#5-limit">#</a></h2>
+<p><em>LIMIT</em> is used to limit the number of rows in the output.
+<strong>It is always at the very end of your query.</strong> The syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span>column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LIMIT</span> n
+</span></span></code></pre></div><p>It limits the output to <code>n</code> rows.</p>
+<h2 id="6-count">6. COUNT<a hidden class="anchor" aria-hidden="true" href="#6-count">#</a></h2>
+<p><em>COUNT</em> is used to count the number of rows in the output. It is often used in combination with grouping and filtering.
+The syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span></code></pre></div><p>The above counts all rows in the table.
+One can cout all rows of one column.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COUNT</span>(column_name1)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span></code></pre></div><p>The above two usuallt result in the same output. However, note that <code>COUNT</code> doesn&rsquo;t count <code>NULL</code>&rsquo;s.
+So, If there is <code>NULL</code> in <code>column_name1</code>, the results will be different.</p>
+<p>If one wants to count the number of distinct values of a column, one can use this command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COUNT</span>(<span style="color:#66d9ef">DISTINCT</span> column_name1)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span></code></pre></div><p>Be careful that <code>DISTINCT</code> is inside the parentheses.</p>
 
 
   </div>
