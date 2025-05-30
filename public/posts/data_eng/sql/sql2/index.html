@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Basic SQL Commands 2 | Minjun Jeon</title>
+<meta name="keywords" content="">
+<meta name="description" content="Here we go through other basic SQL commands for filtering:
+1. WHERE
+WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
+SELECT
+column_name1, 
+column_name2
+FROM table_name1
+WHERE condition
+For example, we can filter out all columns where the amount is 10.99.
+SELECT
+*
+FROM payment
+WHERE amount = 10.99
+Furthermore, we can filter out certain columns.
+SELECT
+first_name,
+last_name
+FROM customer
+WHERE first_name = &#39;ADAM&#39;
+Enclose the texts around &#39;.
+We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b262d2ece952a9e58c4e8747c08d105c6aaff71a7f3fd8e3010bf75efe15b5cb.css" integrity="sha256-smLS7OlSqeWMTodHwI0QXGqv9xp/P9jjAQv3Xv4Vtcs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql2/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="Basic SQL Commands 2">
+  <meta property="og:description" content="Here we go through other basic SQL commands for filtering:
+1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
+SELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.
+SELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.
+SELECT first_name, last_name FROM customer WHERE first_name = &#39;ADAM&#39; Enclose the texts around &#39;. We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-30T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-30T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic SQL Commands 2">
+<meta name="twitter:description" content="Here we go through other basic SQL commands for filtering:
+1. WHERE
+WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
+SELECT
+column_name1, 
+column_name2
+FROM table_name1
+WHERE condition
+For example, we can filter out all columns where the amount is 10.99.
+SELECT
+*
+FROM payment
+WHERE amount = 10.99
+Furthermore, we can filter out certain columns.
+SELECT
+first_name,
+last_name
+FROM customer
+WHERE first_name = &#39;ADAM&#39;
+Enclose the texts around &#39;.
+We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Archive",
+      "item": "https://www.minjunjeon.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "1. Data Engineering",
+      "item": "https://www.minjunjeon.com/posts/data_eng/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "1. SQL",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Basic SQL Commands 2",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql2/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Basic SQL Commands 2",
+  "name": "Basic SQL Commands 2",
+  "description": "Here we go through other basic SQL commands for filtering:\n1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:\nSELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.\nSELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.\nSELECT first_name, last_name FROM customer WHERE first_name = \u0026#39;ADAM\u0026#39; Enclose the texts around '. We can use other operators to filter the data, e.g. \u0026gt;,\u0026lt;, \u0026lt;=, \u0026gt;=, != or \u0026lt;\u0026gt;,\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Here we go through other basic SQL commands for filtering:\n1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:\nSELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.\nSELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.\nSELECT first_name, last_name FROM customer WHERE first_name = 'ADAM' Enclose the texts around '. We can use other operators to filter the data, e.g. \u003e,\u003c, \u003c=, \u003e=, != or \u003c\u003e,\na) IS NULL/IS NOT NULL We can also filter out rows that have NULL’s for certain columns:\nSELECT column_name1, column_name2 FROM table_name1 WHERE column_name1 is null To exclude NULL’s one can use is not command.\nb) AND/OR You can use multiple conditions as well by using AND and OR:\nSELECT column_name1, column_name2 FROM table_name1 WHERE condition1 AND condition2 AND condition3 AND will always be processed before OR. Thus, to correctly execute queries, sometimes you need to put parentheses.\nc) BETWEEN … AND … You can filter a range of values by using the BETWEEN keyword.\nSELECT column_name1, column_name2 FROM table_name1 WHERE column_name3 BETWEEN n AND m where the range includes n and m. n and m can be numeric values and time. The opposite is possible by using NOT BETWEEN.\nSELECT column_name1, column_name2 FROM table_name1 WHERE column_name3 NOT BETWEEN n AND m n and m are not included.\nd) IN If you have a long list of values to filter, you can use the IN statement.\nSELECT * FROM table_name1 where column_name1 IN (val1, val2, ..., valn) The negation of IN is possible by using NOT IN.\ne) LIKE/ILIKE LIKE is used to filter by matching against a pattern. _ is used for any single charater pattern while % is used for any sequence of characters. The example is shown below:\nSELECT * FROM actor WHERE first_name LIKE 'A%' LIKE is case-senstive while ILIKE is case-insensitive.\n%A%: A can be anywhere. _A%: The second character is A. __A%: The third character is A. We can also do the negation of the above. For example, the below code filter everything that doesn’t have the character A.\nSELECT * FROM actor WHERE first_name NOT LIKE '%A%' 2. Comments \u0026 Aliases Comments make code more readable and understandable. For single line comments, use --. For multiple line comments, use /* */ -- This is a single-line comment. /* This is a multiline comment. */ Aliases rename columns for this query. In the database, the column name stays the same. This allows more descriptive name for the column. For example, SELECT payment_id AS invoice_no FROM payment ",
+  "wordCount" : "447",
+  "inLanguage": "en",
+  "datePublished": "2025-05-30T00:00:00Z",
+  "dateModified": "2025-05-30T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql2/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.minjunjeon.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Basic SQL Commands 2
+    </h1>
+    <div class="post-meta"><span title='2025-05-30 00:00:00 +0000 UTC'>May 30, 2025</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-where" aria-label="1. WHERE">1. WHERE</a><ul>
+                        
+                <li>
+                    <a href="#a-is-nullis-not-null" aria-label="a) IS NULL/IS NOT NULL">a) IS NULL/IS NOT NULL</a></li>
+                <li>
+                    <a href="#b-andor" aria-label="b) AND/OR">b) AND/OR</a></li>
+                <li>
+                    <a href="#c-between--and-" aria-label="c) BETWEEN &hellip; AND &hellip;">c) BETWEEN &hellip; AND &hellip;</a></li>
+                <li>
+                    <a href="#d-in" aria-label="d) IN">d) IN</a></li>
+                <li>
+                    <a href="#e-likeilike" aria-label="e) LIKE/ILIKE">e) LIKE/ILIKE</a></li></ul>
+                </li>
+                <li>
+                    <a href="#2-comments--aliases" aria-label="2. Comments &amp; Aliases">2. Comments &amp; Aliases</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Here we go through other basic SQL commands for filtering:</p>
+<h2 id="1-where">1. WHERE<a hidden class="anchor" aria-hidden="true" href="#1-where">#</a></h2>
+<p><em>WHERE</em> is used to filter the data in the output. It always comes after FROM. The syntax is:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1, 
+</span></span><span style="display:flex;"><span>column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> condition
+</span></span></code></pre></div><p>For example, we can filter out all columns where the amount is <code>10.99</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> amount <span style="color:#f92672">=</span> <span style="color:#ae81ff">10</span>.<span style="color:#ae81ff">99</span>
+</span></span></code></pre></div><p>Furthermore, we can filter out certain columns.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>first_name,
+</span></span><span style="display:flex;"><span>last_name
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> customer
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> first_name <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;ADAM&#39;</span>
+</span></span></code></pre></div><p>Enclose the texts around <code>'</code>.
+We can use other operators to filter the data, e.g. <code>&gt;</code>,<code>&lt;</code>, <code>&lt;=</code>, <code>&gt;=</code>, <code>!=</code> or <code>&lt;&gt;</code>,</p>
+<h3 id="a-is-nullis-not-null">a) IS NULL/IS NOT NULL<a hidden class="anchor" aria-hidden="true" href="#a-is-nullis-not-null">#</a></h3>
+<p>We can also filter out rows that have <code>NULL</code>&rsquo;s for certain columns:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span>column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> column_name1 <span style="color:#66d9ef">is</span> <span style="color:#66d9ef">null</span>
+</span></span></code></pre></div><p>To exclude <code>NULL</code>&rsquo;s one can use <code>is not</code> command.</p>
+<h3 id="b-andor">b) AND/OR<a hidden class="anchor" aria-hidden="true" href="#b-andor">#</a></h3>
+<p>You can use multiple conditions as well by using <code>AND</code> and <code>OR</code>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span>column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> condition1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">AND</span> condition2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">AND</span> condition3
+</span></span></code></pre></div><p><code>AND</code> will always be processed before <code>OR</code>. <strong>Thus, to correctly execute queries, sometimes you need to put parentheses.</strong></p>
+<h3 id="c-between--and-">c) BETWEEN &hellip; AND &hellip;<a hidden class="anchor" aria-hidden="true" href="#c-between--and-">#</a></h3>
+<p>You can filter a range of values by using the <code>BETWEEN</code> keyword.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span>column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> column_name3 <span style="color:#66d9ef">BETWEEN</span> n <span style="color:#66d9ef">AND</span> m
+</span></span></code></pre></div><p>where the range includes <code>n</code> and <code>m</code>. <code>n</code> and <code>m</code> can be numeric values and time. The opposite is possible by using <code>NOT BETWEEN</code>.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span>column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> column_name3 <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">BETWEEN</span> n <span style="color:#66d9ef">AND</span> m
+</span></span></code></pre></div><p><code>n</code> and <code>m</code> are not included.</p>
+<h3 id="d-in">d) IN<a hidden class="anchor" aria-hidden="true" href="#d-in">#</a></h3>
+<p>If you have a long list of values to filter, you can use the <code>IN</code> statement.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">where</span> column_name1 <span style="color:#66d9ef">IN</span> (val1, val2, ..., valn)
+</span></span></code></pre></div><p>The negation of <code>IN</code> is possible by using <code>NOT IN</code>.</p>
+<h3 id="e-likeilike">e) LIKE/ILIKE<a hidden class="anchor" aria-hidden="true" href="#e-likeilike">#</a></h3>
+<p><em>LIKE</em> is used to filter by matching against a pattern. <code>_</code> is used for any single charater pattern while <code>%</code> is used for any sequence of characters. The example is shown below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> actor
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> first_name <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;A%&#39;</span>
+</span></span></code></pre></div><p><em>LIKE</em> is case-senstive while <em>ILIKE</em> is case-insensitive.</p>
+<ul>
+<li><code>%A%</code>: A can be anywhere.</li>
+<li><code>_A%</code>: The second character is A.</li>
+<li><code>__A%</code>: The third character is A.</li>
+</ul>
+<p>We can also do the negation of the above. For example, the below code filter everything that <em>doesn&rsquo;t</em> have the character A.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> actor
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> first_name <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">LIKE</span> <span style="color:#e6db74">&#39;%A%&#39;</span>
+</span></span></code></pre></div><h2 id="2-comments--aliases">2. Comments &amp; Aliases<a hidden class="anchor" aria-hidden="true" href="#2-comments--aliases">#</a></h2>
+<ul>
+<li><em>Comments</em> make code more readable and understandable. For single line comments, use <code>--</code>. For multiple line comments, use <code>/* */</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#75715e">-- This is a single-line comment.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#75715e">/*
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">    This is a multiline comment.
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e">*/</span>
+</span></span></code></pre></div><ul>
+<li><em>Aliases</em> rename columns <strong>for this query</strong>. In the database, the column name stays the same. This allows more descriptive name for the column. For example,</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>payment_id <span style="color:#66d9ef">AS</span> invoice_no
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>
