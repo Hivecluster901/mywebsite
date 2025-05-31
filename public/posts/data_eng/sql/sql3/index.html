@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Basic SQL Commands 3 | Minjun Jeon</title>
+<meta name="keywords" content="">
+<meta name="description" content="Here we go through other basic SQL commands for grouping:
+1. Aggregate Functions
+Aggregate functions aggregate values in multiple rows to one value. COUNT in Basic SQL Commands 1 is one of aggregate functions. Here are commonly used aggregate functions:
+
+SUM()
+AVG()
+MIN()
+MAX()
+COUNT()
+
+The examples are as follows:
+SELECT 
+SUM(column_name1)
+FROM table_name1
+You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.b262d2ece952a9e58c4e8747c08d105c6aaff71a7f3fd8e3010bf75efe15b5cb.css" integrity="sha256-smLS7OlSqeWMTodHwI0QXGqv9xp/P9jjAQv3Xv4Vtcs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql3/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="Basic SQL Commands 3">
+  <meta property="og:description" content="Here we go through other basic SQL commands for grouping:
+1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in Basic SQL Commands 1 is one of aggregate functions. Here are commonly used aggregate functions:
+SUM() AVG() MIN() MAX() COUNT() The examples are as follows:
+SELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-31T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-31T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Basic SQL Commands 3">
+<meta name="twitter:description" content="Here we go through other basic SQL commands for grouping:
+1. Aggregate Functions
+Aggregate functions aggregate values in multiple rows to one value. COUNT in Basic SQL Commands 1 is one of aggregate functions. Here are commonly used aggregate functions:
+
+SUM()
+AVG()
+MIN()
+MAX()
+COUNT()
+
+The examples are as follows:
+SELECT 
+SUM(column_name1)
+FROM table_name1
+You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Archive",
+      "item": "https://www.minjunjeon.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "1. Data Engineering",
+      "item": "https://www.minjunjeon.com/posts/data_eng/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "1. SQL",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Basic SQL Commands 3",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql3/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Basic SQL Commands 3",
+  "name": "Basic SQL Commands 3",
+  "description": "Here we go through other basic SQL commands for grouping:\n1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in Basic SQL Commands 1 is one of aggregate functions. Here are commonly used aggregate functions:\nSUM() AVG() MIN() MAX() COUNT() The examples are as follows:\nSELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Here we go through other basic SQL commands for grouping:\n1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in Basic SQL Commands 1 is one of aggregate functions. Here are commonly used aggregate functions:\nSUM() AVG() MIN() MAX() COUNT() The examples are as follows:\nSELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:\nSELECT SUM(column_name1), column_name2 FROM table_name1 On the other hand, if you group by column_name2, such is possible. GROUP BY is going to be introduced later in this post. However, you can use multiple aggregations at the same time.\nSELECT SUM(column_name1), COUNT(*), AVG(column_name2), FROM table_name1 2. GROUP BY When we aggregate, we may want to group by certain category. For example, instead of summing all payments made by all customer, we may want to see all payments made by each customer.\nGROUP BY is used to group aggregations by specfic columns. The syntax is follows:\nSELECT column_name1, SUM(column_name2) FROM table_name1 GROUP BY column_name1 If we want to filter first and order by the grouped column, we can do something like below:\nSELECT column_name1, SUM(column_name2) FROM table_name1 WHERE column_name1 \u003e n GROUP BY column_name1 ORDER BY column_name1 WHERE should comes immediately after FROM. Thus, GROUP BY comes after either FROM or WHERE. Also note that ORDER BY always comes last. As mentioned in section 1, every column should be either in GROUP BY or aggregate functions.\nYou can also group by multiple columns. For example, we can sum over all payments made by each customer for each category of products. This is achieved by the syntax below:\nSELECT column_name1, column_name2, SUM(column_name3) FROM table_name1 GROUP BY column_name1, column_name2 The example code would look like\nSELECT customer_id, category, SUM(amount) AS total_payment FROM sales GROUP BY customer_id, category ORDER BY customer_id, total_payment DESC Additioal ORDER BY was added to see, for each customer ordered in ascending order, which category of products was bought the most.\n3. HAVING HAVING is used to filter groupings by aggregations. HAVING is only used with GROUP BY. For example, you may want to filter the groupings where the total amount paid by the customers is bigger than 200.\nSELECT customer_id, SUM(amount) AS total_payment FROM payment GROUP BY customer_id HAVING SUM(amount) \u003e 200 Just like WHERE, you can use multiple conditions by using AND and OR. As noted in Basic SQL Commands 2, aliases, e.g. total_payment, cannot be used in HAVING.\n",
+  "wordCount" : "443",
+  "inLanguage": "en",
+  "datePublished": "2025-05-31T00:00:00Z",
+  "dateModified": "2025-05-31T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql3/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.minjunjeon.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      Basic SQL Commands 3
+    </h1>
+    <div class="post-meta"><span title='2025-05-31 00:00:00 +0000 UTC'>May 31, 2025</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-aggregate-functions" aria-label="1. Aggregate Functions">1. Aggregate Functions</a></li>
+                <li>
+                    <a href="#2-group-by" aria-label="2. GROUP BY">2. GROUP BY</a></li>
+                <li>
+                    <a href="#3-having" aria-label="3. HAVING">3. HAVING</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>Here we go through other basic SQL commands for grouping:</p>
+<h2 id="1-aggregate-functions">1. Aggregate Functions<a hidden class="anchor" aria-hidden="true" href="#1-aggregate-functions">#</a></h2>
+<p><em>Aggregate functions</em> aggregate values in multiple rows to one value. <code>COUNT</code> in <a href="/posts/data_eng/sql/sql1/#6-count">Basic SQL Commands 1</a> is one of aggregate functions. Here are commonly used aggregate functions:</p>
+<ul>
+<li>SUM()</li>
+<li>AVG()</li>
+<li>MIN()</li>
+<li>MAX()</li>
+<li>COUNT()</li>
+</ul>
+<p>The examples are as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SUM</span>(column_name1)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span></code></pre></div><p>You usually need to specify the column name inside the parentheses. <code>COUNT</code> accepts <code>*</code>. <em>Aggregate functions</em> cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SUM</span>(column_name1),
+</span></span><span style="display:flex;"><span>column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span></code></pre></div><p>On the other hand, if you <em>group by</em> <code>column_name2</code>, such is possible. <code>GROUP BY</code> is going to be introduced later in this post.
+However, you can use multiple aggregations at the same time.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SUM</span>(column_name1),
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COUNT</span>(<span style="color:#f92672">*</span>),
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">AVG</span>(column_name2),
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span></code></pre></div><h2 id="2-group-by">2. GROUP BY<a hidden class="anchor" aria-hidden="true" href="#2-group-by">#</a></h2>
+<p>When we aggregate, we may want to <em>group by</em> certain category. For example, instead of summing all payments made by all customer, we may want to see all payments made by each customer.</p>
+<p><em>GROUP BY</em> is used to group aggregations by specfic columns. The syntax is follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SUM</span>(column_name2)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> column_name1
+</span></span></code></pre></div><p>If we want to filter first and order by the grouped column, we can do something like below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SUM</span>(column_name2)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> column_name1 <span style="color:#f92672">&gt;</span> n
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> column_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> column_name1
+</span></span></code></pre></div><p><code>WHERE</code> should comes immediately after <code>FROM</code>. Thus, <code>GROUP BY</code> comes after either <code>FROM</code> or <code>WHERE</code>. Also note that <code>ORDER BY</code> always comes last. As mentioned in <a href="#1-aggregate-functions">section 1</a>, every column should be either in <code>GROUP BY</code> or <em>aggregate functions</em>.</p>
+<p>You can also group by multiple columns. For example, we can sum over all payments made by each customer for each category of products. This is achieved by the syntax below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>column_name1,
+</span></span><span style="display:flex;"><span>column_name2,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SUM</span>(column_name3)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table_name1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> column_name1, column_name2
+</span></span></code></pre></div><p>The example code would look like</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>customer_id,
+</span></span><span style="display:flex;"><span>category,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SUM</span>(amount) <span style="color:#66d9ef">AS</span> total_payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> sales
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> customer_id, category
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> customer_id, total_payment <span style="color:#66d9ef">DESC</span>
+</span></span></code></pre></div><p>Additioal <code>ORDER BY</code> was added to see, for each customer ordered in ascending order, which category of products was bought the most.</p>
+<h2 id="3-having">3. HAVING<a hidden class="anchor" aria-hidden="true" href="#3-having">#</a></h2>
+<p><em>HAVING</em> is used to filter <u><strong>groupings</strong></u> by aggregations. <em>HAVING</em> is only used with <code>GROUP BY</code>. For example, you may want to filter the groupings where the total amount paid by the customers is bigger than 200.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>customer_id,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SUM</span>(amount) <span style="color:#66d9ef">AS</span> total_payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> customer_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">HAVING</span> <span style="color:#66d9ef">SUM</span>(amount) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">200</span>
+</span></span></code></pre></div><p>Just like <code>WHERE</code>, you can use multiple conditions by using <code>AND</code> and <code>OR</code>. As noted in <a href="/posts/data_eng/sql/sql2/#2-comments--aliases">Basic SQL Commands 2</a>, aliases, e.g. <code>total_payment</code>, cannot be used in <code>HAVING</code>.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

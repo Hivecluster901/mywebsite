@@ -139,3 +139,5 @@ SELECT
 payment_id AS invoice_no
 FROM payment
 ```
+
+**Note that column alias cannot be used in a `SELECT`, `WHERE`, `GROUP BY`, or `HAVING` clauses due to the order of execution.**

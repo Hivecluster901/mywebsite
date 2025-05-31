@@ -6,8 +6,29 @@
     <description>Recent content in 1. SQL on Minjun Jeon</description>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 30 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 May 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/posts/data_eng/sql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Basic SQL Commands 3</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</guid>
+      <description>&lt;p&gt;Here we go through other basic SQL commands for grouping:&lt;/p&gt;
+&lt;h2 id=&#34;1-aggregate-functions&#34;&gt;1. Aggregate Functions&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Aggregate functions&lt;/em&gt; aggregate values in multiple rows to one value. &lt;code&gt;COUNT&lt;/code&gt; in &lt;a href=&#34;https://www.minjunjeon.com/posts/data_eng/sql/sql1/#6-count&#34;&gt;Basic SQL Commands 1&lt;/a&gt; is one of aggregate functions. Here are commonly used aggregate functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SUM()&lt;/li&gt;
+&lt;li&gt;AVG()&lt;/li&gt;
+&lt;li&gt;MIN()&lt;/li&gt;
+&lt;li&gt;MAX()&lt;/li&gt;
+&lt;li&gt;COUNT()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The examples are as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SUM&lt;/span&gt;(column_name1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You usually need to specify the column name inside the parentheses. &lt;code&gt;COUNT&lt;/code&gt; accepts &lt;code&gt;*&lt;/code&gt;. &lt;em&gt;Aggregate functions&lt;/em&gt; cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Basic SQL Commands 2</title>
       <link>https://www.minjunjeon.com/posts/data_eng/sql/sql2/</link>
