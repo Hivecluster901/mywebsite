@@ -1,0 +1,59 @@
+{{- $siteTitle := .Site.Title -}}
+{{- $siteURL := .Site.BaseURL -}}
+{{- $author := .Site.Params.author.name -}}
+{{- $image := "assets/android-chrome-512x512.png" | absURL -}}
+{{- with .Site.Params.images }}
+  {{- $image = (index . 0) | absURL -}}
+{{- end }}
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "{{ $siteURL }}",
+  "name": "{{ $siteTitle }}",
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ $author }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ $image }}"
+    }
+  },
+  "image": "{{ $image }}"
+}
+</script>
+
+{{- if .IsPage }}
+  {{- $postImage := $image -}}
+  {{- with .Params.images }}
+    {{- $postImage = (index . 0) | absURL -}}
+  {{- end }}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ .Permalink }}"
+  },
+  "headline": "{{ .Title }}",
+  "description": "{{ with .Description }}{{ . }}{{ else }}{{ .Summary }}{{ end }}",
+  "image": "{{ $postImage }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ $author }}"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "{{ $author }}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{ $image }}"
+    }
+  },
+  "datePublished": "{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}",
+  "dateModified": "{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}"
+}
+</script>
+{{- end }}

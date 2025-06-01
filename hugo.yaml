@@ -22,6 +22,7 @@ params:
   images: ["assets/android-chrome-512x512.png"]
   author:
     name: "Minjun Jeon"
+  env: production
 
 assets:
   favicon16x16: /assets/favicon-16x16.png
