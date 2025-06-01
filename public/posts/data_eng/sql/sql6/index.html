@@ -123,7 +123,53 @@ For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.
         }
 
     </style>
-</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql6/">
+</noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql6\/"
+  },
+  "headline": "SQL 6. Numerical Functions and Operators",
+  "description": "\u003ch2 id=\u00221-operators\u0022\u003e1. Operators\u003c\/h2\u003e\n\u003cdiv class=\u0022custom-table-wrapper\u0022\u003e\n    \u003ctable\u003e\n      \u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eOperator\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eDescription\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eExamples\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eResult\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eaddition\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e4\u002b3\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e7\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e-\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003esubtraction\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e5-3\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e*\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003emultiplication\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e4*2\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e8\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\/\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003edivision (integer division truncates the result)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e8\/4\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e%\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003emodulo (remainder)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e10%4\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e^\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eexponentiation\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2^3\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e8\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\n    \u003c\/table\u003e\n\u003c\/div\u003e\n\u003cp\u003eFor example, \u003ccode\u003e9\/4\u003c\/code\u003e will give \u003ccode\u003e2\u003c\/code\u003e while \u003ccode\u003e9.0\/4\u003c\/code\u003e will give \u003ccode\u003e2.2500...00\u003c\/code\u003e.\u003c\/p\u003e\n\u003ch2 id=\u00222-functions\u0022\u003e2. Functions\u003c\/h2\u003e\n\u003cdiv class=\u0022custom-table-wrapper\u0022\u003e\n    \u003ctable\u003e\n      \u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eFunction\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eDescription\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eExamples\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eResult\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eabs(x)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eabsolute value\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eabs(-2)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround(x, d)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround x to d decimal places\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround(7.4632, 2)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e7.46\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eceiling(x)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround up to integer\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eceiling(7.4632)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e8\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003efloor(x)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround down to integer\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003efloor(7.4632)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e7\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\n    \u003c\/table\u003e\n\u003c\/div\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "datePublished": "2025-06-01T00:00:00Z",
+  "dateModified": "2025-06-01T00:00:00Z"
+}
+</script>
+<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql6/">
   <meta property="og:site_name" content="Minjun Jeon">
   <meta property="og:title" content="SQL 6. Numerical Functions and Operators">
   <meta property="og:description" content="1. Operators Operator Description Examples Result &#43; addition 4&#43;3 7 - subtraction 5-3 2 * multiplication 4*2 8 / division (integer division truncates the result) 8/4 2 % modulo (remainder) 10%4 2 ^ exponentiation 2^3 8 For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.
@@ -234,52 +280,6 @@ For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.
 
     
 ">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  "url": "https:\/\/www.minjunjeon.com\/",
-  "name": "Minjun Jeon",
-  "publisher": {
-    "@type": "Organization",
-    "name": "Minjun Jeon",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
-    }
-  },
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql6\/"
-  },
-  "headline": "SQL 6. Numerical Functions and Operators",
-  "description": "\u003ch2 id=\u00221-operators\u0022\u003e1. Operators\u003c\/h2\u003e\n\u003cdiv class=\u0022custom-table-wrapper\u0022\u003e\n    \u003ctable\u003e\n      \u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eOperator\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eDescription\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eExamples\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eResult\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\u002b\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eaddition\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e4\u002b3\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e7\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e-\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003esubtraction\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e5-3\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e*\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003emultiplication\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e4*2\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e8\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e\/\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003edivision (integer division truncates the result)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e8\/4\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e%\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003emodulo (remainder)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e10%4\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e^\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eexponentiation\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2^3\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e8\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\n    \u003c\/table\u003e\n\u003c\/div\u003e\n\u003cp\u003eFor example, \u003ccode\u003e9\/4\u003c\/code\u003e will give \u003ccode\u003e2\u003c\/code\u003e while \u003ccode\u003e9.0\/4\u003c\/code\u003e will give \u003ccode\u003e2.2500...00\u003c\/code\u003e.\u003c\/p\u003e\n\u003ch2 id=\u00222-functions\u0022\u003e2. Functions\u003c\/h2\u003e\n\u003cdiv class=\u0022custom-table-wrapper\u0022\u003e\n    \u003ctable\u003e\n      \u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eFunction\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eDescription\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eExamples\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eResult\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eabs(x)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eabsolute value\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eabs(-2)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e2\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround(x, d)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround x to d decimal places\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround(7.4632, 2)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e7.46\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eceiling(x)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround up to integer\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eceiling(7.4632)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e8\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003efloor(x)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eround down to integer\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003efloor(7.4632)\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003e7\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\n    \u003c\/table\u003e\n\u003c\/div\u003e",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
-  "author": {
-    "@type": "Person",
-    "name": "Minjun Jeon"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Minjun Jeon",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
-    }
-  },
-  "datePublished": "2025-06-01T00:00:00Z",
-  "dateModified": "2025-06-01T00:00:00Z"
-}
-</script>
 
 </head>
 
