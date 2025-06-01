@@ -75,6 +75,125 @@
 &lt;p&gt;&lt;em&gt;EXTRACT&lt;/em&gt; is used to extract parts of timestamp/date. The syntax is as follows:&lt;/p&gt;</description>
     </item>
     <item>
+      <title>SQL 6. Numerical Functions and Operators</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</guid>
+      <description>&lt;h2 id=&#34;1-operators&#34;&gt;1. Operators&lt;/h2&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Operator&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Examples&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Result&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;addition&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4+3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;-&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;subtraction&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5-3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;*&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;multiplication&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4*2&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;/&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;division (integer division truncates the result)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8/4&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;%&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;modulo (remainder)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;10%4&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;^&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;exponentiation&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2^3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;For example, &lt;code&gt;9/4&lt;/code&gt; will give &lt;code&gt;2&lt;/code&gt; while &lt;code&gt;9.0/4&lt;/code&gt; will give &lt;code&gt;2.2500...00&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;2-functions&#34;&gt;2. Functions&lt;/h2&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Function&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Examples&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Result&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;abs(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;absolute value&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;abs(-2)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round(x, d)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round x to d decimal places&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round(7.4632, 2)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7.46&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;ceiling(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round up to integer&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;ceiling(7.4632)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;floor(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round down to integer&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;floor(7.4632)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>SQL 7. Conditional Expressions</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</guid>
+      <description>&lt;p&gt;Here, we go through conditional expressions.&lt;/p&gt;
+&lt;h2 id=&#34;1-case-when&#34;&gt;1. CASE WHEN&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;CASE WHEN&lt;/em&gt; goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CASE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; condition1 &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; result1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; condition2 &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; result2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; conditionN &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; resultN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;ELSE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;result&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;END&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the statement with &lt;code&gt;CASE&lt;/code&gt; and &lt;strong&gt;end with &lt;code&gt;END&lt;/code&gt;&lt;/strong&gt;. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both &lt;code&gt;condition1&lt;/code&gt; and &lt;code&gt;condition2&lt;/code&gt; are true, only &lt;code&gt;result1&lt;/code&gt; will be returned. If there is no &lt;code&gt;ELSE&lt;/code&gt; statement, and all the conditions after &lt;code&gt;WHEN&lt;/code&gt; are not met, &lt;code&gt;NULL&lt;/code&gt; is returned.&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>SQL 3. Grouping</title>
       <link>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>

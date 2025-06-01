@@ -5,50 +5,107 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>SQL 5. Date and Time Functions | Minjun Jeon</title>
+<title>SQL 6. Numerical Functions and Operators | Minjun Jeon</title>
 <meta name="keywords" content="">
-<meta name="description" content="In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&rsquo;s look at standard date/time types.
-0. Data/Time types
+<meta name="description" content="1. Operators
 
     
       
   
       
-          Types
+          Operator
           Description
           Examples
+          Result
       
   
   
       
-          date
-          Just date  without time
-          &lsquo;2025-06-01&rsquo;
+          &#43;
+          addition
+          4&#43;3
+          7
       
       
-          time  (with/without time zone)
-          Just time  without date
-          &lsquo;01:02:03.678&#43;02&rsquo;
+          -
+          subtraction
+          5-3
+          2
       
       
-          timestamp  (with/without time zone)
-          Date and time
-          &lsquo;2022-11-28 01:02:03.678&#43;02&rsquo;
+          *
+          multiplication
+          4*2
+          8
       
       
-          intervals
-          Time interval
-          &lsquo;3 days 01:02:03.678&rsquo;
+          /
+          division (integer division truncates the result)
+          8/4
+          2
+      
+      
+          %
+          modulo (remainder)
+          10%4
+          2
+      
+      
+          ^
+          exponentiation
+          2^3
+          8
       
   
 
 
     
 
-1. EXTRACT
-EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
+For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.
+2. Functions
+
+    
+      
+  
+      
+          Function
+          Description
+          Examples
+          Result
+      
+  
+  
+      
+          abs(x)
+          absolute value
+          abs(-2)
+          2
+      
+      
+          round(x, d)
+          round x to d decimal places
+          round(7.4632, 2)
+          7.46
+      
+      
+          ceiling(x)
+          round up to integer
+          ceiling(7.4632)
+          8
+      
+      
+          floor(x)
+          round down to integer
+          floor(7.4632)
+          7
+      
+  
+
+
+    
+">
 <meta name="author" content="map[name:Minjun Jeon]">
-<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql5/">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql6/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.7957225163cf1e33441aa58f056557c1c5d55b677e2f5bc7001a08802094949d.css" integrity="sha256-eVciUWPPHjNEGqWPBWVXwcXVW2d&#43;L1vHABoIgCCUlJ0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
@@ -57,7 +114,7 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
 <link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql5/">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql6/">
 <noscript>
     <style>
         #theme-toggle,
@@ -66,11 +123,11 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
         }
 
     </style>
-</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql5/">
+</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql6/">
   <meta property="og:site_name" content="Minjun Jeon">
-  <meta property="og:title" content="SQL 5. Date and Time Functions">
-  <meta property="og:description" content="In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let’s look at standard date/time types.
-0. Data/Time types Types Description Examples date Just date without time ‘2025-06-01’ time (with/without time zone) Just time without date ‘01:02:03.678&#43;02’ timestamp (with/without time zone) Date and time ‘2022-11-28 01:02:03.678&#43;02’ intervals Time interval ‘3 days 01:02:03.678’ 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
+  <meta property="og:title" content="SQL 6. Numerical Functions and Operators">
+  <meta property="og:description" content="1. Operators Operator Description Examples Result &#43; addition 4&#43;3 7 - subtraction 5-3 2 * multiplication 4*2 8 / division (integer division truncates the result) 8/4 2 % modulo (remainder) 10%4 2 ^ exponentiation 2^3 8 For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.
+2. Functions Function Description Examples Result abs(x) absolute value abs(-2) 2 round(x, d) round x to d decimal places round(7.4632, 2) 7.46 ceiling(x) round up to integer ceiling(7.4632) 8 floor(x) round down to integer floor(7.4632) 7 ">
   <meta property="og:locale" content="en-us">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -79,47 +136,104 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
       <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
-<meta name="twitter:title" content="SQL 5. Date and Time Functions">
-<meta name="twitter:description" content="In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&rsquo;s look at standard date/time types.
-0. Data/Time types
+<meta name="twitter:title" content="SQL 6. Numerical Functions and Operators">
+<meta name="twitter:description" content="1. Operators
 
     
       
   
       
-          Types
+          Operator
           Description
           Examples
+          Result
       
   
   
       
-          date
-          Just date  without time
-          &lsquo;2025-06-01&rsquo;
+          &#43;
+          addition
+          4&#43;3
+          7
       
       
-          time  (with/without time zone)
-          Just time  without date
-          &lsquo;01:02:03.678&#43;02&rsquo;
+          -
+          subtraction
+          5-3
+          2
       
       
-          timestamp  (with/without time zone)
-          Date and time
-          &lsquo;2022-11-28 01:02:03.678&#43;02&rsquo;
+          *
+          multiplication
+          4*2
+          8
       
       
-          intervals
-          Time interval
-          &lsquo;3 days 01:02:03.678&rsquo;
+          /
+          division (integer division truncates the result)
+          8/4
+          2
+      
+      
+          %
+          modulo (remainder)
+          10%4
+          2
+      
+      
+          ^
+          exponentiation
+          2^3
+          8
       
   
 
 
     
 
-1. EXTRACT
-EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
+For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.
+2. Functions
+
+    
+      
+  
+      
+          Function
+          Description
+          Examples
+          Result
+      
+  
+  
+      
+          abs(x)
+          absolute value
+          abs(-2)
+          2
+      
+      
+          round(x, d)
+          round x to d decimal places
+          round(7.4632, 2)
+          7.46
+      
+      
+          ceiling(x)
+          round up to integer
+          ceiling(7.4632)
+          8
+      
+      
+          floor(x)
+          round down to integer
+          floor(7.4632)
+          7
+      
+  
+
+
+    
+">
 
 
 <script type="application/ld+json">
@@ -148,8 +262,8 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
     {
       "@type": "ListItem",
       "position":  4 ,
-      "name": "SQL 5. Date and Time Functions",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql5/"
+      "name": "SQL 6. Numerical Functions and Operators",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql6/"
     }
   ]
 }
@@ -158,14 +272,14 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "SQL 5. Date and Time Functions",
-  "name": "SQL 5. Date and Time Functions",
-  "description": "In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let\u0026rsquo;s look at standard date/time types.\n0. Data/Time types Types Description Examples date Just date without time \u0026lsquo;2025-06-01\u0026rsquo; time (with/without time zone) Just time without date \u0026lsquo;01:02:03.678+02\u0026rsquo; timestamp (with/without time zone) Date and time \u0026lsquo;2022-11-28 01:02:03.678+02\u0026rsquo; intervals Time interval \u0026lsquo;3 days 01:02:03.678\u0026rsquo; 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:\n",
+  "headline": "SQL 6. Numerical Functions and Operators",
+  "name": "SQL 6. Numerical Functions and Operators",
+  "description": "1. Operators Operator Description Examples Result + addition 4+3 7 - subtraction 5-3 2 * multiplication 4*2 8 / division (integer division truncates the result) 8/4 2 % modulo (remainder) 10%4 2 ^ exponentiation 2^3 8 For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.\n2. Functions Function Description Examples Result abs(x) absolute value abs(-2) 2 round(x, d) round x to d decimal places round(7.4632, 2) 7.46 ceiling(x) round up to integer ceiling(7.4632) 8 floor(x) round down to integer floor(7.4632) 7 ",
   "keywords": [
     
   ],
-  "articleBody": "In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let’s look at standard date/time types.\n0. Data/Time types Types Description Examples date Just date without time ‘2025-06-01’ time (with/without time zone) Just time without date ‘01:02:03.678+02’ timestamp (with/without time zone) Date and time ‘2022-11-28 01:02:03.678+02’ intervals Time interval ‘3 days 01:02:03.678’ 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:\nEXTRACT (field from date/time/interval) field is part of date/time, and date/time/interval represents column we want to extract from.\n2. TO_CHAR TO_CHAR is used to get custom formats for timestamp/date/numbers. The output type is always text. The syntax is as follows:\nTO_CHAR (date/time/interval/number, custom format) For example,\nTO_CHAR (rental_date, 'MM-YYYY') For the specific formatted strings, refer to the official webpage for formatting functions.\n3. Helful Interval and Timestamp CURRENT_DATE and ``CURRENT_TIMESTAMP` are used to get current dates and timestamps. These are useful if we want to obtain the interval between the current timestamp and the timestamps in the database. For example,\nSELECT CURRENT_TIMESTAMP - timestamp1 fROM rental ",
-  "wordCount" : "189",
+  "articleBody": "1. Operators Operator Description Examples Result + addition 4+3 7 - subtraction 5-3 2 * multiplication 4*2 8 / division (integer division truncates the result) 8/4 2 % modulo (remainder) 10%4 2 ^ exponentiation 2^3 8 For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.\n2. Functions Function Description Examples Result abs(x) absolute value abs(-2) 2 round(x, d) round x to d decimal places round(7.4632, 2) 7.46 ceiling(x) round up to integer ceiling(7.4632) 8 floor(x) round down to integer floor(7.4632) 7 ",
+  "wordCount" : "83",
   "inLanguage": "en",
   "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-06-01T00:00:00Z",
   "dateModified": "2025-06-01T00:00:00Z",
@@ -175,7 +289,7 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql5/"
+    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql6/"
   },
   "publisher": {
     "@type": "Organization",
@@ -264,7 +378,7 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
   <header class="post-header">
     
     <h1 class="post-title entry-hint-parent">
-      SQL 5. Date and Time Functions
+      SQL 6. Numerical Functions and Operators
     </h1>
     <div class="post-meta"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
 
@@ -275,79 +389,115 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
             <span class="details">Table of Contents</span>
         </summary>
 
-        <div class="inner"><ul><ul>
+        <div class="inner"><ul>
                 <li>
-                    <a href="#0-datatime-types" aria-label="0. Data/Time types">0. Data/Time types</a></li></ul>
-                    
+                    <a href="#1-operators" aria-label="1. Operators">1. Operators</a></li>
                 <li>
-                    <a href="#1-extract" aria-label="1. EXTRACT">1. EXTRACT</a><ul>
-                        
-                <li>
-                    <a href="#2-to_char" aria-label="2. TO_CHAR">2. TO_CHAR</a></li>
-                <li>
-                    <a href="#3-helful-interval-and-timestamp" aria-label="3. Helful Interval and Timestamp">3. Helful Interval and Timestamp</a>
+                    <a href="#2-functions" aria-label="2. Functions">2. Functions</a>
                 </li>
-            </ul>
-            </li>
             </ul>
         </div>
     </details>
 </div>
 
-  <div class="post-content"><p>In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&rsquo;s look at standard date/time types.</p>
-<h3 id="0-datatime-types">0. Data/Time types<a hidden class="anchor" aria-hidden="true" href="#0-datatime-types">#</a></h3>
+  <div class="post-content"><h2 id="1-operators">1. Operators<a hidden class="anchor" aria-hidden="true" href="#1-operators">#</a></h2>
 <div class="custom-table-wrapper">
     <table>
       <table>
   <thead>
       <tr>
-          <th style="text-align: center">Types</th>
+          <th style="text-align: center">Operator</th>
           <th style="text-align: center">Description</th>
           <th style="text-align: center">Examples</th>
+          <th style="text-align: center">Result</th>
       </tr>
   </thead>
   <tbody>
       <tr>
-          <td style="text-align: center">date</td>
-          <td style="text-align: center">Just date <br> without time</td>
-          <td style="text-align: center">&lsquo;2025-06-01&rsquo;</td>
+          <td style="text-align: center">+</td>
+          <td style="text-align: center">addition</td>
+          <td style="text-align: center">4+3</td>
+          <td style="text-align: center">7</td>
       </tr>
       <tr>
-          <td style="text-align: center">time <br> (with/without time zone)</td>
-          <td style="text-align: center">Just time <br> without date</td>
-          <td style="text-align: center">&lsquo;01:02:03.678+02&rsquo;</td>
+          <td style="text-align: center">-</td>
+          <td style="text-align: center">subtraction</td>
+          <td style="text-align: center">5-3</td>
+          <td style="text-align: center">2</td>
       </tr>
       <tr>
-          <td style="text-align: center">timestamp <br> (with/without time zone)</td>
-          <td style="text-align: center">Date and time</td>
-          <td style="text-align: center">&lsquo;2022-11-28 01:02:03.678+02&rsquo;</td>
+          <td style="text-align: center">*</td>
+          <td style="text-align: center">multiplication</td>
+          <td style="text-align: center">4*2</td>
+          <td style="text-align: center">8</td>
       </tr>
       <tr>
-          <td style="text-align: center">intervals</td>
-          <td style="text-align: center">Time interval</td>
-          <td style="text-align: center">&lsquo;3 days 01:02:03.678&rsquo;</td>
+          <td style="text-align: center">/</td>
+          <td style="text-align: center">division (integer division truncates the result)</td>
+          <td style="text-align: center">8/4</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">%</td>
+          <td style="text-align: center">modulo (remainder)</td>
+          <td style="text-align: center">10%4</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">^</td>
+          <td style="text-align: center">exponentiation</td>
+          <td style="text-align: center">2^3</td>
+          <td style="text-align: center">8</td>
       </tr>
   </tbody>
 </table>
 
     </table>
 </div>
-<h2 id="1-extract">1. EXTRACT<a hidden class="anchor" aria-hidden="true" href="#1-extract">#</a></h2>
-<p><em>EXTRACT</em> is used to extract parts of timestamp/date. The syntax is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">EXTRACT</span> (field <span style="color:#66d9ef">from</span> date<span style="color:#f92672">/</span>time<span style="color:#f92672">/</span>interval)
-</span></span></code></pre></div><p><code>field</code> is part of date/time, and <code>date/time/interval</code> represents column we want to extract from.</p>
-<h3 id="2-to_char">2. TO_CHAR<a hidden class="anchor" aria-hidden="true" href="#2-to_char">#</a></h3>
-<p><em>TO_CHAR</em> is used to get custom formats for timestamp/date/numbers. The output type is always text. The syntax is as follows:</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>TO_CHAR (date<span style="color:#f92672">/</span>time<span style="color:#f92672">/</span>interval<span style="color:#f92672">/</span>number, custom format)
-</span></span></code></pre></div><p>For example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>TO_CHAR (rental_date, <span style="color:#e6db74">&#39;MM-YYYY&#39;</span>)
-</span></span></code></pre></div><p>For the specific formatted strings, refer to the <a href="https://www.postgresql.org/docs/current/functions-formatting.html">official webpage for formatting functions</a>.</p>
-<h3 id="3-helful-interval-and-timestamp">3. Helful Interval and Timestamp<a hidden class="anchor" aria-hidden="true" href="#3-helful-interval-and-timestamp">#</a></h3>
-<p><code>CURRENT_DATE</code> and ``CURRENT_TIMESTAMP` are used to get current dates and timestamps. These are useful if we want to obtain the interval between the current timestamp and the timestamps in the database. For example,</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CURRENT_TIMESTAMP</span> <span style="color:#f92672">-</span> timestamp1
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fROM</span> rental
-</span></span></code></pre></div>
+<p>For example, <code>9/4</code> will give <code>2</code> while <code>9.0/4</code> will give <code>2.2500...00</code>.</p>
+<h2 id="2-functions">2. Functions<a hidden class="anchor" aria-hidden="true" href="#2-functions">#</a></h2>
+<div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Function</th>
+          <th style="text-align: center">Description</th>
+          <th style="text-align: center">Examples</th>
+          <th style="text-align: center">Result</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">abs(x)</td>
+          <td style="text-align: center">absolute value</td>
+          <td style="text-align: center">abs(-2)</td>
+          <td style="text-align: center">2</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">round(x, d)</td>
+          <td style="text-align: center">round x to d decimal places</td>
+          <td style="text-align: center">round(7.4632, 2)</td>
+          <td style="text-align: center">7.46</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ceiling(x)</td>
+          <td style="text-align: center">round up to integer</td>
+          <td style="text-align: center">ceiling(7.4632)</td>
+          <td style="text-align: center">8</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">floor(x)</td>
+          <td style="text-align: center">round down to integer</td>
+          <td style="text-align: center">floor(7.4632)</td>
+          <td style="text-align: center">7</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div>
+
 
   </div>
 

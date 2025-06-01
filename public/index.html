@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="map[name:Minjun Jeon]">
 <link rel="canonical" href="https://www.minjunjeon.com/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.c5625c2818370a2ec904f4c8c29ef8e4ad5d4bcaa7fdd6de64349060f63ec0eb.css" integrity="sha256-xWJcKBg3Ci7JBPTIwp745K1dS8qn/dbeZDSQYPY&#43;wOs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.7957225163cf1e33441aa58f056557c1c5d55b677e2f5bc7001a08802094949d.css" integrity="sha256-eVciUWPPHjNEGqWPBWVXwcXVW2d&#43;L1vHABoIgCCUlJ0=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/favicon-32x32.png">
@@ -197,6 +197,34 @@ SELECT UPPER(first_name) LOWER(last_name) FROM customer WHERE LENGTH(first_name)
   </div>
   <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to SQL 5. Date and Time Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql5/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 6. Numerical Functions and Operators
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. Operators Operator Description Examples Result &#43; addition 4&#43;3 7 - subtraction 5-3 2 * multiplication 4*2 8 / division (integer division truncates the result) 8/4 2 % modulo (remainder) 10%4 2 ^ exponentiation 2^3 8 For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.
+2. Functions Function Description Examples Result abs(x) absolute value abs(-2) 2 round(x, d) round x to d decimal places round(7.4632, 2) 7.46 ceiling(x) round up to integer ceiling(7.4632) 8 floor(x) round down to integer floor(7.4632) 7 </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 6. Numerical Functions and Operators" href="https://www.minjunjeon.com/posts/data_eng/sql/sql6/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 7. Conditional Expressions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Here, we go through conditional expressions.
+1. CASE WHEN CASE WHEN goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:
+CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN THEN resultN ELSE result END Start the statement with CASE and end with END. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both condition1 and condition2 are true, only result1 will be returned. If there is no ELSE statement, and all the conditions after WHEN are not met, NULL is returned.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 7. Conditional Expressions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql7/"></a>
 </article>
 
 <article class="post-entry"> 

@@ -35,7 +35,7 @@ header {
     margin: 0.5rem auto;
     width: max-content;
     background-color: transparent;
-    color: white;
+    color: var(--content);
   }
   
   .custom-table-wrapper th,
