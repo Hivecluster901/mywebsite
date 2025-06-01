@@ -19,6 +19,7 @@ params:
       url: 'https://linkedin.com/in/minjun-jeon-074b6a25b'
     - name: github
       url: 'https://github.com/Hivecluster901'
+  images: ["assets/android-chrome-512x512.png"]
 
 assets:
   favicon16x16: /assets/favicon-16x16.png

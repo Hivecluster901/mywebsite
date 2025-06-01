@@ -76,7 +76,9 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-06-01T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-06-01T00:00:00+00:00">
-<meta name="twitter:card" content="summary">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
 <meta name="twitter:title" content="SQL 5. Date and Time Functions">
 <meta name="twitter:description" content="In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&rsquo;s look at standard date/time types.
 0. Data/Time types
@@ -165,7 +167,7 @@ EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
   "articleBody": "In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let’s look at standard date/time types.\n0. Data/Time types Types Description Examples date Just date without time ‘2025-06-01’ time (with/without time zone) Just time without date ‘01:02:03.678+02’ timestamp (with/without time zone) Date and time ‘2022-11-28 01:02:03.678+02’ intervals Time interval ‘3 days 01:02:03.678’ 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:\nEXTRACT (field from date/time/interval) field is part of date/time, and date/time/interval represents column we want to extract from.\n2. TO_CHAR TO_CHAR is used to get custom formats for timestamp/date/numbers. The output type is always text. The syntax is as follows:\nTO_CHAR (date/time/interval/number, custom format) For example,\nTO_CHAR (rental_date, 'MM-YYYY') For the specific formatted strings, refer to the official webpage for formatting functions.\n3. Helful Interval and Timestamp CURRENT_DATE and ``CURRENT_TIMESTAMP` are used to get current dates and timestamps. These are useful if we want to obtain the interval between the current timestamp and the timestamps in the database. For example,\nSELECT CURRENT_TIMESTAMP - timestamp1 fROM rental ",
   "wordCount" : "189",
   "inLanguage": "en",
-  "datePublished": "2025-06-01T00:00:00Z",
+  "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-06-01T00:00:00Z",
   "dateModified": "2025-06-01T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",

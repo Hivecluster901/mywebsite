@@ -4,6 +4,11 @@
     <title>Projects on Minjun Jeon</title>
     <link>https://www.minjunjeon.com/projects/</link>
     <description>Recent content in Projects on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <atom:link href="https://www.minjunjeon.com/projects/index.xml" rel="self" type="application/rss+xml" />

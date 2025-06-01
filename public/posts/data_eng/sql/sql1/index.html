@@ -56,7 +56,9 @@ SELECT * FROM table_name1 Note that the exact format doesn’t matter, e.g. the 
     <meta property="article:section" content="posts">
     <meta property="article:published_time" content="2025-05-29T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-05-29T00:00:00+00:00">
-<meta name="twitter:card" content="summary">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
 <meta name="twitter:title" content="SQL 1. Basics">
 <meta name="twitter:description" content="Here, we go through basic SQL commands:
 1. SELECT
@@ -122,7 +124,7 @@ Note that the exact format doesn&rsquo;t matter, e.g. the two examples are the s
   "articleBody": "Here, we go through basic SQL commands:\n1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:\nSELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.\nSELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.\nSELECT * FROM table_name1 Note that the exact format doesn’t matter, e.g. the two examples are the same:\nSELECT * FROM table_name1 SELECT * FROM table_name1 2. ORDER BY ORDER BY is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. ORDER BY can be used in conjunction with SELECT.\nThe syntax is as follows:\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY column_name1 You can order the table with multiple columns. Just list the column names with ,.\n3. DESC/ASC DESC and ASC are used to specify the orders.\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY column_name1 DESC, column_name2 ASC Numbers can be used instead of column names to be specified. For example,\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY 1 DESC, 2 ASC However, such is not a recommended practice.\n4. DISTINCT DISTINCT is used to select distinct values in a table. The syntax is as follows:\nSELECT DISTINCT column_name1 FROM table_name1 Multiple columns can be selected distinctly.\nSELECT DISTINCT column_name1, column_name2 FROM table_name1 Then, there can be duplicate elements for column_name1 or column_name2 as long as the two rows have distinct values for the other columns. Thus, it selects distinct rows in terms of all selected rows.\n5. LIMIT LIMIT is used to limit the number of rows in the output. It is always at the very end of your query. The syntax is:\nSELECT column_name1, column_name2 FROM table_name1 LIMIT n It limits the output to n rows.\n6. COUNT COUNT is used to count the number of rows in the output. It is often used in combination with grouping and filtering. The syntax is:\nSELECT COUNT(*) FROM table_name1 The above counts all rows in the table. One can cout all rows of one column.\nSELECT COUNT(column_name1) FROM table_name1 The above two usuallt result in the same output. However, note that COUNT doesn’t count NULL’s. So, If there is NULL in column_name1, the results will be different.\nIf one wants to count the number of distinct values of a column, one can use this command:\nSELECT COUNT(DISTINCT column_name1) FROM table_name1 Be careful that DISTINCT is inside the parentheses.\n",
   "wordCount" : "452",
   "inLanguage": "en",
-  "datePublished": "2025-05-29T00:00:00Z",
+  "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-05-29T00:00:00Z",
   "dateModified": "2025-05-29T00:00:00Z",
   "mainEntityOfPage": {
     "@type": "WebPage",
