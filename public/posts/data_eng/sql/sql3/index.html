@@ -77,68 +77,48 @@ You usually need to specify the column name inside the parentheses. COUNT accept
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Archive",
-      "item": "https://www.minjunjeon.com/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "1. Data Engineering",
-      "item": "https://www.minjunjeon.com/posts/data_eng/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  3 ,
-      "name": "1. SQL",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  4 ,
-      "name": "SQL 3. Grouping",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql3/"
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
     }
-  ]
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "SQL 3. Grouping",
-  "name": "SQL 3. Grouping",
-  "description": "Here we go through other basic SQL commands for grouping:\n1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:\nSUM() AVG() MIN() MAX() COUNT() The examples are as follows:\nSELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:\n",
-  "keywords": [
-    
-  ],
-  "articleBody": "Here we go through other basic SQL commands for grouping:\n1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:\nSUM() AVG() MIN() MAX() COUNT() The examples are as follows:\nSELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:\nSELECT SUM(column_name1), column_name2 FROM table_name1 On the other hand, if you group by column_name2, such is possible. GROUP BY is going to be introduced later in this post. However, you can use multiple aggregations at the same time.\nSELECT SUM(column_name1), COUNT(*), AVG(column_name2), FROM table_name1 2. GROUP BY When we aggregate, we may want to group by certain category. For example, instead of summing all payments made by all customer, we may want to see all payments made by each customer.\nGROUP BY is used to group aggregations by specfic columns. The syntax is follows:\nSELECT column_name1, SUM(column_name2) FROM table_name1 GROUP BY column_name1 If we want to filter first and order by the grouped column, we can do something like below:\nSELECT column_name1, SUM(column_name2) FROM table_name1 WHERE column_name1 \u003e n GROUP BY column_name1 ORDER BY column_name1 WHERE should comes immediately after FROM. Thus, GROUP BY comes after either FROM or WHERE. Also note that ORDER BY always comes last. As mentioned in section 1, every column should be either in GROUP BY or aggregate functions.\nYou can also group by multiple columns. For example, we can sum over all payments made by each customer for each category of products. This is achieved by the syntax below:\nSELECT column_name1, column_name2, SUM(column_name3) FROM table_name1 GROUP BY column_name1, column_name2 The example code would look like\nSELECT customer_id, category, SUM(amount) AS total_payment FROM sales GROUP BY customer_id, category ORDER BY customer_id, total_payment DESC Additioal ORDER BY was added to see, for each customer ordered in ascending order, which category of products was bought the most.\n3. HAVING HAVING is used to filter groupings by aggregations. HAVING is only used with GROUP BY. For example, you may want to filter the groupings where the total amount paid by the customers is bigger than 200.\nSELECT customer_id, SUM(amount) AS total_payment FROM payment GROUP BY customer_id HAVING SUM(amount) \u003e 200 Just like WHERE, you can use multiple conditions by using AND and OR. As noted in SQL 2. Filtering, aliases, e.g. total_payment, cannot be used in HAVING.\n",
-  "wordCount" : "441",
-  "inLanguage": "en",
-  "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-05-31T00:00:00Z",
-  "dateModified": "2025-05-31T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": {"name":"Minjun Jeon"}
-  },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql3/"
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql3\/"
+  },
+  "headline": "SQL 3. Grouping",
+  "description": "\u003cp\u003eHere we go through other basic SQL commands for grouping:\u003c\/p\u003e\n\u003ch2 id=\u00221-aggregate-functions\u0022\u003e1. Aggregate Functions\u003c\/h2\u003e\n\u003cp\u003e\u003cem\u003eAggregate functions\u003c\/em\u003e aggregate values in multiple rows to one value. \u003ccode\u003eCOUNT\u003c\/code\u003e in \u003ca href=\u0022\/posts\/data_eng\/sql\/sql1\/#6-count\u0022\u003eSQL 1. Basics\u003c\/a\u003e is one of aggregate functions. Here are commonly used aggregate functions:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eSUM()\u003c\/li\u003e\n\u003cli\u003eAVG()\u003c\/li\u003e\n\u003cli\u003eMIN()\u003c\/li\u003e\n\u003cli\u003eMAX()\u003c\/li\u003e\n\u003cli\u003eCOUNT()\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cp\u003eThe examples are as follows:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-sql\u0022 data-lang=\u0022sql\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eSELECT\u003c\/span\u003e \n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eSUM\u003c\/span\u003e(column_name1)\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eFROM\u003c\/span\u003e table_name1\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eYou usually need to specify the column name inside the parentheses. \u003ccode\u003eCOUNT\u003c\/code\u003e accepts \u003ccode\u003e*\u003c\/code\u003e. \u003cem\u003eAggregate functions\u003c\/em\u003e cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.minjunjeon.com/favicon.ico"
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
     }
-  }
+  },
+  "datePublished": "2025-05-31T00:00:00Z",
+  "dateModified": "2025-05-31T00:00:00Z"
 }
 </script>
+
 </head>
 
 <body class=" dark" id="top">

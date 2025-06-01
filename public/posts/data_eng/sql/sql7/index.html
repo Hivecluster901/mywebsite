@@ -66,68 +66,48 @@ Start the statement with CASE and end with END. In between, the statement has co
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Archive",
-      "item": "https://www.minjunjeon.com/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "1. Data Engineering",
-      "item": "https://www.minjunjeon.com/posts/data_eng/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  3 ,
-      "name": "1. SQL",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  4 ,
-      "name": "SQL 7. Conditional Expressions",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql7/"
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
     }
-  ]
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "SQL 7. Conditional Expressions",
-  "name": "SQL 7. Conditional Expressions",
-  "description": "Here, we go through conditional expressions.\n1. CASE WHEN CASE WHEN goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:\nCASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN THEN resultN ELSE result END Start the statement with CASE and end with END. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both condition1 and condition2 are true, only result1 will be returned. If there is no ELSE statement, and all the conditions after WHEN are not met, NULL is returned.\n",
-  "keywords": [
-    
-  ],
-  "articleBody": "Here, we go through conditional expressions.\n1. CASE WHEN CASE WHEN goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:\nCASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN THEN resultN ELSE result END Start the statement with CASE and end with END. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both condition1 and condition2 are true, only result1 will be returned. If there is no ELSE statement, and all the conditions after WHEN are not met, NULL is returned.\nNow, we look at a very speical use case of CASE WHEN in conjunction with SUM.\na) CASE WHEN \u0026 SUM We can count a column with certain value using CASE WHEN and SUM. The syntax is as follows:\nSELECT SUM(CASE WHEN column_name1 = val1 THEN 1 ELSE 0) FROM table_name1 2. COALESCE COALESCE returns first value of a list of values which is not null. The syntax is as follows:\nCOALESCE (column1, column2) Instead of specifying other columns, one can also specify the default value.\nCOALESCE (column1, '1970-01-01 0:00') column1 and the default value should be the same type. Due to this problem, it is useful to be able to do type-casting.\na) CAST CAST changes the data type of a value. The syntax is as follows:\nCAST (value/column AS data_type) Often, data are not clean to do type-casting. For example, if there is a white space between two numbers, which is saved as VARCHAR type, it wouldn’t be possible to type-cast it to an integer. Thus, we need to be able to replace the white space with something else before type-casting.\nb) REPLACE REPLACE is used to replace text from a string in a column with another text. The syntax is\nREPLACE (column, old_text, new_text) ",
-  "wordCount" : "316",
-  "inLanguage": "en",
-  "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-06-01T00:00:00Z",
-  "dateModified": "2025-06-01T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": {"name":"Minjun Jeon"}
-  },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql7/"
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql7\/"
+  },
+  "headline": "SQL 7. Conditional Expressions",
+  "description": "\u003cp\u003eHere, we go through conditional expressions.\u003c\/p\u003e\n\u003ch2 id=\u00221-case-when\u0022\u003e1. CASE WHEN\u003c\/h2\u003e\n\u003cp\u003e\u003cem\u003eCASE WHEN\u003c\/em\u003e goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-sql\u0022 data-lang=\u0022sql\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eCASE\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#66d9ef\u0022\u003eWHEN\u003c\/span\u003e condition1 \u003cspan style=\u0022color:#66d9ef\u0022\u003eTHEN\u003c\/span\u003e result1\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#66d9ef\u0022\u003eWHEN\u003c\/span\u003e condition2 \u003cspan style=\u0022color:#66d9ef\u0022\u003eTHEN\u003c\/span\u003e result2\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#66d9ef\u0022\u003eWHEN\u003c\/span\u003e conditionN \u003cspan style=\u0022color:#66d9ef\u0022\u003eTHEN\u003c\/span\u003e resultN\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#66d9ef\u0022\u003eELSE\u003c\/span\u003e \u003cspan style=\u0022color:#66d9ef\u0022\u003eresult\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eEND\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eStart the statement with \u003ccode\u003eCASE\u003c\/code\u003e and \u003cstrong\u003eend with \u003ccode\u003eEND\u003c\/code\u003e\u003c\/strong\u003e. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both \u003ccode\u003econdition1\u003c\/code\u003e and \u003ccode\u003econdition2\u003c\/code\u003e are true, only \u003ccode\u003eresult1\u003c\/code\u003e will be returned. If there is no \u003ccode\u003eELSE\u003c\/code\u003e statement, and all the conditions after \u003ccode\u003eWHEN\u003c\/code\u003e are not met, \u003ccode\u003eNULL\u003c\/code\u003e is returned.\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.minjunjeon.com/favicon.ico"
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
     }
-  }
+  },
+  "datePublished": "2025-06-01T00:00:00Z",
+  "dateModified": "2025-06-01T00:00:00Z"
 }
 </script>
+
 </head>
 
 <body class=" dark" id="top">

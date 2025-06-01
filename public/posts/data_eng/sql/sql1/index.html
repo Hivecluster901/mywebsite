@@ -82,68 +82,48 @@ Note that the exact format doesn&rsquo;t matter, e.g. the two examples are the s
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Archive",
-      "item": "https://www.minjunjeon.com/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "1. Data Engineering",
-      "item": "https://www.minjunjeon.com/posts/data_eng/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  3 ,
-      "name": "1. SQL",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  4 ,
-      "name": "SQL 1. Basics",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql1/"
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
     }
-  ]
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
 }
 </script>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "SQL 1. Basics",
-  "name": "SQL 1. Basics",
-  "description": "Here, we go through basic SQL commands:\n1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:\nSELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.\nSELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.\nSELECT * FROM table_name1 Note that the exact format doesn\u0026rsquo;t matter, e.g. the two examples are the same:\n",
-  "keywords": [
-    
-  ],
-  "articleBody": "Here, we go through basic SQL commands:\n1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:\nSELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.\nSELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.\nSELECT * FROM table_name1 Note that the exact format doesn’t matter, e.g. the two examples are the same:\nSELECT * FROM table_name1 SELECT * FROM table_name1 2. ORDER BY ORDER BY is used to order results based on a column. The criterion depends on the data type of the chosen column. For example, if the column consists of texts, the table will be ordered alphabetically. If the column consists of numbers, the table will be ordered numerically. If the column consists of dates or times, the table will be ordered chronologically. ORDER BY can be used in conjunction with SELECT.\nThe syntax is as follows:\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY column_name1 You can order the table with multiple columns. Just list the column names with ,.\n3. DESC/ASC DESC and ASC are used to specify the orders.\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY column_name1 DESC, column_name2 ASC Numbers can be used instead of column names to be specified. For example,\nSELECT column_name1 column_name2 FROM table_name1 ORDER BY 1 DESC, 2 ASC However, such is not a recommended practice.\n4. DISTINCT DISTINCT is used to select distinct values in a table. The syntax is as follows:\nSELECT DISTINCT column_name1 FROM table_name1 Multiple columns can be selected distinctly.\nSELECT DISTINCT column_name1, column_name2 FROM table_name1 Then, there can be duplicate elements for column_name1 or column_name2 as long as the two rows have distinct values for the other columns. Thus, it selects distinct rows in terms of all selected rows.\n5. LIMIT LIMIT is used to limit the number of rows in the output. It is always at the very end of your query. The syntax is:\nSELECT column_name1, column_name2 FROM table_name1 LIMIT n It limits the output to n rows.\n6. COUNT COUNT is used to count the number of rows in the output. It is often used in combination with grouping and filtering. The syntax is:\nSELECT COUNT(*) FROM table_name1 The above counts all rows in the table. One can cout all rows of one column.\nSELECT COUNT(column_name1) FROM table_name1 The above two usuallt result in the same output. However, note that COUNT doesn’t count NULL’s. So, If there is NULL in column_name1, the results will be different.\nIf one wants to count the number of distinct values of a column, one can use this command:\nSELECT COUNT(DISTINCT column_name1) FROM table_name1 Be careful that DISTINCT is inside the parentheses.\n",
-  "wordCount" : "452",
-  "inLanguage": "en",
-  "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-05-29T00:00:00Z",
-  "dateModified": "2025-05-29T00:00:00Z",
-  "author":{
-    "@type": "Person",
-    "name": {"name":"Minjun Jeon"}
-  },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql1/"
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql1\/"
+  },
+  "headline": "SQL 1. Basics",
+  "description": "\u003cp\u003eHere, we go through basic SQL commands:\u003c\/p\u003e\n\u003ch2 id=\u00221-select\u0022\u003e1. SELECT\u003c\/h2\u003e\n\u003cp\u003e\u003cem\u003eSELECT\u003c\/em\u003e is used to select and return data.\nFor a single column, the syntax is as below:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-sql\u0022 data-lang=\u0022sql\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eSELECT\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003ecolumn_name\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eFROM\u003c\/span\u003e table_name1\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eFor multiple columns, you just list the column names with \u003ccode\u003e,\u003c\/code\u003e.\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-sql\u0022 data-lang=\u0022sql\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eSELECT\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003ecolumn_name1,\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003ecolumn_name2\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eFROM\u003c\/span\u003e table_name1\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eTo select all columns, use \u003ccode\u003e*\u003c\/code\u003e.\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-sql\u0022 data-lang=\u0022sql\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eSELECT\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#f92672\u0022\u003e*\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eFROM\u003c\/span\u003e table_name1\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eNote that \u003cstrong\u003ethe exact format doesn\u0026rsquo;t matter\u003c\/strong\u003e, e.g. the two examples are the same:\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.minjunjeon.com/favicon.ico"
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
     }
-  }
+  },
+  "datePublished": "2025-05-29T00:00:00Z",
+  "dateModified": "2025-05-29T00:00:00Z"
 }
 </script>
+
 </head>
 
 <body class=" dark" id="top">
