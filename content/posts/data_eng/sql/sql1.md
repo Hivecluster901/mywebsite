@@ -1,5 +1,5 @@
 ---
-title: "Basic SQL Commands 1"
+title: "SQL 1. Basics"
 date: 2025-05-29
 draft: false
 ShowToc: true

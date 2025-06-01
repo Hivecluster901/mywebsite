@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="https://www.minjunjeon.com/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.b262d2ece952a9e58c4e8747c08d105c6aaff71a7f3fd8e3010bf75efe15b5cb.css" integrity="sha256-smLS7OlSqeWMTodHwI0QXGqv9xp/P9jjAQv3Xv4Vtcs=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c5625c2818370a2ec904f4c8c29ef8e4ad5d4bcaa7fdd6de64349060f63ec0eb.css" integrity="sha256-xWJcKBg3Ci7JBPTIwp745K1dS8qn/dbeZDSQYPY&#43;wOs=" rel="preload stylesheet" as="style">
 <link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/favicon-32x32.png">
@@ -170,23 +170,52 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Basic SQL Commands 3
+    <h2 class="entry-hint-parent">SQL 4. String Functions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>In this post, we are going to look at basic string functions in SQL.
+1. UPPER, LOWER, LENGTH UPPER changes all lowercase alphabets to uppercase. LOWER changes all uppercase letters to lowercase. Finally, LENGTH gives the number of characters. The example is as follows:
+SELECT UPPER(first_name) LOWER(last_name) FROM customer WHERE LENGTH(first_name) &gt; 10 The above code outputs the first names in uppercase and last names in lowercase from the table customer where the length of the first name is more than 10.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to SQL 4. String Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql4/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 5. Date and Time Functions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let’s look at standard date/time types.
+0. Data/Time types Types Description Examples date Just date without time ‘2025-06-01’ time (with/without time zone) Just time without date ‘01:02:03.678&#43;02’ timestamp (with/without time zone) Date and time ‘2022-11-28 01:02:03.678&#43;02’ intervals Time interval ‘3 days 01:02:03.678’ 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to SQL 5. Date and Time Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql5/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 3. Grouping
     </h2>
   </header>
   <div class="entry-content">
     <p>Here we go through other basic SQL commands for grouping:
-1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in Basic SQL Commands 1 is one of aggregate functions. Here are commonly used aggregate functions:
+1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:
 SUM() AVG() MIN() MAX() COUNT() The examples are as follows:
 SELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-05-31 00:00:00 +0000 UTC'>May 31, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Basic SQL Commands 3" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/"></a>
+  <a class="entry-link" aria-label="post link to SQL 3. Grouping" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Basic SQL Commands 2
+    <h2 class="entry-hint-parent">SQL 2. Filtering
     </h2>
   </header>
   <div class="entry-content">
@@ -198,24 +227,7 @@ SELECT first_name, last_name FROM customer WHERE first_name = &#39;ADAM&#39; Enc
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-05-30 00:00:00 +0000 UTC'>May 30, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Basic SQL Commands 2" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Basic SQL Commands 1
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Here, we go through basic SQL commands:
-1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:
-SELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.
-SELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.
-SELECT * FROM table_name1 Note that the exact format doesn’t matter, e.g. the two examples are the same:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-05-29 00:00:00 +0000 UTC'>May 29, 2025</span></footer>
-  <a class="entry-link" aria-label="post link to Basic SQL Commands 1" href="https://www.minjunjeon.com/posts/data_eng/sql/sql1/"></a>
+  <a class="entry-link" aria-label="post link to SQL 2. Filtering" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -230,6 +242,23 @@ a) Dialects of SQL All DMBS’s have slightly different dialects even though the
   </div>
   <footer class="entry-footer"><span title='2025-05-29 00:00:00 +0000 UTC'>May 29, 2025</span></footer>
   <a class="entry-link" aria-label="post link to Intro to SQL" href="https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 1. Basics
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Here, we go through basic SQL commands:
+1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:
+SELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.
+SELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.
+SELECT * FROM table_name1 Note that the exact format doesn’t matter, e.g. the two examples are the same:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-05-29 00:00:00 +0000 UTC'>May 29, 2025</span></footer>
+  <a class="entry-link" aria-label="post link to SQL 1. Basics" href="https://www.minjunjeon.com/posts/data_eng/sql/sql1/"></a>
 </article>
     </main>
     

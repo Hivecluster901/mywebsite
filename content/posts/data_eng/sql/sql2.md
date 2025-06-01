@@ -1,5 +1,5 @@
 ---
-title: "Basic SQL Commands 2"
+title: "SQL 2. Filtering"
 date: 2025-05-30
 draft: false
 ShowToc: true
@@ -140,4 +140,4 @@ payment_id AS invoice_no
 FROM payment
 ```
 
-**Note that column alias cannot be used in a `SELECT`, `WHERE`, `GROUP BY`, or `HAVING` clauses due to the order of execution.**
+**Note that column alias cannot be used in a `WHERE`, or `HAVING` clauses due to the order of execution.**

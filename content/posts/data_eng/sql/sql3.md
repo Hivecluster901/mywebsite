@@ -1,5 +1,5 @@
 ---
-title: "Basic SQL Commands 3"
+title: "SQL 3. Grouping"
 date: 2025-05-31
 draft: false
 ShowToc: true
@@ -8,7 +8,7 @@ ShowToc: true
 Here we go through other basic SQL commands for grouping:
 
 ## 1. Aggregate Functions
-*Aggregate functions* aggregate values in multiple rows to one value. `COUNT` in [Basic SQL Commands 1](/posts/data_eng/sql/sql1/#6-count) is one of aggregate functions. Here are commonly used aggregate functions:
+*Aggregate functions* aggregate values in multiple rows to one value. `COUNT` in [SQL 1. Basics](/posts/data_eng/sql/sql1/#6-count) is one of aggregate functions. Here are commonly used aggregate functions:
 
 - SUM()
 - AVG()
@@ -98,4 +98,4 @@ GROUP BY customer_id
 HAVING SUM(amount) > 200
 ```
 
-Just like `WHERE`, you can use multiple conditions by using `AND` and `OR`. As noted in [Basic SQL Commands 2](/posts/data_eng/sql/sql2/#2-comments--aliases), aliases, e.g. `total_payment`, cannot be used in `HAVING`.
+Just like `WHERE`, you can use multiple conditions by using `AND` and `OR`. As noted in [SQL 2. Filtering](/posts/data_eng/sql/sql2/#2-comments--aliases), aliases, e.g. `total_payment`, cannot be used in `HAVING`.

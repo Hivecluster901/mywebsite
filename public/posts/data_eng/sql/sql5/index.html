@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>SQL 5. Date and Time Functions | Minjun Jeon</title>
+<meta name="keywords" content="">
+<meta name="description" content="In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&rsquo;s look at standard date/time types.
+0. Data/Time types
+
+    
+      
+  
+      
+          Types
+          Description
+          Examples
+      
+  
+  
+      
+          date
+          Just date  without time
+          &lsquo;2025-06-01&rsquo;
+      
+      
+          time  (with/without time zone)
+          Just time  without date
+          &lsquo;01:02:03.678&#43;02&rsquo;
+      
+      
+          timestamp  (with/without time zone)
+          Date and time
+          &lsquo;2022-11-28 01:02:03.678&#43;02&rsquo;
+      
+      
+          intervals
+          Time interval
+          &lsquo;3 days 01:02:03.678&rsquo;
+      
+  
+
+
+    
+
+1. EXTRACT
+EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
+<meta name="author" content="">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql5/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c5625c2818370a2ec904f4c8c29ef8e4ad5d4bcaa7fdd6de64349060f63ec0eb.css" integrity="sha256-xWJcKBg3Ci7JBPTIwp745K1dS8qn/dbeZDSQYPY&#43;wOs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql5/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql5/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="SQL 5. Date and Time Functions">
+  <meta property="og:description" content="In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let’s look at standard date/time types.
+0. Data/Time types Types Description Examples date Just date without time ‘2025-06-01’ time (with/without time zone) Just time without date ‘01:02:03.678&#43;02’ timestamp (with/without time zone) Date and time ‘2022-11-28 01:02:03.678&#43;02’ intervals Time interval ‘3 days 01:02:03.678’ 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-01T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-01T00:00:00+00:00">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL 5. Date and Time Functions">
+<meta name="twitter:description" content="In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&rsquo;s look at standard date/time types.
+0. Data/Time types
+
+    
+      
+  
+      
+          Types
+          Description
+          Examples
+      
+  
+  
+      
+          date
+          Just date  without time
+          &lsquo;2025-06-01&rsquo;
+      
+      
+          time  (with/without time zone)
+          Just time  without date
+          &lsquo;01:02:03.678&#43;02&rsquo;
+      
+      
+          timestamp  (with/without time zone)
+          Date and time
+          &lsquo;2022-11-28 01:02:03.678&#43;02&rsquo;
+      
+      
+          intervals
+          Time interval
+          &lsquo;3 days 01:02:03.678&rsquo;
+      
+  
+
+
+    
+
+1. EXTRACT
+EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Archive",
+      "item": "https://www.minjunjeon.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "1. Data Engineering",
+      "item": "https://www.minjunjeon.com/posts/data_eng/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "1. SQL",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "SQL 5. Date and Time Functions",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql5/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SQL 5. Date and Time Functions",
+  "name": "SQL 5. Date and Time Functions",
+  "description": "In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let\u0026rsquo;s look at standard date/time types.\n0. Data/Time types Types Description Examples date Just date without time \u0026lsquo;2025-06-01\u0026rsquo; time (with/without time zone) Just time without date \u0026lsquo;01:02:03.678+02\u0026rsquo; timestamp (with/without time zone) Date and time \u0026lsquo;2022-11-28 01:02:03.678+02\u0026rsquo; intervals Time interval \u0026lsquo;3 days 01:02:03.678\u0026rsquo; 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let’s look at standard date/time types.\n0. Data/Time types Types Description Examples date Just date without time ‘2025-06-01’ time (with/without time zone) Just time without date ‘01:02:03.678+02’ timestamp (with/without time zone) Date and time ‘2022-11-28 01:02:03.678+02’ intervals Time interval ‘3 days 01:02:03.678’ 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:\nEXTRACT (field from date/time/interval) field is part of date/time, and date/time/interval represents column we want to extract from.\n2. TO_CHAR TO_CHAR is used to get custom formats for timestamp/date/numbers. The output type is always text. The syntax is as follows:\nTO_CHAR (date/time/interval/number, custom format) For example,\nTO_CHAR (rental_date, 'MM-YYYY') For the specific formatted strings, refer to the official webpage for formatting functions.\n3. Helful Interval and Timestamp CURRENT_DATE and ``CURRENT_TIMESTAMP` are used to get current dates and timestamps. These are useful if we want to obtain the interval between the current timestamp and the timestamps in the database. For example,\nSELECT CURRENT_TIMESTAMP - timestamp1 fROM rental ",
+  "wordCount" : "189",
+  "inLanguage": "en",
+  "datePublished": "2025-06-01T00:00:00Z",
+  "dateModified": "2025-06-01T00:00:00Z",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql5/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.minjunjeon.com/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      SQL 5. Date and Time Functions
+    </h1>
+    <div class="post-meta"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#0-datatime-types" aria-label="0. Data/Time types">0. Data/Time types</a></li></ul>
+                    
+                <li>
+                    <a href="#1-extract" aria-label="1. EXTRACT">1. EXTRACT</a><ul>
+                        
+                <li>
+                    <a href="#2-to_char" aria-label="2. TO_CHAR">2. TO_CHAR</a></li>
+                <li>
+                    <a href="#3-helful-interval-and-timestamp" aria-label="3. Helful Interval and Timestamp">3. Helful Interval and Timestamp</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&rsquo;s look at standard date/time types.</p>
+<h3 id="0-datatime-types">0. Data/Time types<a hidden class="anchor" aria-hidden="true" href="#0-datatime-types">#</a></h3>
+<div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Types</th>
+          <th style="text-align: center">Description</th>
+          <th style="text-align: center">Examples</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">date</td>
+          <td style="text-align: center">Just date <br> without time</td>
+          <td style="text-align: center">&lsquo;2025-06-01&rsquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">time <br> (with/without time zone)</td>
+          <td style="text-align: center">Just time <br> without date</td>
+          <td style="text-align: center">&lsquo;01:02:03.678+02&rsquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">timestamp <br> (with/without time zone)</td>
+          <td style="text-align: center">Date and time</td>
+          <td style="text-align: center">&lsquo;2022-11-28 01:02:03.678+02&rsquo;</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">intervals</td>
+          <td style="text-align: center">Time interval</td>
+          <td style="text-align: center">&lsquo;3 days 01:02:03.678&rsquo;</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div>
+<h2 id="1-extract">1. EXTRACT<a hidden class="anchor" aria-hidden="true" href="#1-extract">#</a></h2>
+<p><em>EXTRACT</em> is used to extract parts of timestamp/date. The syntax is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">EXTRACT</span> (field <span style="color:#66d9ef">from</span> date<span style="color:#f92672">/</span>time<span style="color:#f92672">/</span>interval)
+</span></span></code></pre></div><p><code>field</code> is part of date/time, and <code>date/time/interval</code> represents column we want to extract from.</p>
+<h3 id="2-to_char">2. TO_CHAR<a hidden class="anchor" aria-hidden="true" href="#2-to_char">#</a></h3>
+<p><em>TO_CHAR</em> is used to get custom formats for timestamp/date/numbers. The output type is always text. The syntax is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>TO_CHAR (date<span style="color:#f92672">/</span>time<span style="color:#f92672">/</span>interval<span style="color:#f92672">/</span>number, custom format)
+</span></span></code></pre></div><p>For example,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>TO_CHAR (rental_date, <span style="color:#e6db74">&#39;MM-YYYY&#39;</span>)
+</span></span></code></pre></div><p>For the specific formatted strings, refer to the <a href="https://www.postgresql.org/docs/current/functions-formatting.html">official webpage for formatting functions</a>.</p>
+<h3 id="3-helful-interval-and-timestamp">3. Helful Interval and Timestamp<a hidden class="anchor" aria-hidden="true" href="#3-helful-interval-and-timestamp">#</a></h3>
+<p><code>CURRENT_DATE</code> and ``CURRENT_TIMESTAMP` are used to get current dates and timestamps. These are useful if we want to obtain the interval between the current timestamp and the timestamps in the database. For example,</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CURRENT_TIMESTAMP</span> <span style="color:#f92672">-</span> timestamp1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">fROM</span> rental
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

@@ -28,3 +28,23 @@ header {
 .main {
     text-align: justify;
 }
+
+
+.custom-table-wrapper table {
+    border-collapse: collapse;
+    margin: 0.5rem auto;
+    width: max-content;
+    background-color: transparent;
+    color: white;
+  }
+  
+  .custom-table-wrapper th,
+  .custom-table-wrapper td {
+    text-align: center;
+    vertical-align: middle;
+    padding: 10px 16px;
+    border: 2px solid var(--content) !important;
+    white-space: normal;
+    word-break: break-word;
+    line-height: 1.4;
+  }
