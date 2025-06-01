@@ -1,153 +1,23 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>SQL 2. Filtering | Minjun Jeon</title>
-<meta name="keywords" content="">
-<meta name="description" content="Here we go through other basic SQL commands for filtering:
-1. WHERE
-WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
-SELECT
-column_name1, 
-column_name2
-FROM table_name1
-WHERE condition
-For example, we can filter out all columns where the amount is 10.99.
-SELECT
-*
-FROM payment
-WHERE amount = 10.99
-Furthermore, we can filter out certain columns.
-SELECT
-first_name,
-last_name
-FROM customer
-WHERE first_name = &#39;ADAM&#39;
-Enclose the texts around &#39;.
-We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,">
-<meta name="author" content="">
-<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.c5625c2818370a2ec904f4c8c29ef8e4ad5d4bcaa7fdd6de64349060f63ec0eb.css" integrity="sha256-xWJcKBg3Ci7JBPTIwp745K1dS8qn/dbeZDSQYPY&#43;wOs=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://www.minjunjeon.com/apple-touch-icon.png">
-<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
+<head><script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "url": "https:\/\/www.minjunjeon.com\/",
+      "name": "Minjun Jeon",
+      "publisher": {
+        "@type": "Organization",
+        "name": "",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https:\/\/www.minjunjeon.com\/assets/example.png"
         }
-
-    </style>
-</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql2/">
-  <meta property="og:site_name" content="Minjun Jeon">
-  <meta property="og:title" content="SQL 2. Filtering">
-  <meta property="og:description" content="Here we go through other basic SQL commands for filtering:
-1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
-SELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.
-SELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.
-SELECT first_name, last_name FROM customer WHERE first_name = &#39;ADAM&#39; Enclose the texts around &#39;. We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,">
-  <meta property="og:locale" content="en-us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-05-30T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-05-30T00:00:00+00:00">
-      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
-<meta name="twitter:title" content="SQL 2. Filtering">
-<meta name="twitter:description" content="Here we go through other basic SQL commands for filtering:
-1. WHERE
-WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
-SELECT
-column_name1, 
-column_name2
-FROM table_name1
-WHERE condition
-For example, we can filter out all columns where the amount is 10.99.
-SELECT
-*
-FROM payment
-WHERE amount = 10.99
-Furthermore, we can filter out certain columns.
-SELECT
-first_name,
-last_name
-FROM customer
-WHERE first_name = &#39;ADAM&#39;
-Enclose the texts around &#39;.
-We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Archive",
-      "item": "https://www.minjunjeon.com/posts/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "1. Data Engineering",
-      "item": "https://www.minjunjeon.com/posts/data_eng/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  3 ,
-      "name": "1. SQL",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  4 ,
-      "name": "SQL 2. Filtering",
-      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql2/"
+      },
+      "image": "https:\/\/www.minjunjeon.com\/assets/example.png"
     }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "SQL 2. Filtering",
-  "name": "SQL 2. Filtering",
-  "description": "Here we go through other basic SQL commands for filtering:\n1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:\nSELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.\nSELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.\nSELECT first_name, last_name FROM customer WHERE first_name = \u0026#39;ADAM\u0026#39; Enclose the texts around '. We can use other operators to filter the data, e.g. \u0026gt;,\u0026lt;, \u0026lt;=, \u0026gt;=, != or \u0026lt;\u0026gt;,\n",
-  "keywords": [
-    
-  ],
-  "articleBody": "Here we go through other basic SQL commands for filtering:\n1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:\nSELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.\nSELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.\nSELECT first_name, last_name FROM customer WHERE first_name = 'ADAM' Enclose the texts around '. We can use other operators to filter the data, e.g. \u003e,\u003c, \u003c=, \u003e=, != or \u003c\u003e,\na) IS NULL/IS NOT NULL We can also filter out rows that have NULL’s for certain columns:\nSELECT column_name1, column_name2 FROM table_name1 WHERE column_name1 is null To exclude NULL’s one can use is not command.\nb) AND/OR You can use multiple conditions as well by using AND and OR:\nSELECT column_name1, column_name2 FROM table_name1 WHERE condition1 AND condition2 AND condition3 AND will always be processed before OR. Thus, to correctly execute queries, sometimes you need to put parentheses.\nc) BETWEEN … AND … You can filter a range of values by using the BETWEEN keyword.\nSELECT column_name1, column_name2 FROM table_name1 WHERE column_name3 BETWEEN n AND m where the range includes n and m. n and m can be numeric values and time. The opposite is possible by using NOT BETWEEN.\nSELECT column_name1, column_name2 FROM table_name1 WHERE column_name3 NOT BETWEEN n AND m n and m are not included.\nd) IN If you have a long list of values to filter, you can use the IN statement.\nSELECT * FROM table_name1 where column_name1 IN (val1, val2, ..., valn) The negation of IN is possible by using NOT IN.\ne) LIKE/ILIKE LIKE is used to filter by matching against a pattern. _ is used for any single charater pattern while % is used for any sequence of characters. The example is shown below:\nSELECT * FROM actor WHERE first_name LIKE 'A%' LIKE is case-senstive while ILIKE is case-insensitive.\n%A%: A can be anywhere. _A%: The second character is A. __A%: The third character is A. We can also do the negation of the above. For example, the below code filter everything that doesn’t have the character A.\nSELECT * FROM actor WHERE first_name NOT LIKE '%A%' 2. Comments \u0026 Aliases Comments make code more readable and understandable. For single line comments, use --. For multiple line comments, use /* */ -- This is a single-line comment. /* This is a multiline comment. */ Aliases rename columns for this query. In the database, the column name stays the same. This allows more descriptive name for the column. For example, SELECT payment_id AS invoice_no FROM payment Note that column alias cannot be used in a WHERE, or HAVING clauses due to the order of execution.\n",
-  "wordCount" : "466",
-  "inLanguage": "en",
-  "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-05-30T00:00:00Z",
-  "dateModified": "2025-05-30T00:00:00Z",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql2/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Minjun Jeon",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://www.minjunjeon.com/favicon.ico"
-    }
-  }
-}
-</script>
+    </script>
 </head>
 
 <body class=" dark" id="top">
