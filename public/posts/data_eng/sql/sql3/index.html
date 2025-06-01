@@ -1,23 +1,144 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": "https:\/\/www.minjunjeon.com\/",
-      "name": "Minjun Jeon",
-      "publisher": {
-        "@type": "Organization",
-        "name": "",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https:\/\/www.minjunjeon.com\/assets/example.png"
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>SQL 3. Grouping | Minjun Jeon</title>
+<meta name="keywords" content="">
+<meta name="description" content="Here we go through other basic SQL commands for grouping:
+1. Aggregate Functions
+Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:
+
+SUM()
+AVG()
+MIN()
+MAX()
+COUNT()
+
+The examples are as follows:
+SELECT 
+SUM(column_name1)
+FROM table_name1
+You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:">
+<meta name="author" content="map[name:Minjun Jeon]">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c5625c2818370a2ec904f4c8c29ef8e4ad5d4bcaa7fdd6de64349060f63ec0eb.css" integrity="sha256-xWJcKBg3Ci7JBPTIwp745K1dS8qn/dbeZDSQYPY&#43;wOs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
         }
-      },
-      "image": "https:\/\/www.minjunjeon.com\/assets/example.png"
+
+    </style>
+</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql3/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="SQL 3. Grouping">
+  <meta property="og:description" content="Here we go through other basic SQL commands for grouping:
+1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:
+SUM() AVG() MIN() MAX() COUNT() The examples are as follows:
+SELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-31T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-31T00:00:00+00:00">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:title" content="SQL 3. Grouping">
+<meta name="twitter:description" content="Here we go through other basic SQL commands for grouping:
+1. Aggregate Functions
+Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:
+
+SUM()
+AVG()
+MIN()
+MAX()
+COUNT()
+
+The examples are as follows:
+SELECT 
+SUM(column_name1)
+FROM table_name1
+You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Archive",
+      "item": "https://www.minjunjeon.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "1. Data Engineering",
+      "item": "https://www.minjunjeon.com/posts/data_eng/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "1. SQL",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "SQL 3. Grouping",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql3/"
     }
-    </script>
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "SQL 3. Grouping",
+  "name": "SQL 3. Grouping",
+  "description": "Here we go through other basic SQL commands for grouping:\n1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:\nSUM() AVG() MIN() MAX() COUNT() The examples are as follows:\nSELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "Here we go through other basic SQL commands for grouping:\n1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:\nSUM() AVG() MIN() MAX() COUNT() The examples are as follows:\nSELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:\nSELECT SUM(column_name1), column_name2 FROM table_name1 On the other hand, if you group by column_name2, such is possible. GROUP BY is going to be introduced later in this post. However, you can use multiple aggregations at the same time.\nSELECT SUM(column_name1), COUNT(*), AVG(column_name2), FROM table_name1 2. GROUP BY When we aggregate, we may want to group by certain category. For example, instead of summing all payments made by all customer, we may want to see all payments made by each customer.\nGROUP BY is used to group aggregations by specfic columns. The syntax is follows:\nSELECT column_name1, SUM(column_name2) FROM table_name1 GROUP BY column_name1 If we want to filter first and order by the grouped column, we can do something like below:\nSELECT column_name1, SUM(column_name2) FROM table_name1 WHERE column_name1 \u003e n GROUP BY column_name1 ORDER BY column_name1 WHERE should comes immediately after FROM. Thus, GROUP BY comes after either FROM or WHERE. Also note that ORDER BY always comes last. As mentioned in section 1, every column should be either in GROUP BY or aggregate functions.\nYou can also group by multiple columns. For example, we can sum over all payments made by each customer for each category of products. This is achieved by the syntax below:\nSELECT column_name1, column_name2, SUM(column_name3) FROM table_name1 GROUP BY column_name1, column_name2 The example code would look like\nSELECT customer_id, category, SUM(amount) AS total_payment FROM sales GROUP BY customer_id, category ORDER BY customer_id, total_payment DESC Additioal ORDER BY was added to see, for each customer ordered in ascending order, which category of products was bought the most.\n3. HAVING HAVING is used to filter groupings by aggregations. HAVING is only used with GROUP BY. For example, you may want to filter the groupings where the total amount paid by the customers is bigger than 200.\nSELECT customer_id, SUM(amount) AS total_payment FROM payment GROUP BY customer_id HAVING SUM(amount) \u003e 200 Just like WHERE, you can use multiple conditions by using AND and OR. As noted in SQL 2. Filtering, aliases, e.g. total_payment, cannot be used in HAVING.\n",
+  "wordCount" : "441",
+  "inLanguage": "en",
+  "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-05-31T00:00:00Z",
+  "dateModified": "2025-05-31T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": {"name":"Minjun Jeon"}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql3/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.minjunjeon.com/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class=" dark" id="top">
@@ -97,7 +218,7 @@
     <h1 class="post-title entry-hint-parent">
       SQL 3. Grouping
     </h1>
-    <div class="post-meta"><span title='2025-05-31 00:00:00 +0000 UTC'>May 31, 2025</span>
+    <div class="post-meta"><span title='2025-05-31 00:00:00 +0000 UTC'>May 31, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
 
 </div>
   </header> <div class="toc">

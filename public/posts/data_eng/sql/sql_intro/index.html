@@ -1,23 +1,126 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "url": "https:\/\/www.minjunjeon.com\/",
-      "name": "Minjun Jeon",
-      "publisher": {
-        "@type": "Organization",
-        "name": "",
-        "logo": {
-          "@type": "ImageObject",
-          "url": "https:\/\/www.minjunjeon.com\/assets/example.png"
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Intro to SQL | Minjun Jeon</title>
+<meta name="keywords" content="">
+<meta name="description" content="1. SQL
+SQL stands for structured query language. It is a language to interact with databases.
+Database is an organized collection of structured information, or data, typically stored electronically in a computer system.
+Database consists of schemas, which are a collection of tables and help structuring the database.
+Database is managed by Database Management Systems(DBMS). One example of DMBS is PostgreSQL.
+a) Dialects of SQL
+All DMBS&rsquo;s have slightly different dialects even though the differences are small. Among all DMBS&rsquo;s, PostgreSQL is a good place to start because">
+<meta name="author" content="map[name:Minjun Jeon]">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.c5625c2818370a2ec904f4c8c29ef8e4ad5d4bcaa7fdd6de64349060f63ec0eb.css" integrity="sha256-xWJcKBg3Ci7JBPTIwp745K1dS8qn/dbeZDSQYPY&#43;wOs=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://www.minjunjeon.com/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
         }
-      },
-      "image": "https:\/\/www.minjunjeon.com\/assets/example.png"
+
+    </style>
+</noscript><meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="Intro to SQL">
+  <meta property="og:description" content="1. SQL SQL stands for structured query language. It is a language to interact with databases. Database is an organized collection of structured information, or data, typically stored electronically in a computer system. Database consists of schemas, which are a collection of tables and help structuring the database. Database is managed by Database Management Systems(DBMS). One example of DMBS is PostgreSQL.
+a) Dialects of SQL All DMBS’s have slightly different dialects even though the differences are small. Among all DMBS’s, PostgreSQL is a good place to start because">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-05-29T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-05-29T00:00:00+00:00">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:title" content="Intro to SQL">
+<meta name="twitter:description" content="1. SQL
+SQL stands for structured query language. It is a language to interact with databases.
+Database is an organized collection of structured information, or data, typically stored electronically in a computer system.
+Database consists of schemas, which are a collection of tables and help structuring the database.
+Database is managed by Database Management Systems(DBMS). One example of DMBS is PostgreSQL.
+a) Dialects of SQL
+All DMBS&rsquo;s have slightly different dialects even though the differences are small. Among all DMBS&rsquo;s, PostgreSQL is a good place to start because">
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Archive",
+      "item": "https://www.minjunjeon.com/posts/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "1. Data Engineering",
+      "item": "https://www.minjunjeon.com/posts/data_eng/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  3 ,
+      "name": "1. SQL",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  4 ,
+      "name": "Intro to SQL",
+      "item": "https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/"
     }
-    </script>
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Intro to SQL",
+  "name": "Intro to SQL",
+  "description": "1. SQL SQL stands for structured query language. It is a language to interact with databases. Database is an organized collection of structured information, or data, typically stored electronically in a computer system. Database consists of schemas, which are a collection of tables and help structuring the database. Database is managed by Database Management Systems(DBMS). One example of DMBS is PostgreSQL.\na) Dialects of SQL All DMBS\u0026rsquo;s have slightly different dialects even though the differences are small. Among all DMBS\u0026rsquo;s, PostgreSQL is a good place to start because\n",
+  "keywords": [
+    
+  ],
+  "articleBody": "1. SQL SQL stands for structured query language. It is a language to interact with databases. Database is an organized collection of structured information, or data, typically stored electronically in a computer system. Database consists of schemas, which are a collection of tables and help structuring the database. Database is managed by Database Management Systems(DBMS). One example of DMBS is PostgreSQL.\na) Dialects of SQL All DMBS’s have slightly different dialects even though the differences are small. Among all DMBS’s, PostgreSQL is a good place to start because\nPostgreSQL is closest to the standard SQL. Free to download and use. The most popular and advanced open-source DMBS due to its extensive feature set, strong performance, and scalability. It offers a wide range of advanced features like support for both relational and non-relational data types (JSON, XML, etc.), robust concurrency control, and powerful extensions for geospatial data, full-text search, and more. ",
+  "wordCount" : "150",
+  "inLanguage": "en",
+  "image": "https://www.minjunjeon.com/assets/android-chrome-512x512.png","datePublished": "2025-05-29T00:00:00Z",
+  "dateModified": "2025-05-29T00:00:00Z",
+  "author":{
+    "@type": "Person",
+    "name": {"name":"Minjun Jeon"}
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.minjunjeon.com/favicon.ico"
+    }
+  }
+}
+</script>
 </head>
 
 <body class=" dark" id="top">
@@ -97,7 +200,7 @@
     <h1 class="post-title entry-hint-parent">
       Intro to SQL
     </h1>
-    <div class="post-meta"><span title='2025-05-29 00:00:00 +0000 UTC'>May 29, 2025</span>
+    <div class="post-meta"><span title='2025-05-29 00:00:00 +0000 UTC'>May 29, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
 
 </div>
   </header> <div class="toc">
