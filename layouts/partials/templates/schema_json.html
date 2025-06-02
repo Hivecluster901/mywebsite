@@ -26,6 +26,21 @@
 }
 </script>
 
+<!-- Person schema (you, the site owner) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ $author }}",
+  "url": "{{ $siteURL }}",
+  "image": "{{ $image }}",
+  "sameAs": [
+    "{{ .Site.Params.github }}",
+    "{{ .Site.Params.linkedin }}"
+  ]
+}
+</script>
+
 <!-- BlogPosting schema (only on posts/pages) -->
 {{ if .IsPage }}
   {{- $postImage := $image -}}
