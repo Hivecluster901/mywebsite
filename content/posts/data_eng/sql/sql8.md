@@ -56,7 +56,7 @@ You can apply filtering for the joined table by two methods, either using `ON` o
 ``` sql
 SELECT * FROM table_name1 AS A
 INNER JOIN table_name2 AS B
-ON A.join_column = B.join_column ON A.column_name1 = B.column_name2
+ON A.join_column = B.join_column AND A.column_name1 = B.column_name2
 ```
 
 ``` sql
