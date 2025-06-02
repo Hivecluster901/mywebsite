@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Algorithm on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/categories/algorithm/</link>
+    <description>Recent content in Algorithm on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/categories/algorithm/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Big O asymptotic analysis</title>
+      <link>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</guid>
+      <description>&lt;h2 id=&#34;1-what-is-good-code&#34;&gt;1. What is good code?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Readability : How easily humans can understand, modify, and maintain a piece of code.&lt;/li&gt;
+&lt;li&gt;Scalability: How well the code can handle increased load and complexity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Big O&lt;/em&gt;, a shorthand for &lt;em&gt;Big O asymptotic analysis&lt;/em&gt;, measures the scalability of code. Scalability consists of runtime and memory. There is usally a trade-off between runtime and memory. In this post, we introduce the Big O notation in terms of runtime and look at how to measure the space complexity of an algorithm at the end.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

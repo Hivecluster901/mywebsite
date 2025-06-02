@@ -11,6 +11,119 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
+    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Algorithm</title>
+      <link>https://www.minjunjeon.com/tags/algorithm/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Basics</title>
+      <link>https://www.minjunjeon.com/tags/basics/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Structure</title>
+      <link>https://www.minjunjeon.com/tags/data-structure/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/data-structure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Databases</title>
+      <link>https://www.minjunjeon.com/tags/databases/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/databases/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview Prep</title>
+      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Joins</title>
+      <link>https://www.minjunjeon.com/tags/joins/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/joins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>https://www.minjunjeon.com/tags/sql/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Conditions</title>
+      <link>https://www.minjunjeon.com/tags/conditions/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/conditions/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Date</title>
+      <link>https://www.minjunjeon.com/tags/date/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/date/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Function</title>
+      <link>https://www.minjunjeon.com/tags/function/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/function/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Numerics</title>
+      <link>https://www.minjunjeon.com/tags/numerics/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/numerics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Operators</title>
+      <link>https://www.minjunjeon.com/tags/operators/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/operators/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>String</title>
+      <link>https://www.minjunjeon.com/tags/string/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/string/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Time</title>
+      <link>https://www.minjunjeon.com/tags/time/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/time/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grouping</title>
+      <link>https://www.minjunjeon.com/tags/grouping/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/grouping/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Filtering</title>
+      <link>https://www.minjunjeon.com/tags/filtering/</link>
+      <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/filtering/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

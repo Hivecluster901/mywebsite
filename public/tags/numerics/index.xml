@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Numerics on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/numerics/</link>
+    <description>Recent content in Numerics on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/numerics/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL 6. Numerical Functions and Operators</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</guid>
+      <description>&lt;h2 id=&#34;1-operators&#34;&gt;1. Operators&lt;/h2&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Operator&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Examples&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Result&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;addition&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4+3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;-&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;subtraction&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5-3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;*&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;multiplication&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4*2&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;/&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;division (integer division truncates the result)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8/4&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;%&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;modulo (remainder)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;10%4&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;^&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;exponentiation&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2^3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;For example, &lt;code&gt;9/4&lt;/code&gt; will give &lt;code&gt;2&lt;/code&gt; while &lt;code&gt;9.0/4&lt;/code&gt; will give &lt;code&gt;2.2500...00&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;2-functions&#34;&gt;2. Functions&lt;/h2&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Function&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Examples&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Result&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;abs(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;absolute value&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;abs(-2)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round(x, d)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round x to d decimal places&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round(7.4632, 2)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7.46&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;ceiling(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round up to integer&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;ceiling(7.4632)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;floor(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round down to integer&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;floor(7.4632)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;</description>
+    </item>
+  </channel>
+</rss>

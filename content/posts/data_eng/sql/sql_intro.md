@@ -3,6 +3,8 @@ title: "Intro to SQL"
 date: 2025-05-29
 draft: false
 ShowToc: true
+tags: ["sql", "databases", "interview prep"]
+categories: ["Tech", "Databases"]
 ---
 ## 1. SQL
 SQL stands for structured query language. It is a language to interact with *databases*.

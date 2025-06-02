@@ -3,6 +3,8 @@ title: "SQL 3. Grouping"
 date: 2025-05-31
 draft: false
 ShowToc: true
+tags: ["sql", "grouping", "databases", "interview prep"]
+categories: ["Tech", "Databases"]
 ---
 
 Here we go through other basic SQL commands for grouping:

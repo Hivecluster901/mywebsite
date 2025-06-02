@@ -2,25 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/</loc>
+    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/sql/</loc>
+    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/</loc>
+    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/</loc>
+    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/posts/ds_algo/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/posts/</loc>
+    <loc>https://www.minjunjeon.com/categories/algorithm/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/</loc>
+    <loc>https://www.minjunjeon.com/tags/algorithm/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/basics/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/categories/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/categories/data-structure/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/data-structure/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/categories/databases/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/databases/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/interview-prep/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/joins/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/sql/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/</loc>
+    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/categories/tech/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/posts/ds_algo/theory/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/posts/data_eng/</loc>
+    <loc>https://www.minjunjeon.com/tags/conditions/</loc>
     <lastmod>2025-06-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/posts/data_eng/sql/</loc>
+    <loc>https://www.minjunjeon.com/tags/date/</loc>
+    <lastmod>2025-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/function/</loc>
+    <lastmod>2025-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/numerics/</loc>
+    <lastmod>2025-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/operators/</loc>
     <lastmod>2025-06-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/posts/data_eng/sql/sql4/</loc>
@@ -35,8 +92,20 @@
     <loc>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</loc>
     <lastmod>2025-06-01T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.minjunjeon.com/tags/string/</loc>
+    <lastmod>2025-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/time/</loc>
+    <lastmod>2025-06-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/grouping/</loc>
+    <lastmod>2025-05-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</loc>
     <lastmod>2025-05-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/filtering/</loc>
+    <lastmod>2025-05-30T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/posts/data_eng/sql/sql2/</loc>
     <lastmod>2025-05-30T00:00:00+00:00</lastmod>
@@ -53,10 +122,6 @@
   </url><url>
     <loc>https://www.minjunjeon.com/about_me/</loc>
   </url><url>
-    <loc>https://www.minjunjeon.com/categories/</loc>
-  </url><url>
     <loc>https://www.minjunjeon.com/projects/</loc>
-  </url><url>
-    <loc>https://www.minjunjeon.com/tags/</loc>
   </url>
 </urlset>

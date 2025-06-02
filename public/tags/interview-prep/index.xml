@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Interview Prep on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/interview-prep/</link>
+    <description>Recent content in Interview Prep on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/interview-prep/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Big O asymptotic analysis</title>
+      <link>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</guid>
+      <description>&lt;h2 id=&#34;1-what-is-good-code&#34;&gt;1. What is good code?&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Readability : How easily humans can understand, modify, and maintain a piece of code.&lt;/li&gt;
+&lt;li&gt;Scalability: How well the code can handle increased load and complexity.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;em&gt;Big O&lt;/em&gt;, a shorthand for &lt;em&gt;Big O asymptotic analysis&lt;/em&gt;, measures the scalability of code. Scalability consists of runtime and memory. There is usally a trade-off between runtime and memory. In this post, we introduce the Big O notation in terms of runtime and look at how to measure the space complexity of an algorithm at the end.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL 8. Joins</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</guid>
+      <description>&lt;p&gt;&lt;code&gt;JOIN&lt;/code&gt; is used to combine information from multiple tables in one query. There are four types of &lt;code&gt;JOIN&lt;/code&gt;s: &lt;code&gt;INNER JOIN&lt;/code&gt;, &lt;code&gt;OUTER JOIN&lt;/code&gt;, &lt;code&gt;LEFT JOIN&lt;/code&gt;, and &lt;code&gt;RIGHT JOIN&lt;/code&gt;. When combining two tables, you need one common column, so called reference column or join column.&lt;/p&gt;
+&lt;h2 id=&#34;1-inner-join&#34;&gt;1. INNER JOIN&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;INNER JOIN&lt;/em&gt; combines two tables only for the rows where the value in the join column occurs in both tables.&lt;/p&gt;
+&lt;p&gt;If there are &lt;code&gt;m&lt;/code&gt; matching rows in the first table and &lt;code&gt;n&lt;/code&gt; matching rows in the second table for the join column value, the result will contain &lt;code&gt;m × n&lt;/code&gt; rows for that value.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL 4. String Functions</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql4/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql4/</guid>
+      <description>&lt;p&gt;In this post, we are going to look at basic string functions in SQL.&lt;/p&gt;
+&lt;h2 id=&#34;1-upper-lower-length&#34;&gt;1. UPPER, LOWER, LENGTH&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;UPPER&lt;/em&gt; changes all lowercase alphabets to uppercase. &lt;em&gt;LOWER&lt;/em&gt; changes all uppercase letters to lowercase. Finally, &lt;em&gt;LENGTH&lt;/em&gt; gives the number of characters. The example is as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;UPPER&lt;/span&gt;(first_name)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;LOWER&lt;/span&gt;(last_name)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; customer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;LENGTH&lt;/span&gt;(first_name) &lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;The above code outputs the first names in uppercase and last names in lowercase from the table &lt;code&gt;customer&lt;/code&gt; where the length of the first name is more than &lt;code&gt;10&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL 5. Date and Time Functions</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql5/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql5/</guid>
+      <description>&lt;p&gt;In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&amp;rsquo;s look at standard date/time types.&lt;/p&gt;
+&lt;h3 id=&#34;0-datatime-types&#34;&gt;0. Data/Time types&lt;/h3&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Types&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Examples&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;date&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Just date &lt;br&gt; without time&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&amp;lsquo;2025-06-01&amp;rsquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;time &lt;br&gt; (with/without time zone)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Just time &lt;br&gt; without date&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&amp;lsquo;01:02:03.678+02&amp;rsquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;timestamp &lt;br&gt; (with/without time zone)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Date and time&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&amp;lsquo;2022-11-28 01:02:03.678+02&amp;rsquo;&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;intervals&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Time interval&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;&amp;lsquo;3 days 01:02:03.678&amp;rsquo;&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;h2 id=&#34;1-extract&#34;&gt;1. EXTRACT&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;EXTRACT&lt;/em&gt; is used to extract parts of timestamp/date. The syntax is as follows:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL 6. Numerical Functions and Operators</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</guid>
+      <description>&lt;h2 id=&#34;1-operators&#34;&gt;1. Operators&lt;/h2&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Operator&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Examples&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Result&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;+&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;addition&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4+3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;-&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;subtraction&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;5-3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;*&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;multiplication&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;4*2&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;/&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;division (integer division truncates the result)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8/4&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;%&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;modulo (remainder)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;10%4&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;^&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;exponentiation&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2^3&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;p&gt;For example, &lt;code&gt;9/4&lt;/code&gt; will give &lt;code&gt;2&lt;/code&gt; while &lt;code&gt;9.0/4&lt;/code&gt; will give &lt;code&gt;2.2500...00&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&#34;2-functions&#34;&gt;2. Functions&lt;/h2&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Function&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Description&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Examples&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Result&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;abs(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;absolute value&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;abs(-2)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;2&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round(x, d)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round x to d decimal places&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round(7.4632, 2)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7.46&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;ceiling(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round up to integer&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;ceiling(7.4632)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;8&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;floor(x)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;round down to integer&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;floor(7.4632)&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;7&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;</description>
+    </item>
+    <item>
+      <title>SQL 7. Conditional Expressions</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</guid>
+      <description>&lt;p&gt;Here, we go through conditional expressions.&lt;/p&gt;
+&lt;h2 id=&#34;1-case-when&#34;&gt;1. CASE WHEN&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;CASE WHEN&lt;/em&gt; goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CASE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; condition1 &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; result1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; condition2 &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; result2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; conditionN &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; resultN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;ELSE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;result&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;END&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the statement with &lt;code&gt;CASE&lt;/code&gt; and &lt;strong&gt;end with &lt;code&gt;END&lt;/code&gt;&lt;/strong&gt;. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both &lt;code&gt;condition1&lt;/code&gt; and &lt;code&gt;condition2&lt;/code&gt; are true, only &lt;code&gt;result1&lt;/code&gt; will be returned. If there is no &lt;code&gt;ELSE&lt;/code&gt; statement, and all the conditions after &lt;code&gt;WHEN&lt;/code&gt; are not met, &lt;code&gt;NULL&lt;/code&gt; is returned.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL 3. Grouping</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</link>
+      <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</guid>
+      <description>&lt;p&gt;Here we go through other basic SQL commands for grouping:&lt;/p&gt;
+&lt;h2 id=&#34;1-aggregate-functions&#34;&gt;1. Aggregate Functions&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;Aggregate functions&lt;/em&gt; aggregate values in multiple rows to one value. &lt;code&gt;COUNT&lt;/code&gt; in &lt;a href=&#34;https://www.minjunjeon.com/posts/data_eng/sql/sql1/#6-count&#34;&gt;SQL 1. Basics&lt;/a&gt; is one of aggregate functions. Here are commonly used aggregate functions:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;SUM()&lt;/li&gt;
+&lt;li&gt;AVG()&lt;/li&gt;
+&lt;li&gt;MIN()&lt;/li&gt;
+&lt;li&gt;MAX()&lt;/li&gt;
+&lt;li&gt;COUNT()&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The examples are as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SUM&lt;/span&gt;(column_name1)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You usually need to specify the column name inside the parentheses. &lt;code&gt;COUNT&lt;/code&gt; accepts &lt;code&gt;*&lt;/code&gt;. &lt;em&gt;Aggregate functions&lt;/em&gt; cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL 2. Filtering</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql2/</link>
+      <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql2/</guid>
+      <description>&lt;p&gt;Here we go through other basic SQL commands for filtering:&lt;/p&gt;
+&lt;h2 id=&#34;1-where&#34;&gt;1. WHERE&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;WHERE&lt;/em&gt; is used to filter the data in the output. It always comes after FROM. The syntax is:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;column_name1, 
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;column_name2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; condition
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For example, we can filter out all columns where the amount is &lt;code&gt;10.99&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; payment
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; amount &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;.&lt;span style=&#34;color:#ae81ff&#34;&gt;99&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Furthermore, we can filter out certain columns.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;first_name,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;last_name
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; customer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; first_name &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;ADAM&amp;#39;&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Enclose the texts around &lt;code&gt;&#39;&lt;/code&gt;.
+We can use other operators to filter the data, e.g. &lt;code&gt;&amp;gt;&lt;/code&gt;,&lt;code&gt;&amp;lt;&lt;/code&gt;, &lt;code&gt;&amp;lt;=&lt;/code&gt;, &lt;code&gt;&amp;gt;=&lt;/code&gt;, &lt;code&gt;!=&lt;/code&gt; or &lt;code&gt;&amp;lt;&amp;gt;&lt;/code&gt;,&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Intro to SQL</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/</guid>
+      <description>&lt;h2 id=&#34;1-sql&#34;&gt;1. SQL&lt;/h2&gt;
+&lt;p&gt;SQL stands for structured query language. It is a language to interact with &lt;em&gt;databases&lt;/em&gt;.
+&lt;em&gt;Database&lt;/em&gt; is an organized collection of structured information, or data, typically stored electronically in a computer system.
+Database consists of schemas, which are a collection of tables and help structuring the database.
+Database is managed by Database Management Systems(DBMS). One example of DMBS is PostgreSQL.&lt;/p&gt;
+&lt;h3 id=&#34;a-dialects-of-sql&#34;&gt;a) Dialects of SQL&lt;/h3&gt;
+&lt;p&gt;All DMBS&amp;rsquo;s have slightly different dialects even though the differences are small. Among all DMBS&amp;rsquo;s, PostgreSQL is a good place to start because&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL 1. Basics</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql1/</link>
+      <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql1/</guid>
+      <description>&lt;p&gt;Here, we go through basic SQL commands:&lt;/p&gt;
+&lt;h2 id=&#34;1-select&#34;&gt;1. SELECT&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;SELECT&lt;/em&gt; is used to select and return data.
+For a single column, the syntax is as below:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;column_name&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;For multiple columns, you just list the column names with &lt;code&gt;,&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;column_name1,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;column_name2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;To select all columns, use &lt;code&gt;*&lt;/code&gt;.&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;*&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Note that &lt;strong&gt;the exact format doesn&amp;rsquo;t matter&lt;/strong&gt;, e.g. the two examples are the same:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Conditions on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/conditions/</link>
+    <description>Recent content in Conditions on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/conditions/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL 7. Conditional Expressions</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</link>
+      <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</guid>
+      <description>&lt;p&gt;Here, we go through conditional expressions.&lt;/p&gt;
+&lt;h2 id=&#34;1-case-when&#34;&gt;1. CASE WHEN&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;CASE WHEN&lt;/em&gt; goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CASE&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; condition1 &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; result1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; condition2 &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; result2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;WHEN&lt;/span&gt; conditionN &lt;span style=&#34;color:#66d9ef&#34;&gt;THEN&lt;/span&gt; resultN
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#66d9ef&#34;&gt;ELSE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;result&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;END&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Start the statement with &lt;code&gt;CASE&lt;/code&gt; and &lt;strong&gt;end with &lt;code&gt;END&lt;/code&gt;&lt;/strong&gt;. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both &lt;code&gt;condition1&lt;/code&gt; and &lt;code&gt;condition2&lt;/code&gt; are true, only &lt;code&gt;result1&lt;/code&gt; will be returned. If there is no &lt;code&gt;ELSE&lt;/code&gt; statement, and all the conditions after &lt;code&gt;WHEN&lt;/code&gt; are not met, &lt;code&gt;NULL&lt;/code&gt; is returned.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -3,6 +3,8 @@ title: "SQL 7. Conditional Expressions"
 date: 2025-06-01
 draft: false
 ShowToc: true
+tags: ["sql", "conditions", "databases", "interview prep"]
+categories: ["Tech", "Databases"]
 ---
 
 Here, we go through conditional expressions.

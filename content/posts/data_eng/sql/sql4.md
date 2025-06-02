@@ -3,6 +3,8 @@ title: "SQL 4. String Functions"
 date: 2025-06-01
 draft: false
 ShowToc: true
+tags: ["sql", "function", "string", "databases", "interview prep"]
+categories: ["Tech", "Databases"]
 ---
 
 In this post, we are going to look at basic string functions in SQL.

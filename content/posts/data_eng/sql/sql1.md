@@ -3,6 +3,8 @@ title: "SQL 1. Basics"
 date: 2025-05-29
 draft: false
 ShowToc: true
+tags: ["sql", "basics", "databases", "interview prep"]
+categories: ["Tech", "Databases"]
 ---
 
 Here, we go through basic SQL commands:

@@ -1,8 +1,11 @@
 ---
 title: "SQL 5. Date and Time Functions"
 date: 2025-06-01
+tags: ["sql", "function", "date", "time", "databases", "interview prep"]
+categories: ["Tech", "Databases"]
 draft: false
 ShowToc: true
+
 ---
 
 In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let's look at standard date/time types.

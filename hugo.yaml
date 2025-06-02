@@ -21,7 +21,8 @@ params:
       url: 'https://github.com/Hivecluster901'
   images: ["assets/android-chrome-512x512.png"]
   author:
-    name: "Minjun Jeon"
+    name:
+      "Minjun Jeon"
   env: production
 
   assets:

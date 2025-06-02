@@ -1,8 +1,10 @@
 ---
 title: "1. Big O asymptotic analysis"
 date: 2025-06-02
-draft: 
+draft: false
 ShowToc: false
+tags: ["basics", "data structure", "algorithm", "interview prep"]
+categories: ["Tech", "data structure", "algorithm"]
 ---
 
 ## 1. What is good code?

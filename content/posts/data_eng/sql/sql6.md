@@ -3,6 +3,8 @@ title: "SQL 6. Numerical Functions and Operators"
 date: 2025-06-01
 draft: false
 ShowToc: true
+tags: ["sql", "function", "operators", "numerics", "databases", "interview prep"]
+categories: ["Tech", "Databases"]
 ---
 ## 1. Operators
 

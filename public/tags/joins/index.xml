@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Joins on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/joins/</link>
+    <description>Recent content in Joins on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/joins/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL 8. Joins</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</link>
+      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</guid>
+      <description>&lt;p&gt;&lt;code&gt;JOIN&lt;/code&gt; is used to combine information from multiple tables in one query. There are four types of &lt;code&gt;JOIN&lt;/code&gt;s: &lt;code&gt;INNER JOIN&lt;/code&gt;, &lt;code&gt;OUTER JOIN&lt;/code&gt;, &lt;code&gt;LEFT JOIN&lt;/code&gt;, and &lt;code&gt;RIGHT JOIN&lt;/code&gt;. When combining two tables, you need one common column, so called reference column or join column.&lt;/p&gt;
+&lt;h2 id=&#34;1-inner-join&#34;&gt;1. INNER JOIN&lt;/h2&gt;
+&lt;p&gt;&lt;em&gt;INNER JOIN&lt;/em&gt; combines two tables only for the rows where the value in the join column occurs in both tables.&lt;/p&gt;
+&lt;p&gt;If there are &lt;code&gt;m&lt;/code&gt; matching rows in the first table and &lt;code&gt;n&lt;/code&gt; matching rows in the second table for the join column value, the result will contain &lt;code&gt;m × n&lt;/code&gt; rows for that value.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

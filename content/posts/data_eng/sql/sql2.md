@@ -3,6 +3,8 @@ title: "SQL 2. Filtering"
 date: 2025-05-30
 draft: false
 ShowToc: true
+tags: ["sql", "filtering", "databases", "interview prep"]
+categories: ["Tech", "Databases"]
 ---
 
 Here we go through other basic SQL commands for filtering:
