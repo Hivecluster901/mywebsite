@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Subquery on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/subquery/</link>
+    <description>Recent content in Subquery on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/subquery/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL 9. Union and Subqueries</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql9/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql9/</guid>
+      <description>&lt;h2 id=&#34;1-unionunion-all&#34;&gt;1. UNION/UNION ALL&lt;/h2&gt;
+&lt;p&gt;In contrast to &lt;a href=&#34;https://www.minjunjeon.com/posts/data_eng/sql/sql8&#34;&gt;&lt;em&gt;JOINS&lt;/em&gt;&lt;/a&gt;, &lt;em&gt;UNION&lt;/em&gt; combines rows instead of columns.&lt;/p&gt;
+&lt;h3 id=&#34;a-basic-syntax&#34;&gt;a) Basic Syntax&lt;/h3&gt;
+&lt;p&gt;The syntax is as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; column_name1, column_name2 &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;UNION&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; column_name3, column_name4 &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name2
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;The number of columns from the first table should match the number of columns from the second table.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Columns are matched by the order. For example &lt;code&gt;column_name1&lt;/code&gt; and &lt;code&gt;column_name3&lt;/code&gt; don&amp;rsquo;t need to be identitcal. The merged table will have column names of the first table, i.e. &lt;code&gt;column_name1&lt;/code&gt; and &lt;code&gt;column_name2&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

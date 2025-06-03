@@ -3,7 +3,7 @@ title: "SQL 8. Joins"
 date: 2025-06-02
 draft: false
 ShowToc: true
-tags: ["sql", "joins", "databases", "interview prep"]
+tags: ["sql", "join", "databases", "interview prep"]
 categories: ["Tech", "Databases"]
 ---
 
@@ -56,7 +56,8 @@ You can apply filtering for the joined table by two methods, either using `ON` o
 ``` sql
 SELECT * FROM table_name1 AS A
 INNER JOIN table_name2 AS B
-ON A.join_column = B.join_column AND A.column_name1 = B.column_name2
+ON A.join_column = B.join_column 
+AND A.column_name1 = B.column_name2
 ```
 
 ``` sql
@@ -66,7 +67,7 @@ ON A.join_column = B.join_column
 WHERE A.column_name1 = B.column_name2
 ```
 
-These two both filter the joined table. While the above two examples output the same result for `INNER JOIN`, they output different results for `LEFT JOIN`. The subtleties will be explain further later.
+These two both filter the joined table. While the above two examples output the same result for `INNER JOIN`, they output different results for `LEFT JOIN`. The subtleties will be explain further later. Note that filtering with `ON` is more cost-efficient than filtering with `WHERE`.
 
 ### e) Joining multiple tables
 
@@ -108,7 +109,7 @@ WHERE t2.any_column IS null
 
 You can use this pattern to **simulate a "diff"** between two datasets.
 
-Some databases, e.g. MySQL, doesn't support `FULL OUTER JOIN` natively. In those cases, you can perform `FULL OUTER JOIN` by using `UNION`, `LEFT JOIN`, and `RIGHT JOIN`. We will cover `UNION` in detail in a future post.
+Some databases, e.g. MySQL, doesn't support `FULL OUTER JOIN` natively. In those cases, you can perform `FULL OUTER JOIN` by using `UNION`, `LEFT JOIN`, and `RIGHT JOIN`. We will cover `UNION` in detail in a [SQL 9. UNION and Subqueries](/posts/data_eng/sql/sql9).
 
 ## 3. LEFT OUTER JOIN (LEFT JOIN)
 *LEFT JOIN* covers all rows from first table and **matching** rows from the second table.

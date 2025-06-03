@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>SQL 8. Joins | Minjun Jeon</title>
-<meta name="keywords" content="sql, joins, databases, interview prep">
+<meta name="keywords" content="sql, join, databases, interview prep">
 <meta name="description" content="JOIN is used to combine information from multiple tables in one query. There are four types of JOINs: INNER JOIN, OUTER JOIN, LEFT JOIN, and RIGHT JOIN. When combining two tables, you need one common column, so called reference column or join column.
 1. INNER JOIN
 INNER JOIN combines two tables only for the rows where the value in the join column occurs in both tables.
@@ -108,7 +108,7 @@ If there are m matching rows in the first table and n matching rows in the secon
     <meta property="article:published_time" content="2025-06-02T00:00:00+00:00">
     <meta property="article:modified_time" content="2025-06-02T00:00:00+00:00">
     <meta property="article:tag" content="Sql">
-    <meta property="article:tag" content="Joins">
+    <meta property="article:tag" content="Join">
     <meta property="article:tag" content="Databases">
     <meta property="article:tag" content="Interview Prep">
       <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
@@ -269,12 +269,13 @@ If there are m matching rows in the first table and n matching rows in the secon
 <p>You can apply filtering for the joined table by two methods, either using <code>ON</code> or using <code>WHERE</code>. Let&rsquo;s look at the examples below:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> table_name1 <span style="color:#66d9ef">AS</span> A
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> table_name2 <span style="color:#66d9ef">AS</span> B
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> A.join_column <span style="color:#f92672">=</span> B.join_column <span style="color:#66d9ef">AND</span> A.column_name1 <span style="color:#f92672">=</span> B.column_name2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> A.join_column <span style="color:#f92672">=</span> B.join_column 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">AND</span> A.column_name1 <span style="color:#f92672">=</span> B.column_name2
 </span></span></code></pre></div><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> table_name1 <span style="color:#66d9ef">AS</span> A
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">INNER</span> <span style="color:#66d9ef">JOIN</span> table_name2 <span style="color:#66d9ef">AS</span> B
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> A.join_column <span style="color:#f92672">=</span> B.join_column 
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> A.column_name1 <span style="color:#f92672">=</span> B.column_name2
-</span></span></code></pre></div><p>These two both filter the joined table. While the above two examples output the same result for <code>INNER JOIN</code>, they output different results for <code>LEFT JOIN</code>. The subtleties will be explain further later.</p>
+</span></span></code></pre></div><p>These two both filter the joined table. While the above two examples output the same result for <code>INNER JOIN</code>, they output different results for <code>LEFT JOIN</code>. The subtleties will be explain further later. Note that filtering with <code>ON</code> is more cost-efficient than filtering with <code>WHERE</code>.</p>
 <h3 id="e-joining-multiple-tables">e) Joining multiple tables<a hidden class="anchor" aria-hidden="true" href="#e-joining-multiple-tables">#</a></h3>
 <p>Finally, you can join multiple tables. For example, if you are joining three tables, use the following syntax:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> <span style="color:#f92672">*</span> <span style="color:#66d9ef">FROM</span> table_name1 tb1
@@ -300,7 +301,7 @@ If there are m matching rows in the first table and n matching rows in the secon
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> t1.column_name1 <span style="color:#f92672">=</span> t2.column_name2
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> t2.any_column <span style="color:#66d9ef">IS</span> <span style="color:#66d9ef">null</span>
 </span></span></code></pre></div><p>You can use this pattern to <strong>simulate a &ldquo;diff&rdquo;</strong> between two datasets.</p>
-<p>Some databases, e.g. MySQL, doesn&rsquo;t support <code>FULL OUTER JOIN</code> natively. In those cases, you can perform <code>FULL OUTER JOIN</code> by using <code>UNION</code>, <code>LEFT JOIN</code>, and <code>RIGHT JOIN</code>. We will cover <code>UNION</code> in detail in a future post.</p>
+<p>Some databases, e.g. MySQL, doesn&rsquo;t support <code>FULL OUTER JOIN</code> natively. In those cases, you can perform <code>FULL OUTER JOIN</code> by using <code>UNION</code>, <code>LEFT JOIN</code>, and <code>RIGHT JOIN</code>. We will cover <code>UNION</code> in detail in a <a href="/posts/data_eng/sql/sql9">SQL 9. UNION and Subqueries</a>.</p>
 <h2 id="3-left-outer-join-left-join">3. LEFT OUTER JOIN (LEFT JOIN)<a hidden class="anchor" aria-hidden="true" href="#3-left-outer-join-left-join">#</a></h2>
 <p><em>LEFT JOIN</em> covers all rows from first table and <strong>matching</strong> rows from the second table.</p>
 <p>The syntax is as follows:</p>
@@ -491,7 +492,7 @@ If there are m matching rows in the first table and n matching rows in the secon
   <footer class="post-footer">
     <ul class="post-tags">
       <li><a href="https://www.minjunjeon.com/tags/sql/">Sql</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/joins/">Joins</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/join/">Join</a></li>
       <li><a href="https://www.minjunjeon.com/tags/databases/">Databases</a></li>
       <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
     </ul>

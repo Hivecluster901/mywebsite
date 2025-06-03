@@ -11,8 +11,57 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Databases</title>
+      <link>https://www.minjunjeon.com/tags/databases/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/databases/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview Prep</title>
+      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Join</title>
+      <link>https://www.minjunjeon.com/tags/join/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/join/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>https://www.minjunjeon.com/tags/sql/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Subquery</title>
+      <link>https://www.minjunjeon.com/tags/subquery/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/subquery/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Union</title>
+      <link>https://www.minjunjeon.com/tags/union/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/union/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Union All</title>
+      <link>https://www.minjunjeon.com/tags/union-all/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/union-all/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Algorithm</title>
       <link>https://www.minjunjeon.com/tags/algorithm/</link>
@@ -32,34 +81,6 @@
       <link>https://www.minjunjeon.com/tags/data-structure/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/tags/data-structure/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Databases</title>
-      <link>https://www.minjunjeon.com/tags/databases/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/databases/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Interview Prep</title>
-      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Joins</title>
-      <link>https://www.minjunjeon.com/tags/joins/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/joins/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sql</title>
-      <link>https://www.minjunjeon.com/tags/sql/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/sql/</guid>
       <description></description>
     </item>
     <item>
