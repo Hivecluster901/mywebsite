@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>DBT 1. Data Maturity Model | Minjun Jeon</title>
+<meta name="keywords" content="dbt, basics, data maturity model, databases, interview prep">
+<meta name="description" content="1. Intro
+The Maslow&rsquo;s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.
+Silmiarly, one can think of data hierarchy of needs. The 5 levels are Data Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.">
+<meta name="author" content="map[name:Minjun Jeon]">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Minjun Jeon",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "sameAs": [
+    "",
+    ""
+  ]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/dbt\/dbt1\/"
+  },
+  "headline": "DBT 1. Data Maturity Model",
+  "description": "\u003ch2 id=\u00221-intro\u0022\u003e1. Intro\u003c\/h2\u003e\n\u003cp\u003eThe Maslow\u0026rsquo;s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.\u003c\/p\u003e\n\u003cp\u003eSilmiarly, one can think of \u003cem\u003edata hierarchy of needs\u003c\/em\u003e. The 5 levels are \u003cstrong\u003eData Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.\u003c\/strong\u003e\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "datePublished": "2025-06-03T00:00:00Z",
+  "dateModified": "2025-06-03T00:00:00Z"
+}
+</script>
+
+<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="DBT 1. Data Maturity Model">
+  <meta property="og:description" content="1. Intro The Maslow’s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.
+Silmiarly, one can think of data hierarchy of needs. The 5 levels are Data Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-03T00:00:00+00:00">
+    <meta property="article:tag" content="Dbt">
+    <meta property="article:tag" content="Basics">
+    <meta property="article:tag" content="Data Maturity Model">
+    <meta property="article:tag" content="Databases">
+    <meta property="article:tag" content="Interview Prep">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:title" content="DBT 1. Data Maturity Model">
+<meta name="twitter:description" content="1. Intro
+The Maslow&rsquo;s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.
+Silmiarly, one can think of data hierarchy of needs. The 5 levels are Data Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.">
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      DBT 1. Data Maturity Model
+    </h1>
+    <div class="post-meta"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-intro" aria-label="1. Intro">1. Intro</a></li>
+                <li>
+                    <a href="#2-etl-vs-elt" aria-label="2. ETL vs. ELT">2. ETL vs. ELT</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="1-intro">1. Intro<a hidden class="anchor" aria-hidden="true" href="#1-intro">#</a></h2>
+<p>The Maslow&rsquo;s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.</p>
+<p>Silmiarly, one can think of <em>data hierarchy of needs</em>. The 5 levels are <strong>Data Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.</strong></p>
+<p>Raw data should be collected, transformed and mapped to a useful format for analytics. Then, clean data should be loaded to data lake or data warehouse so that the later stages, such as Business Analytics and Machine Learning can be performed.</p>
+<p>Here, we focus on the first three stages of data evolution.</p>
+<p>Data collection is extraction of data from difference sources systems. Data can come in different format and different ways. <em>Three V&rsquo;s of big data</em> are <em>variety</em>, <em>velocity</em>, and <em>volume</em>. When designing our data architecture, it is important to think about the <em>three V&rsquo;s</em> to build reliable, scalable and maintainable systems.</p>
+<p>Data wrangling, or data transform stage, is cleaning of raw data and improvement of data quality. For example, duplicate data, missing data, typos, and errors often create inconsistencies and mistakes. The goal is to convert data into a data warehouse format.</p>
+<p>Data integration is about writing the transformed data from the staging area to a target database, where the analytics workloads will be performed. Loading can be done by two ways: refresh (complete rewrite) and update.</p>
+<h2 id="2-etl-vs-elt">2. ETL vs. ELT<a hidden class="anchor" aria-hidden="true" href="#2-etl-vs-elt">#</a></h2>
+<p>The above explains ETL, which stands for Extract, Transform, and Load. When the storage and compute resource were expensive, it was important to consider what data you want to persist in the database. Thus, transformation was performed outside of the database in the staging area. Thus, ETL was wide spread and traditional approach.</p>
+<p>There are a few problems associated with ETL:</p>
+<ul>
+<li>Schema changes in source systems can break ETL pipelines, leading to data processing errors or incorrect results. Maintaining schema compatibility requires version control, validation, and robust schema evolution strategies.</li>
+<li>The rate at which data is generated or ingested (data velocity) can fluctuate, affecting the performance and reliability of ETL pipelines.</li>
+<li>Scaling ETL pipelines to accommodate growing data volumes and complexity can be challenging.</li>
+<li>Integrating a new data source into an existing ETL pipeline can be time-consuming and complex.</li>
+<li>Testing and debugging ETL processes is often difficult due to the complexity, volume, and asynchronous nature of data pipelines.</li>
+</ul>
+<p>Nowadays, the storage and computational resource are so cheap that there is no harm in loading raw data from the source system directly to the destination. Data warehouses, e.g. snowflake, redshift, and BigQuery are extremely scalable and performant, and it is natural to change from ETL to ELT, i.e. the transformations are performed inside the database rather than an external processing layer.</p>
+<p>Doing the transformation inside the database facillitates handling issues with upstream schemas and downstream data models. Tools like Fivetran and stitch are used to connect to source systems and load data into our destination, i.e. Extract and Load.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.minjunjeon.com/tags/dbt/">Dbt</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/basics/">Basics</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/data-maturity-model/">Data Maturity Model</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/databases/">Databases</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

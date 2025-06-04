@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>DBT 3. Data Warehouses, Data Lakes, and Lake Houses | Minjun Jeon</title>
+<meta name="keywords" content="dbt, basics, data warehouse, data lake, lakehouse, databases, interview prep">
+<meta name="description" content="1. Data Warehouses
+A Data Warehouse (DW) is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.
+Unlike transactional databases (OLTP), data warehouses are built for analytical workloads (OLAP): they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.
+Data warehouses typically use:">
+<meta name="author" content="map[name:Minjun Jeon]">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Minjun Jeon",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "sameAs": [
+    "",
+    ""
+  ]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/dbt\/dbt3\/"
+  },
+  "headline": "DBT 3. Data Warehouses, Data Lakes, and Lake Houses",
+  "description": "\u003ch2 id=\u00221-data-warehouses\u0022\u003e1. Data Warehouses\u003c\/h2\u003e\n\u003cp\u003eA \u003cem\u003eData Warehouse (DW)\u003c\/em\u003e is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.\u003c\/p\u003e\n\u003cp\u003eUnlike transactional databases (OLTP), data warehouses are built for \u003cstrong\u003eanalytical workloads (OLAP)\u003c\/strong\u003e: they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.\u003c\/p\u003e\n\u003cp\u003eData warehouses typically use:\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "datePublished": "2025-06-04T00:00:00Z",
+  "dateModified": "2025-06-04T00:00:00Z"
+}
+</script>
+
+<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="DBT 3. Data Warehouses, Data Lakes, and Lake Houses">
+  <meta property="og:description" content="1. Data Warehouses A Data Warehouse (DW) is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.
+Unlike transactional databases (OLTP), data warehouses are built for analytical workloads (OLAP): they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.
+Data warehouses typically use:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-04T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-04T00:00:00+00:00">
+    <meta property="article:tag" content="Dbt">
+    <meta property="article:tag" content="Basics">
+    <meta property="article:tag" content="Data Warehouse">
+    <meta property="article:tag" content="Data Lake">
+    <meta property="article:tag" content="Lakehouse">
+    <meta property="article:tag" content="Databases">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:title" content="DBT 3. Data Warehouses, Data Lakes, and Lake Houses">
+<meta name="twitter:description" content="1. Data Warehouses
+A Data Warehouse (DW) is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.
+Unlike transactional databases (OLTP), data warehouses are built for analytical workloads (OLAP): they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.
+Data warehouses typically use:">
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      DBT 3. Data Warehouses, Data Lakes, and Lake Houses
+    </h1>
+    <div class="post-meta"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-data-warehouses" aria-label="1. Data Warehouses">1. Data Warehouses</a><ul>
+                        
+                <li>
+                    <a href="#a-on-premise-vs-cloud-based-data-warehouses" aria-label="a) On-Premise vs Cloud-Based Data Warehouses">a) On-Premise vs Cloud-Based Data Warehouses</a></li>
+                <li>
+                    <a href="#b-examples-of-data-warehouses" aria-label="b) Examples of Data Warehouses">b) Examples of Data Warehouses</a><ul>
+                        
+                <li>
+                    <a href="#cloud-based-data-warehouses" aria-label="Cloud-based Data Warehouses">Cloud-based Data Warehouses</a></li>
+                <li>
+                    <a href="#on-premise-or-hybrid-data-warehouses" aria-label="On-Premise or Hybrid Data Warehouses">On-Premise or Hybrid Data Warehouses</a></li>
+                <li>
+                    <a href="#open-source-data-warehouse-options" aria-label="Open-Source Data Warehouse Options">Open-Source Data Warehouse Options</a></li></ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#2-data-lake" aria-label="2. Data Lake">2. Data Lake</a><ul>
+                        
+                <li>
+                    <a href="#external-tables" aria-label="External Tables">External Tables</a><ul>
+                        <ul>
+                        
+                <li>
+                    <a href="#benefits" aria-label="Benefits:">Benefits:</a></li>
+                <li>
+                    <a href="#query-performance-trade-offs" aria-label="Query Performance Trade-offs:">Query Performance Trade-offs:</a></li>
+                <li>
+                    <a href="#common-use-cases" aria-label="Common Use Cases:">Common Use Cases:</a></li>
+                <li>
+                    <a href="#examples-of-supported-platforms" aria-label="Examples of Supported Platforms:">Examples of Supported Platforms:</a></li></ul>
+                    </ul>
+                </li></ul>
+                </li>
+                <li>
+                    <a href="#3-data-lakehouses" aria-label="3. Data Lakehouses">3. Data Lakehouses</a><ul>
+                        
+                <li>
+                    <a href="#data-lake-vs-data-warehouse-vs-data-lakehouse" aria-label="Data Lake vs. Data Warehouse vs. Data Lakehouse">Data Lake vs. Data Warehouse vs. Data Lakehouse</a></li>
+                <li>
+                    <a href="#key-features" aria-label="Key Features">Key Features</a></li>
+                <li>
+                    <a href="#examples-of-lakehouses" aria-label="Examples of Lakehouses">Examples of Lakehouses</a>
+                </li>
+            </ul>
+            </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="1-data-warehouses">1. Data Warehouses<a hidden class="anchor" aria-hidden="true" href="#1-data-warehouses">#</a></h2>
+<p>A <em>Data Warehouse (DW)</em> is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.</p>
+<p>Unlike transactional databases (OLTP), data warehouses are built for <strong>analytical workloads (OLAP)</strong>: they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.</p>
+<p>Data warehouses typically use:</p>
+<ul>
+<li><strong>Columnar storage</strong> for efficient scanning and aggregation.</li>
+<li><strong>Structured data formats</strong> for optimized query performance.</li>
+</ul>
+<blockquote>
+<p>They are <strong>not suitable for unstructured data</strong> like images, videos, or raw documents.</p></blockquote>
+<p>Users interact with DWs using SQL, and popular BI tools connect to them to power dashboards and analytics pipelines.</p>
+<hr>
+<h3 id="a-on-premise-vs-cloud-based-data-warehouses">a) On-Premise vs Cloud-Based Data Warehouses<a hidden class="anchor" aria-hidden="true" href="#a-on-premise-vs-cloud-based-data-warehouses">#</a></h3>
+<p>There are two main types of data warehouses:</p>
+<ol>
+<li>
+<p><strong>On-Premise DWs</strong></p>
+<ul>
+<li>Fully managed in-house: you control storage, compute, networking, and security.</li>
+<li>High upfront cost: hardware, software licenses, and maintenance.</li>
+<li>Requires dedicated teams: network engineers, DBAs, and sysadmins.</li>
+<li><strong>Scaling</strong> is manual and slow: It involves purchasing and provisioning new infrastructure.</li>
+</ul>
+</li>
+<li>
+<p><strong>Cloud-Based DWs</strong></p>
+<ul>
+<li>Fully managed by providers (e.g., Snowflake, BigQuery, Redshift).</li>
+<li><strong>Elastic scalability</strong>: compute and storage scale independently and on-demand.</li>
+<li><strong>Predictable pricing</strong> models (pay-as-you-go or reserved capacity).</li>
+<li>The provider handles hardware, patching, and scaling infrastructure.</li>
+</ul>
+</li>
+</ol>
+<p>Most modern enterprises prefer cloud DWs for their <strong>flexibility, cost-efficiency</strong>, and <strong>ease of scaling</strong>, especially when dealing with fast-growing or unpredictable data needs.</p>
+<hr>
+<h3 id="b-examples-of-data-warehouses">b) Examples of Data Warehouses<a hidden class="anchor" aria-hidden="true" href="#b-examples-of-data-warehouses">#</a></h3>
+<h4 id="cloud-based-data-warehouses">Cloud-based Data Warehouses<a hidden class="anchor" aria-hidden="true" href="#cloud-based-data-warehouses">#</a></h4>
+<ul>
+<li><strong>Amazon Redshift</strong> - Fully managed DW on AWS; supports Redshift Spectrum for external tables.</li>
+<li><strong>Google BigQuery</strong> - Serverless DW on GCP with support for federated queries and external data sources.</li>
+<li><strong>Snowflake</strong> - Cloud-native DW supporting multi-cloud deployments and separation of compute/storage.</li>
+<li><strong>Azure Synapse Analytics</strong> - Microsoft&rsquo;s DW platform with support for serverless querying and integrated analytics.</li>
+<li><strong>Databricks SQL Warehouse</strong> - Built on top of Delta Lake for analytics over large-scale lakehouse data.</li>
+</ul>
+<h4 id="on-premise-or-hybrid-data-warehouses">On-Premise or Hybrid Data Warehouses<a hidden class="anchor" aria-hidden="true" href="#on-premise-or-hybrid-data-warehouses">#</a></h4>
+<ul>
+<li><strong>Teradata</strong> - Scalable enterprise-grade DW, often used in financial services and telecom.</li>
+<li><strong>Oracle Exadata</strong> - High-performance DW platform from Oracle, often deployed in enterprise data centers.</li>
+<li><strong>IBM Db2 Warehouse</strong> - Optimized for private clouds or on-premise deployments.</li>
+<li><strong>Vertica</strong> - Columnar DW with high-speed analytics, available on-prem and in cloud.</li>
+</ul>
+<blockquote>
+<p>Many modern warehouses also support <strong>hybrid deployments</strong>, where compute may reside in the cloud while data remains on-prem or in a data lake.</p></blockquote>
+<h4 id="open-source-data-warehouse-options">Open-Source Data Warehouse Options<a hidden class="anchor" aria-hidden="true" href="#open-source-data-warehouse-options">#</a></h4>
+<p>While most enterprise data warehouses are managed or proprietary, there are some powerful open-source alternatives:</p>
+<ul>
+<li><strong>ClickHouse</strong> - A high-performance, columnar OLAP database optimized for real-time analytics. Ideal for log data, dashboards, and metrics platforms.</li>
+<li><strong>Apache Druid</strong> - A real-time analytics database designed for interactive queries on streaming and batch data.</li>
+<li><strong>Apache Hive</strong> - Originally built for querying large datasets on Hadoop using SQL-like syntax. Often used with data lakes.</li>
+<li><strong>DuckDB</strong> - Lightweight, in-process OLAP database designed for analytics on local files. Great for local development and embedded use cases.</li>
+<li><strong>Greenplum</strong> - Massively parallel PostgreSQL-based DW, suitable for large-scale on-prem analytics.</li>
+</ul>
+<blockquote>
+<p>These open-source tools may require more setup and tuning but offer cost-effective, customizable alternatives for analytics and BI.</p></blockquote>
+<h2 id="2-data-lake">2. Data Lake<a hidden class="anchor" aria-hidden="true" href="#2-data-lake">#</a></h2>
+<p><em>Data lakes</em> are designed to store massive amounts of structured, semi-structured, and unstructured data in raw form. Unlike data warehouses, they focus on low-cost storage and flexibility, using formats like JSON, CSV, Parquet, or ORC.</p>
+<h3 id="external-tables">External Tables<a hidden class="anchor" aria-hidden="true" href="#external-tables">#</a></h3>
+<p>External tables allow querying data stored in a data lake (e.g., Amazon S3) directly from a data warehouse (e.g., Redshift, BigQuery) without importing the data. This decouples compute from storage and brings cost and performance flexibility.</p>
+<p>One challenge with traditional data warehouses — whether on-premise or cloud-based — is the tight coupling of <strong>compute and storage</strong>. This leads to several issues:</p>
+<ul>
+<li>You may be charged for compute even when it&rsquo;s idle.</li>
+<li>Autoscaling may not react quickly enough to handle unpredictable or peak workloads.</li>
+<li>Loading large volumes of raw or temporary data into the warehouse can be inefficient and costly.</li>
+</ul>
+<p>To address these problems, many modern architectures adopt <strong>external tables</strong> to <strong>decouple compute from storage</strong>.</p>
+<p>An <strong>external table</strong> allows the data warehouse to <strong>query data stored outside of itself</strong>, typically in a data lake or object storage system such as:</p>
+<ul>
+<li>Amazon S3</li>
+<li>Google Cloud Storage</li>
+<li>Azure Blob Storage</li>
+<li>Apache Hadoop (On-premise)</li>
+</ul>
+<p>These external tables reference raw files (e.g. Parquet, ORC, CSV, JSON), but can be queried using <strong>standard SQL</strong>, just like internal warehouse tables.</p>
+<hr>
+<h5 id="benefits">Benefits:<a hidden class="anchor" aria-hidden="true" href="#benefits">#</a></h5>
+<ul>
+<li>Separation of compute and storage enables independent scaling.</li>
+<li>No need to ingest or copy data into the warehouse — the data is queried in place.</li>
+<li>Lower storage costs: object storage is cheaper than warehouse-managed storage.</li>
+<li>Serverless infrastructure: fully managed by the cloud provider.</li>
+</ul>
+<hr>
+<h5 id="query-performance-trade-offs">Query Performance Trade-offs:<a hidden class="anchor" aria-hidden="true" href="#query-performance-trade-offs">#</a></h5>
+<ul>
+<li><strong>External tables may be slower</strong> than internal tables, especially:
+<ul>
+<li>If the external data isn&rsquo;t optimized (e.g. not partitioned, compressed, or columnar).</li>
+<li>For complex joins, aggregations, or filters without indexes.</li>
+</ul>
+</li>
+<li>Performance can often be improved by:
+<ul>
+<li>Using <strong>columnar formats</strong> like Parquet or ORC.</li>
+<li>Applying <strong>partitioning and bucketing</strong>.</li>
+<li>Caching frequently queried datasets.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h5 id="common-use-cases">Common Use Cases:<a hidden class="anchor" aria-hidden="true" href="#common-use-cases">#</a></h5>
+<ul>
+<li>Exploratory analysis on newly ingested or raw data.</li>
+<li>Data lakehouse architectures where the same data is shared between a lake and a warehouse.</li>
+<li>Staging layer before data is cleaned and loaded into structured tables.</li>
+<li>Cross-service querying — e.g., combining Redshift internal data with external S3 logs.</li>
+</ul>
+<hr>
+<h5 id="examples-of-supported-platforms">Examples of Supported Platforms:<a hidden class="anchor" aria-hidden="true" href="#examples-of-supported-platforms">#</a></h5>
+<ul>
+<li>Amazon Redshift Spectrum</li>
+<li>Google BigQuery External Tables</li>
+<li>Snowflake External Tables</li>
+<li>Databricks + Unity Catalog</li>
+<li>Azure Synapse Serverless SQL Pools</li>
+</ul>
+<blockquote>
+<p>From the user’s perspective, querying external tables feels almost identical to querying internal ones, but the data physically resides <strong>outside</strong> the warehouse.</p></blockquote>
+<h2 id="3-data-lakehouses">3. Data Lakehouses<a hidden class="anchor" aria-hidden="true" href="#3-data-lakehouses">#</a></h2>
+<p><em>Data Lakehouses</em> emerged as a modern solution to combine the scalability and flexibility of data lakes with the data management and performance features of data warehouses.</p>
+<p>They aim to address the shortcomings of traditional data lakes, which lack structure and reliability, and data warehouses, which can be costly and less flexible with unstructured data.</p>
+<p>A Data Lakehouse is a unified data platform that supports:</p>
+<ul>
+<li>Structured, semi-structured, and unstructured data (like in data Lakes)</li>
+<li>Data engineering, BI/analytics, data science, and machine learning workloads (like in data warehouses)</li>
+<li>ACID transactions, schema enforcement, and metadata management (like in data warehouses)</li>
+<li>Low-cost storage and scalable processing (like in data lakes)</li>
+</ul>
+<blockquote>
+<p>It essentially brings the best of both worlds — the schema and governance of warehouses and the cost-efficient, large-scale storage of lakes, enabling a single platform for for analytics, BI, and machine learning.</p></blockquote>
+<hr>
+<h3 id="data-lake-vs-data-warehouse-vs-data-lakehouse">Data Lake vs. Data Warehouse vs. Data Lakehouse<a hidden class="anchor" aria-hidden="true" href="#data-lake-vs-data-warehouse-vs-data-lakehouse">#</a></h3>
+<h2 id="hahahugoshortcode7s0hbhb"><div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Feature</th>
+          <th style="text-align: center">Data Lake</th>
+          <th style="text-align: center">Data Warehouse</th>
+          <th style="text-align: center">Data Lakehouse</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Data Types</td>
+          <td style="text-align: center">All (unstructured, etc.)</td>
+          <td style="text-align: center">Structured only</td>
+          <td style="text-align: center">All</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Cost</td>
+          <td style="text-align: center">Low</td>
+          <td style="text-align: center">High</td>
+          <td style="text-align: center">Medium</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Performance (analytics)</td>
+          <td style="text-align: center">Low (without prep)</td>
+          <td style="text-align: center">High</td>
+          <td style="text-align: center">High</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ACID Transactions</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">O</td>
+          <td style="text-align: center">O</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Schema Enforcement</td>
+          <td style="text-align: center">X</td>
+          <td style="text-align: center">O</td>
+          <td style="text-align: center">O</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ML &amp; Data Science Friendly</td>
+          <td style="text-align: center">O</td>
+          <td style="text-align: center">X (limited)</td>
+          <td style="text-align: center">O</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div></h2>
+<h3 id="key-features">Key Features<a hidden class="anchor" aria-hidden="true" href="#key-features">#</a></h3>
+<ul>
+<li><strong>Support for ACID transactions</strong> (via technologies like Delta Lake, Apache Iceberg, Hudi)</li>
+<li><strong>Unified storage layer</strong> — typically object storage like S3, Azure Data Lake, or GCS</li>
+<li><strong>Open format</strong> (e.g., Parquet, ORC) with metadata layers</li>
+<li><strong>Streaming + batch</strong> capabilities</li>
+<li><strong>Scalable</strong> architecture for multi-persona access (data engineers, analysts, scientists)</li>
+</ul>
+<hr>
+<h3 id="examples-of-lakehouses">Examples of Lakehouses<a hidden class="anchor" aria-hidden="true" href="#examples-of-lakehouses">#</a></h3>
+<ul>
+<li><strong>Delta Lake</strong>  -  Open-source storage layer developed by Databricks</li>
+<li><strong>Apache Iceberg</strong> - Table format for huge analytic datasets</li>
+<li><strong>Apache Hudi</strong> -  Incremental processing for big data lakes</li>
+<li><strong>Databricks</strong>  -  Lakehouse platform built on Delta Lake</li>
+<li><strong>Snowflake</strong> -  Expanding to include Lakehouse capabilities</li>
+<li><strong>BigQuery</strong>  -  Google&rsquo;s solution blending lake + warehouse</li>
+</ul>
+<blockquote>
+</blockquote>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.minjunjeon.com/tags/dbt/">Dbt</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/basics/">Basics</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/data-warehouse/">Data Warehouse</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/data-lake/">Data Lake</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/lakehouse/">Lakehouse</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/databases/">Databases</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

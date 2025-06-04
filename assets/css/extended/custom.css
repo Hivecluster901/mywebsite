@@ -29,11 +29,13 @@ header {
     text-align: justify;
 }
 
-
-.custom-table-wrapper table {
+  .custom-table-wrapper table {
     border-collapse: collapse;
     margin: 0.5rem auto;
-    width: max-content;
+    max-width: max-content;
+    width: 100%;                /* Make table responsive */
+    table-layout: fixed;        /* Force equal column widths */
+    font-size: 1rem;          /* Reduce overall size */
     background-color: transparent;
     color: var(--content);
   }
@@ -42,7 +44,7 @@ header {
   .custom-table-wrapper td {
     text-align: center;
     vertical-align: middle;
-    padding: 10px 16px;
+    padding: 6px 10px;          /* Reduced padding */
     border: 2px solid var(--content) !important;
     white-space: normal;
     word-break: break-word;

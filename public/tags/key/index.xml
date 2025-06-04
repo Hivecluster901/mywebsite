@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Key on Minjun Jeon</title>
+    <link>http://localhost:1313/tags/key/</link>
+    <description>Recent content in Key on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/key/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Keys in the table</title>
+      <link>http://localhost:1313/posts/data_eng/sql/sql20/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql20/</guid>
+      <description>&lt;h2 id=&#34;1-primary-key&#34;&gt;1. Primary Key&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;pimary key&lt;/em&gt; is a column that uniquely identifies every row in a table.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;There can be only &lt;strong&gt;one primary key per table&lt;/strong&gt;. But, the primary key can be &lt;strong&gt;composite&lt;/strong&gt;, i.e. it can consist of multiple columns.&lt;/li&gt;
+&lt;li&gt;A primary key cannot contain &lt;code&gt;NULL&lt;/code&gt;&amp;rsquo;s.&lt;/li&gt;
+&lt;li&gt;A primary key must contain unique values.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;You can define ia simple primary key as follows:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;CREATE&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;TABLE&lt;/span&gt; employees (
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  employee_id SERIAL &lt;span style=&#34;color:#66d9ef&#34;&gt;PRIMARY&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;KEY&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  name TEXT &lt;span style=&#34;color:#66d9ef&#34;&gt;NOT&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;NULL&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  department_id INT
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;&lt;code&gt;employee_id&lt;/code&gt; uniquely indentifies each row. &lt;code&gt;SERIAL&lt;/code&gt; auto-increments. Instead, &lt;code&gt;GENERATED ALWAYS AS IDENTITY&lt;/code&gt; for stricter SQL compliance.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

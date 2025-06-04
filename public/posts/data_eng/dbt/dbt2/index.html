@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>DBT 2. OLTP vs OLAP | Minjun Jeon</title>
+<meta name="keywords" content="OLTP, OLAP, dbt, Database, Data Warehousing, SQL">
+<meta name="description" content="When working with databases, it&rsquo;s essential to distinguish between two fundamental system types: OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing). These systems serve very different purposes and are optimized accordingly.
+
+OLTP — Online Transaction Processing
+OLTP systems are designed to handle a large number of short, atomic transactions such as inserts, updates, and deletes. They are optimized for speed and reliability in transactional environments.
+Example Use Cases
+
+Banking systems
+E-commerce checkout
+Inventory management
+Booking/reservation systems
+
+
+    
+      Characteristics
+
+  
+      
+          Feature
+          OLTP
+      
+  
+  
+      
+          Main Use
+          Day-to-day operations (CRUD)
+      
+      
+          Queries
+          Simple and frequent
+      
+      
+          Data Volume
+          Current data (live, real-time)
+      
+      
+          Users
+          Many concurrent users
+      
+      
+          Schema
+          Highly normalized
+      
+      
+          Transactions
+          Short and fast
+      
+      
+          Performance Goal
+          High throughput and low latency
+      
+      
+          Storage Type
+          Primarily Row-based
+      
+      
+          ACID Compliance
+          Fully ACID-compliant
+      
+  
+
+
+    
+
+
+What is ACID?">
+<meta name="author" content="map[name:Minjun Jeon]">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Minjun Jeon",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "sameAs": [
+    "",
+    ""
+  ]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/dbt\/dbt2\/"
+  },
+  "headline": "DBT 2. OLTP vs OLAP",
+  "description": "\u003cp\u003eWhen working with databases, it\u0026rsquo;s essential to distinguish between two fundamental system types: \u003cstrong\u003eOLTP (Online Transaction Processing)\u003c\/strong\u003e and \u003cstrong\u003eOLAP (Online Analytical Processing)\u003c\/strong\u003e. These systems serve very different purposes and are optimized accordingly.\u003c\/p\u003e\n\u003chr\u003e\n\u003ch3 id=\u0022oltp--online-transaction-processing\u0022\u003eOLTP — Online Transaction Processing\u003c\/h3\u003e\n\u003cp\u003e\u003cstrong\u003eOLTP\u003c\/strong\u003e systems are designed to handle a large number of \u003cstrong\u003eshort, atomic transactions\u003c\/strong\u003e such as inserts, updates, and deletes. They are optimized for \u003cstrong\u003espeed and reliability\u003c\/strong\u003e in transactional environments.\u003c\/p\u003e\n\u003ch4 id=\u0022example-use-cases\u0022\u003eExample Use Cases\u003c\/h4\u003e\n\u003cul\u003e\n\u003cli\u003eBanking systems\u003c\/li\u003e\n\u003cli\u003eE-commerce checkout\u003c\/li\u003e\n\u003cli\u003eInventory management\u003c\/li\u003e\n\u003cli\u003eBooking\/reservation systems\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cdiv class=\u0022custom-table-wrapper\u0022\u003e\n    \u003ctable\u003e\n      \u003ch4 id=\u0022characteristics\u0022\u003eCharacteristics\u003c\/h4\u003e\n\u003ctable\u003e\n  \u003cthead\u003e\n      \u003ctr\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eFeature\u003c\/th\u003e\n          \u003cth style=\u0022text-align: center\u0022\u003eOLTP\u003c\/th\u003e\n      \u003c\/tr\u003e\n  \u003c\/thead\u003e\n  \u003ctbody\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eMain Use\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eDay-to-day operations (CRUD)\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eQueries\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eSimple and frequent\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eData Volume\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eCurrent data (live, real-time)\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eUsers\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eMany concurrent users\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eSchema\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eHighly normalized\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eTransactions\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eShort and fast\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003ePerformance Goal\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eHigh throughput and low latency\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eStorage Type\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003ePrimarily Row-based\u003c\/td\u003e\n      \u003c\/tr\u003e\n      \u003ctr\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eACID Compliance\u003c\/td\u003e\n          \u003ctd style=\u0022text-align: center\u0022\u003eFully ACID-compliant\u003c\/td\u003e\n      \u003c\/tr\u003e\n  \u003c\/tbody\u003e\n\u003c\/table\u003e\n\n    \u003c\/table\u003e\n\u003c\/div\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\u003cstrong\u003eWhat is ACID?\u003c\/strong\u003e\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "datePublished": "2025-06-03T00:00:00Z",
+  "dateModified": "2025-06-03T00:00:00Z"
+}
+</script>
+
+<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="DBT 2. OLTP vs OLAP">
+  <meta property="og:description" content="When working with databases, it’s essential to distinguish between two fundamental system types: OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing). These systems serve very different purposes and are optimized accordingly.
+OLTP — Online Transaction Processing OLTP systems are designed to handle a large number of short, atomic transactions such as inserts, updates, and deletes. They are optimized for speed and reliability in transactional environments.
+Example Use Cases Banking systems E-commerce checkout Inventory management Booking/reservation systems Characteristics Feature OLTP Main Use Day-to-day operations (CRUD) Queries Simple and frequent Data Volume Current data (live, real-time) Users Many concurrent users Schema Highly normalized Transactions Short and fast Performance Goal High throughput and low latency Storage Type Primarily Row-based ACID Compliance Fully ACID-compliant What is ACID?">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-03T00:00:00+00:00">
+    <meta property="article:tag" content="OLTP">
+    <meta property="article:tag" content="OLAP">
+    <meta property="article:tag" content="Dbt">
+    <meta property="article:tag" content="Database">
+    <meta property="article:tag" content="Data Warehousing">
+    <meta property="article:tag" content="Sql">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:title" content="DBT 2. OLTP vs OLAP">
+<meta name="twitter:description" content="When working with databases, it&rsquo;s essential to distinguish between two fundamental system types: OLTP (Online Transaction Processing) and OLAP (Online Analytical Processing). These systems serve very different purposes and are optimized accordingly.
+
+OLTP — Online Transaction Processing
+OLTP systems are designed to handle a large number of short, atomic transactions such as inserts, updates, and deletes. They are optimized for speed and reliability in transactional environments.
+Example Use Cases
+
+Banking systems
+E-commerce checkout
+Inventory management
+Booking/reservation systems
+
+
+    
+      Characteristics
+
+  
+      
+          Feature
+          OLTP
+      
+  
+  
+      
+          Main Use
+          Day-to-day operations (CRUD)
+      
+      
+          Queries
+          Simple and frequent
+      
+      
+          Data Volume
+          Current data (live, real-time)
+      
+      
+          Users
+          Many concurrent users
+      
+      
+          Schema
+          Highly normalized
+      
+      
+          Transactions
+          Short and fast
+      
+      
+          Performance Goal
+          High throughput and low latency
+      
+      
+          Storage Type
+          Primarily Row-based
+      
+      
+          ACID Compliance
+          Fully ACID-compliant
+      
+  
+
+
+    
+
+
+What is ACID?">
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      DBT 2. OLTP vs OLAP
+    </h1>
+    <div class="post-meta"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul><ul>
+                <li>
+                    <a href="#oltp--online-transaction-processing" aria-label="OLTP — Online Transaction Processing">OLTP — Online Transaction Processing</a><ul>
+                        
+                <li>
+                    <a href="#example-use-cases" aria-label="Example Use Cases">Example Use Cases</a></li>
+                <li>
+                    <a href="#characteristics" aria-label="Characteristics">Characteristics</a></li></ul>
+                </li>
+                <li>
+                    <a href="#olap--online-analytical-processing" aria-label="OLAP — Online Analytical Processing">OLAP — Online Analytical Processing</a><ul>
+                        
+                <li>
+                    <a href="#example-use-cases-1" aria-label="Example Use Cases">Example Use Cases</a></li>
+                <li>
+                    <a href="#characteristics" aria-label="Characteristics">Characteristics</a></li></ul>
+                </li></ul>
+                    
+                <li>
+                    <a href="#head-to-head-comparison" aria-label="Head-to-Head Comparison">Head-to-Head Comparison</a></li>
+                <li>
+                    <a href="#can-they-work-together" aria-label="Can They Work Together?">Can They Work Together?</a></li>
+                <li>
+                    <a href="#summary" aria-label="Summary">Summary</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>When working with databases, it&rsquo;s essential to distinguish between two fundamental system types: <strong>OLTP (Online Transaction Processing)</strong> and <strong>OLAP (Online Analytical Processing)</strong>. These systems serve very different purposes and are optimized accordingly.</p>
+<hr>
+<h3 id="oltp--online-transaction-processing">OLTP — Online Transaction Processing<a hidden class="anchor" aria-hidden="true" href="#oltp--online-transaction-processing">#</a></h3>
+<p><strong>OLTP</strong> systems are designed to handle a large number of <strong>short, atomic transactions</strong> such as inserts, updates, and deletes. They are optimized for <strong>speed and reliability</strong> in transactional environments.</p>
+<h4 id="example-use-cases">Example Use Cases<a hidden class="anchor" aria-hidden="true" href="#example-use-cases">#</a></h4>
+<ul>
+<li>Banking systems</li>
+<li>E-commerce checkout</li>
+<li>Inventory management</li>
+<li>Booking/reservation systems</li>
+</ul>
+<div class="custom-table-wrapper">
+    <table>
+      <h4 id="characteristics">Characteristics<a hidden class="anchor" aria-hidden="true" href="#characteristics">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Feature</th>
+          <th style="text-align: center">OLTP</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Main Use</td>
+          <td style="text-align: center">Day-to-day operations (CRUD)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Queries</td>
+          <td style="text-align: center">Simple and frequent</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Data Volume</td>
+          <td style="text-align: center">Current data (live, real-time)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Users</td>
+          <td style="text-align: center">Many concurrent users</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Schema</td>
+          <td style="text-align: center">Highly normalized</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Transactions</td>
+          <td style="text-align: center">Short and fast</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Performance Goal</td>
+          <td style="text-align: center">High throughput and low latency</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Storage Type</td>
+          <td style="text-align: center">Primarily Row-based</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">ACID Compliance</td>
+          <td style="text-align: center">Fully ACID-compliant</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div>
+<blockquote>
+<p><strong>What is ACID?</strong></p>
+<p>ACID stands for Atomicity, Consistency, Isolation, and Durability - four key properties that ensure reliable transactions in OLTP systems:</p>
+<ul>
+<li>Atomicity: All operations in a transaction complete successfully or none do. Transaction is a collection of queries that constitute a logical operation.</li>
+<li>Consistency: The database remains in a valid state before and after a transaction.</li>
+<li>Isolation: Concurrent transactions don’t interfere with each other.</li>
+<li>Durability: Once committed, data changes persist even after crashes or failures.
+These guarantees are critical in systems like banking or inventory, where accuracy and reliability are non-negotiable.</li>
+</ul></blockquote>
+<hr>
+<h3 id="olap--online-analytical-processing">OLAP — Online Analytical Processing<a hidden class="anchor" aria-hidden="true" href="#olap--online-analytical-processing">#</a></h3>
+<p><strong>OLAP</strong> systems are designed for <strong>complex queries</strong>, <strong>aggregations</strong>, and <strong>data analysis</strong>. They support business intelligence, reporting, and decision-making processes.</p>
+<h4 id="example-use-cases-1">Example Use Cases<a hidden class="anchor" aria-hidden="true" href="#example-use-cases-1">#</a></h4>
+<ul>
+<li>Sales forecasting</li>
+<li>Market trend analysis</li>
+<li>Business dashboards</li>
+<li>Executive reporting</li>
+</ul>
+<h2 id="hahahugoshortcode9s1hbhb"><div class="custom-table-wrapper">
+    <table>
+      <h4 id="characteristics">Characteristics<a hidden class="anchor" aria-hidden="true" href="#characteristics">#</a></h4>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Feature</th>
+          <th style="text-align: center">OLAP</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Main Use</td>
+          <td style="text-align: center">Analytical queries and reporting</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Queries</td>
+          <td style="text-align: center">Complex, fewer, read-heavy</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Data Volume</td>
+          <td style="text-align: center">Historical and large-scale data</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Users</td>
+          <td style="text-align: center">Few analysts or BI tools</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Schema</td>
+          <td style="text-align: center">Denormalized (e.g., star/snowflake)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Transactions</td>
+          <td style="text-align: center">Long-running read-only queries</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Performance Goal</td>
+          <td style="text-align: center">Fast for aggregates and summaries</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Storage Type</td>
+          <td style="text-align: center">Columnar (often)</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div></h2>
+<h2 id="head-to-head-comparison">Head-to-Head Comparison<a hidden class="anchor" aria-hidden="true" href="#head-to-head-comparison">#</a></h2>
+<h2 id="hahahugoshortcode9s2hbhb"><div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Feature</th>
+          <th style="text-align: center">OLTP</th>
+          <th style="text-align: center">OLAP</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Purpose</td>
+          <td style="text-align: center">Real-time transactional systems</td>
+          <td style="text-align: center">Analytical processing &amp; reporting</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Data Modifications</td>
+          <td style="text-align: center">Frequent (INSERT, UPDATE, DELETE)</td>
+          <td style="text-align: center">Rare (mostly SELECT)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Data Size</td>
+          <td style="text-align: center">Smaller, current data</td>
+          <td style="text-align: center">Large, historical data</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Schema Design</td>
+          <td style="text-align: center">Normalized (3NF)</td>
+          <td style="text-align: center">Denormalized (Star/Snowflake)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Query Speed</td>
+          <td style="text-align: center">Milliseconds</td>
+          <td style="text-align: center">Seconds to minutes (for complex queries)</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Example Tools</td>
+          <td style="text-align: center">PostgreSQL, MySQL, Oracle</td>
+          <td style="text-align: center">Snowflake, Redshift, BigQuery, Hive</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div></h2>
+<h2 id="can-they-work-together">Can They Work Together?<a hidden class="anchor" aria-hidden="true" href="#can-they-work-together">#</a></h2>
+<p>Yes! In modern data architecture:</p>
+<ul>
+<li>OLTP systems feed raw data into ETL pipelines.</li>
+<li>That data is transformed and loaded into OLAP systems (data warehouses or data lakes).</li>
+<li>Business users query OLAP systems for insights.</li>
+</ul>
+<p>This design is often called a <strong>Modern Data Stack</strong>.</p>
+<hr>
+<h2 id="summary">Summary<a hidden class="anchor" aria-hidden="true" href="#summary">#</a></h2>
+<div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th style="text-align: center">OLTP</th>
+          <th style="text-align: center">OLAP</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">Optimized for transactions</td>
+          <td style="text-align: center">Optimized for analytics</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">High volume of small operations</td>
+          <td style="text-align: center">Low volume of complex queries</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Maintains data integrity</td>
+          <td style="text-align: center">Supports business intelligence</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">Suitable for operational applications</td>
+          <td style="text-align: center">Suitable for decision support systems</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.minjunjeon.com/tags/oltp/">OLTP</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/olap/">OLAP</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/dbt/">Dbt</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/database/">Database</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/data-warehousing/">Data Warehousing</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/sql/">Sql</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

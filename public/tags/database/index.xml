@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Database on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/database/</link>
+    <description>Recent content in Database on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/database/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DBT 2. OLTP vs OLAP</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/</guid>
+      <description>&lt;p&gt;When working with databases, it&amp;rsquo;s essential to distinguish between two fundamental system types: &lt;strong&gt;OLTP (Online Transaction Processing)&lt;/strong&gt; and &lt;strong&gt;OLAP (Online Analytical Processing)&lt;/strong&gt;. These systems serve very different purposes and are optimized accordingly.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;oltp--online-transaction-processing&#34;&gt;OLTP — Online Transaction Processing&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;OLTP&lt;/strong&gt; systems are designed to handle a large number of &lt;strong&gt;short, atomic transactions&lt;/strong&gt; such as inserts, updates, and deletes. They are optimized for &lt;strong&gt;speed and reliability&lt;/strong&gt; in transactional environments.&lt;/p&gt;
+&lt;h4 id=&#34;example-use-cases&#34;&gt;Example Use Cases&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Banking systems&lt;/li&gt;
+&lt;li&gt;E-commerce checkout&lt;/li&gt;
+&lt;li&gt;Inventory management&lt;/li&gt;
+&lt;li&gt;Booking/reservation systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;h4 id=&#34;characteristics&#34;&gt;Characteristics&lt;/h4&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Feature&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;OLTP&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Main Use&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Day-to-day operations (CRUD)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Queries&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Simple and frequent&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Data Volume&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Current data (live, real-time)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Users&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Many concurrent users&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Schema&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Highly normalized&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Transactions&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Short and fast&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Performance Goal&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;High throughput and low latency&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Storage Type&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Primarily Row-based&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;ACID Compliance&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Fully ACID-compliant&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What is ACID?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

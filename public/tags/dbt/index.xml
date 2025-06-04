@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Dbt on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/dbt/</link>
+    <description>Recent content in Dbt on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/dbt/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DBT 3. Data Warehouses, Data Lakes, and Lake Houses</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/</link>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/</guid>
+      <description>&lt;h2 id=&#34;1-data-warehouses&#34;&gt;1. Data Warehouses&lt;/h2&gt;
+&lt;p&gt;A &lt;em&gt;Data Warehouse (DW)&lt;/em&gt; is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.&lt;/p&gt;
+&lt;p&gt;Unlike transactional databases (OLTP), data warehouses are built for &lt;strong&gt;analytical workloads (OLAP)&lt;/strong&gt;: they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.&lt;/p&gt;
+&lt;p&gt;Data warehouses typically use:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DBT 4. Denormalized Schema in Data Warehouses</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt4/</link>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt4/</guid>
+      <description>&lt;h4 id=&#34;1-denormalized-schema&#34;&gt;1. Denormalized Schema&lt;/h4&gt;
+&lt;p&gt;A &lt;strong&gt;denormalized schema&lt;/strong&gt; is a database design that reduces the number of joins by &lt;strong&gt;combining related data into fewer tables&lt;/strong&gt;, often at the expense of some redundancy.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Optimized for read-heavy analytical workloads&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Not ideal for OLTP systems (which benefit from normalization)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In a typical data warehouse:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data is modeled to &lt;strong&gt;maximize query performance&lt;/strong&gt; and &lt;strong&gt;simplify analytics&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;This contrasts with normalized schemas used in transactional databases, where the goal is data integrity and avoiding redundancy.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h4 id=&#34;2-star-and-snowflake-schemas&#34;&gt;2. Star and Snowflake Schemas&lt;/h4&gt;
+&lt;p&gt;Two common denormalized designs are:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DBT 5. Modern Data Stack</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt5/</link>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt5/</guid>
+      <description>&lt;p&gt;As the cost of cloud storage and compute continues to fall and internet speeds rise, data engineers are rethinking how data is stored, processed, and analyzed. This shift has led to what we now call the &lt;strong&gt;modern data stack&lt;/strong&gt;: a flexible, scalable, cloud-native approach that replaces traditional monolithic systems.&lt;/p&gt;
+&lt;p&gt;In this post, we’ll explore key architectural changes that enabled the modern data stack, from the transition from &lt;strong&gt;SMP to MPP&lt;/strong&gt;, to the &lt;strong&gt;decoupling of storage and compute&lt;/strong&gt;, and the rise of &lt;strong&gt;columnar databases&lt;/strong&gt;, &lt;strong&gt;ELT workflows&lt;/strong&gt;, and the &lt;strong&gt;tooling ecosystem&lt;/strong&gt; that glues it all together.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DBT 1. Data Maturity Model</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/</guid>
+      <description>&lt;h2 id=&#34;1-intro&#34;&gt;1. Intro&lt;/h2&gt;
+&lt;p&gt;The Maslow&amp;rsquo;s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.&lt;/p&gt;
+&lt;p&gt;Silmiarly, one can think of &lt;em&gt;data hierarchy of needs&lt;/em&gt;. The 5 levels are &lt;strong&gt;Data Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>DBT 2. OLTP vs OLAP</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/</link>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/</guid>
+      <description>&lt;p&gt;When working with databases, it&amp;rsquo;s essential to distinguish between two fundamental system types: &lt;strong&gt;OLTP (Online Transaction Processing)&lt;/strong&gt; and &lt;strong&gt;OLAP (Online Analytical Processing)&lt;/strong&gt;. These systems serve very different purposes and are optimized accordingly.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id=&#34;oltp--online-transaction-processing&#34;&gt;OLTP — Online Transaction Processing&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;OLTP&lt;/strong&gt; systems are designed to handle a large number of &lt;strong&gt;short, atomic transactions&lt;/strong&gt; such as inserts, updates, and deletes. They are optimized for &lt;strong&gt;speed and reliability&lt;/strong&gt; in transactional environments.&lt;/p&gt;
+&lt;h4 id=&#34;example-use-cases&#34;&gt;Example Use Cases&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Banking systems&lt;/li&gt;
+&lt;li&gt;E-commerce checkout&lt;/li&gt;
+&lt;li&gt;Inventory management&lt;/li&gt;
+&lt;li&gt;Booking/reservation systems&lt;/li&gt;
+&lt;/ul&gt;
+&lt;div class=&#34;custom-table-wrapper&#34;&gt;
+    &lt;table&gt;
+      &lt;h4 id=&#34;characteristics&#34;&gt;Characteristics&lt;/h4&gt;
+&lt;table&gt;
+  &lt;thead&gt;
+      &lt;tr&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;Feature&lt;/th&gt;
+          &lt;th style=&#34;text-align: center&#34;&gt;OLTP&lt;/th&gt;
+      &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Main Use&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Day-to-day operations (CRUD)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Queries&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Simple and frequent&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Data Volume&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Current data (live, real-time)&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Users&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Many concurrent users&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Schema&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Highly normalized&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Transactions&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Short and fast&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Performance Goal&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;High throughput and low latency&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Storage Type&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Primarily Row-based&lt;/td&gt;
+      &lt;/tr&gt;
+      &lt;tr&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;ACID Compliance&lt;/td&gt;
+          &lt;td style=&#34;text-align: center&#34;&gt;Fully ACID-compliant&lt;/td&gt;
+      &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+    &lt;/table&gt;
+&lt;/div&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;strong&gt;What is ACID?&lt;/strong&gt;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

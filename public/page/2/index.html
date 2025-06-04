@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="map[name:Minjun Jeon]">
 <link rel="canonical" href="https://www.minjunjeon.com/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.7957225163cf1e33441aa58f056557c1c5d55b677e2f5bc7001a08802094949d.css" integrity="sha256-eVciUWPPHjNEGqWPBWVXwcXVW2d&#43;L1vHABoIgCCUlJ0=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
@@ -150,6 +150,81 @@
     </nav>
 </header>
 <main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 6. Numerical Functions and Operators
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. Operators Operator Description Examples Result &#43; addition 4&#43;3 7 - subtraction 5-3 2 * multiplication 4*2 8 / division (integer division truncates the result) 8/4 2 % modulo (remainder) 10%4 2 ^ exponentiation 2^3 8 For example, 9/4 will give 2 while 9.0/4 will give 2.2500...00.
+2. Functions Function Description Examples Result abs(x) absolute value abs(-2) 2 round(x, d) round x to d decimal places round(7.4632, 2) 7.46 ceiling(x) round up to integer ceiling(7.4632) 8 floor(x) round down to integer floor(7.4632) 7 </p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 6. Numerical Functions and Operators" href="https://www.minjunjeon.com/posts/data_eng/sql/sql6/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 7. Conditional Expressions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Here, we go through conditional expressions.
+1. CASE WHEN CASE WHEN goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:
+CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN THEN resultN ELSE result END Start the statement with CASE and end with END. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both condition1 and condition2 are true, only result1 will be returned. If there is no ELSE statement, and all the conditions after WHEN are not met, NULL is returned.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 7. Conditional Expressions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql7/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 3. Grouping
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Here we go through other basic SQL commands for grouping:
+1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:
+SUM() AVG() MIN() MAX() COUNT() The examples are as follows:
+SELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-05-31 00:00:00 +0000 UTC'>May 31, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 3. Grouping" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 2. Filtering
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Here we go through other basic SQL commands for filtering:
+1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
+SELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.
+SELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.
+SELECT first_name, last_name FROM customer WHERE first_name = &#39;ADAM&#39; Enclose the texts around &#39;. We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-05-30 00:00:00 +0000 UTC'>May 30, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 2. Filtering" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Intro to SQL
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. SQL SQL stands for structured query language. It is a language to interact with databases. Database is an organized collection of structured information, or data, typically stored electronically in a computer system. Database consists of schemas, which are a collection of tables and help structuring the database. Database is managed by Database Management Systems(DBMS). One example of DMBS is PostgreSQL.
+a) Dialects of SQL All DMBS’s have slightly different dialects even though the differences are small. Among all DMBS’s, PostgreSQL is a good place to start because
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-05-29 00:00:00 +0000 UTC'>May 29, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to Intro to SQL" href="https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/"></a>
+</article>
 
 <article class="post-entry"> 
   <header class="entry-header">

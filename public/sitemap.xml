@@ -3,30 +3,87 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://www.minjunjeon.com/posts/data_eng/</loc>
-    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/dbt/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/basics/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/categories/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/data-lake/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/data-warehouse/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/categories/databases/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/databases/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/dbt/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/dbt/dbt4/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/dbt/dbt5/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/interview-prep/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/lakehouse/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/modern-data-stack/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/categories/tech/</loc>
+    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/posts/data_eng/sql/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/posts/</loc>
+    <loc>https://www.minjunjeon.com/tags/data-maturity-model/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/categories/</loc>
+    <loc>https://www.minjunjeon.com/tags/data-warehousing/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/categories/databases/</loc>
+    <loc>https://www.minjunjeon.com/tags/database/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/tags/databases/</loc>
+    <loc>https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/tags/interview-prep/</loc>
+    <loc>https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/tags/join/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/</loc>
+    <loc>https://www.minjunjeon.com/tags/olap/</loc>
+    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/oltp/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/tags/sql/</loc>
@@ -36,12 +93,6 @@
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/tags/subquery/</loc>
-    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.minjunjeon.com/tags/</loc>
-    <lastmod>2025-06-03T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.minjunjeon.com/categories/tech/</loc>
     <lastmod>2025-06-03T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/tags/union/</loc>
@@ -60,9 +111,6 @@
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/tags/algorithm/</loc>
-    <lastmod>2025-06-02T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.minjunjeon.com/tags/basics/</loc>
     <lastmod>2025-06-02T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/categories/data-structure/</loc>
