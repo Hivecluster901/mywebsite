@@ -157,6 +157,19 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Big Data 6. Slowly Changing Dimensions (SCD)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Slowly Changing Dimensions (SCD) Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimension table that change infrequently—yet unpredictably—over time. When a source system updates a dimension attribute, we need a strategy to decide how that change will be reflected (or not) in the data warehouse. In some cases, storing historical values isn’t necessary; in others, retaining a full history is critical for reporting, auditing, or trend analysis.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-05 00:00:00 +0000 UTC'>June 5, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to Big Data 6. Slowly Changing Dimensions (SCD)" href="https://www.minjunjeon.com/posts/data_eng/bd/bd6/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Big Data 3. Data Warehouses, Data Lakes, and Lake Houses
     </h2>
   </header>
@@ -284,21 +297,6 @@ SELECT UPPER(first_name) LOWER(last_name) FROM customer WHERE LENGTH(first_name)
   </div>
   <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to SQL 6. Numerical Functions and Operators" href="https://www.minjunjeon.com/posts/data_eng/sql/sql6/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 7. Conditional Expressions
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Here, we go through conditional expressions.
-1. CASE WHEN CASE WHEN goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:
-CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN THEN resultN ELSE result END Start the statement with CASE and end with END. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both condition1 and condition2 are true, only result1 will be returned. If there is no ELSE statement, and all the conditions after WHEN are not met, NULL is returned.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 7. Conditional Expressions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql7/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -260,6 +260,19 @@ how can we create our custom package? Let’s walk through how to structure a cu
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Big Data 6. Slowly Changing Dimensions (SCD)
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Slowly Changing Dimensions (SCD) Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimension table that change infrequently—yet unpredictably—over time. When a source system updates a dimension attribute, we need a strategy to decide how that change will be reflected (or not) in the data warehouse. In some cases, storing historical values isn’t necessary; in others, retaining a full history is critical for reporting, auditing, or trend analysis.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-05 00:00:00 +0000 UTC'>June 5, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to Big Data 6. Slowly Changing Dimensions (SCD)" href="https://www.minjunjeon.com/posts/data_eng/bd/bd6/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Big Data 3. Data Warehouses, Data Lakes, and Lake Houses
     </h2>
   </header>
@@ -329,22 +342,6 @@ Example Use Cases Banking systems E-commerce checkout Inventory management Booki
   </div>
   <footer class="entry-footer"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to Big Data 2. OLTP vs OLAP" href="https://www.minjunjeon.com/posts/data_eng/bd/bd2/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 9. Union and Subqueries
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>1. UNION/UNION ALL In contrast to JOINS, UNION combines rows instead of columns.
-a) Basic Syntax The syntax is as follows:
-SELECT column_name1, column_name2 FROM table_name1 UNION SELECT column_name3, column_name4 FROM table_name2 The number of columns from the first table should match the number of columns from the second table.
-Columns are matched by the order. For example column_name1 and column_name3 don’t need to be identitcal. The merged table will have column names of the first table, i.e. column_name1 and column_name2.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 9. Union and Subqueries" href="https://www.minjunjeon.com/posts/data_eng/sql/sql9/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

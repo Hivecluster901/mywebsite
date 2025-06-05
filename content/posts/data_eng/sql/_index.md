@@ -1,5 +1,5 @@
 ---
-title: "1. SQL"
+title: "1. SQL Concepts"
 draft: false
 ---
 

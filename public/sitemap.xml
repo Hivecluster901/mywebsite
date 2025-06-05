@@ -5,6 +5,9 @@
     <loc>https://www.minjunjeon.com/tags/__init__.py/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -24,6 +27,9 @@
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/bd/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</loc>
@@ -47,6 +53,12 @@
     <loc>https://www.minjunjeon.com/tags/basics/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>https://www.minjunjeon.com/tags/big-data/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/bd/bd6/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://www.minjunjeon.com/categories/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
@@ -54,6 +66,15 @@
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/tags/data-structure/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/categories/databases/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/databases/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/dbt/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/tags/filter/</loc>
@@ -69,6 +90,9 @@
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/</loc>
+    <lastmod>2025-06-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://www.minjunjeon.com/tags/modern-data-stack/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/tags/packaging/</loc>
@@ -98,15 +122,6 @@
     <loc>https://www.minjunjeon.com/categories/tech/</loc>
     <lastmod>2025-06-05T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/posts/data_eng/</loc>
-    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.minjunjeon.com/posts/data_eng/bd/</loc>
-    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.minjunjeon.com/tags/big-data/</loc>
-    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.minjunjeon.com/posts/data_eng/bd/bd3/</loc>
     <lastmod>2025-06-04T00:00:00+00:00</lastmod>
   </url><url>
@@ -122,19 +137,7 @@
     <loc>https://www.minjunjeon.com/tags/data-warehouse/</loc>
     <lastmod>2025-06-04T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://www.minjunjeon.com/categories/databases/</loc>
-    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.minjunjeon.com/tags/databases/</loc>
-    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.minjunjeon.com/tags/dbt/</loc>
-    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://www.minjunjeon.com/tags/lakehouse/</loc>
-    <lastmod>2025-06-04T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://www.minjunjeon.com/tags/modern-data-stack/</loc>
     <lastmod>2025-06-04T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://www.minjunjeon.com/posts/data_eng/sql/</loc>
@@ -245,6 +248,8 @@
     <loc>https://www.minjunjeon.com/contact/</loc>
   </url><url>
     <loc>https://www.minjunjeon.com/resume/</loc>
+  </url><url>
+    <loc>https://www.minjunjeon.com/posts/data_eng/sql_practice/</loc>
   </url><url>
     <loc>https://www.minjunjeon.com/about_me/</loc>
   </url><url>

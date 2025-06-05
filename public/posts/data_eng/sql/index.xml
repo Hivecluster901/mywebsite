@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>1. SQL on Minjun Jeon</title>
+    <title>1. SQL Concepts on Minjun Jeon</title>
     <link>https://www.minjunjeon.com/posts/data_eng/sql/</link>
-    <description>Recent content in 1. SQL on Minjun Jeon</description>
+    <description>Recent content in 1. SQL Concepts on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
       <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>

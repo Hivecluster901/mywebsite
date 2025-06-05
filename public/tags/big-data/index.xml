@@ -11,8 +11,16 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/big-data/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Big Data 6. Slowly Changing Dimensions (SCD)</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd6/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd6/</guid>
+      <description>&lt;h2 id=&#34;slowly-changing-dimensions-scd&#34;&gt;Slowly Changing Dimensions (SCD)&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Slowly Changing Dimensions (SCDs)&lt;/strong&gt; refer to attributes in a data warehouse dimension table that change infrequently—yet unpredictably—over time. When a source system updates a dimension attribute, we need a strategy to decide how that change will be reflected (or not) in the data warehouse. In some cases, storing historical values isn’t necessary; in others, retaining a full history is critical for reporting, auditing, or trend analysis.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>Big Data 3. Data Warehouses, Data Lakes, and Lake Houses</title>
       <link>https://www.minjunjeon.com/posts/data_eng/bd/bd3/</link>
