@@ -11,23 +11,81 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/interview-prep/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>DBT 3. Data Warehouses, Data Lakes, and Lake Houses</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/</link>
+      <title>1. Python: map</title>
+      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;map()&lt;/code&gt; function applies a given function to all items in an input list (or any other iterable) and returns a map object (an iterator). This is particularly useful for transforming data in a list comprehensively.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An iterable is any python object:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;capable of returning its members one at a time, permitting it to be iterated over in a for-loop.&lt;/li&gt;
+&lt;li&gt;implements &lt;code&gt;__iter__&lt;/code&gt; method, which returns an iterator, or &lt;code&gt;__getitem__&lt;/code&gt; method suitable for indexed lookup.&lt;/li&gt;
+&lt;li&gt;The examples are &lt;code&gt;list&lt;/code&gt;, &lt;code&gt;tuple&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt;, &lt;code&gt;dict&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An iterator is an object that:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2. Array/List</title>
+      <link>https://www.minjunjeon.com/posts/ds_algo/theory/theory2/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/ds_algo/theory/theory2/</guid>
+      <description>&lt;p&gt;Arrays, more commonly known as &lt;strong&gt;lists&lt;/strong&gt; in Python, are one of the most fundamental and widely used data structures. They store items in a sequential, ordered manner, and support a wide range of operations efficiently.&lt;/p&gt;
+&lt;p&gt;This post is designed as a refresher for interviews or technical review, with code examples, time complexity analysis, and clarifications on memory behavior.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-what-is-an-array-list&#34;&gt;1. What is an Array (List)?&lt;/h2&gt;
+&lt;p&gt;In Python, the built-in &lt;code&gt;list&lt;/code&gt; type is a &lt;strong&gt;dynamic array&lt;/strong&gt; implementation. Arrays:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2. Python: filter</title>
+      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;filter()&lt;/code&gt; function constructs an iterator from elements of an iterable for which a function returns &lt;code&gt;true&lt;/code&gt;. It is used to filter out items from a list (or any other iterable) based on a condition.&lt;/p&gt;
+&lt;p&gt;The syntax is similar to &lt;a href=&#34;https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1&#34;&gt;map&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;filter(func1, iterable)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Examples:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;num_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [i &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;)] &lt;span style=&#34;color:#75715e&#34;&gt;# [1, ..., 12] &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(list(filter(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x: x&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, num_list)))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output: [2, 4, 6, 8, 10, 12 ]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can filter with multiple conditions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;num_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [i &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)] &lt;span style=&#34;color:#75715e&#34;&gt;#[1,2,...,9]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;even_and_greater_than_five &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; list(filter(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x: x&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; x&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, num_list))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(even_and_greater_than_five) &lt;span style=&#34;color:#75715e&#34;&gt;# output: [6, 8]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can perform filter operation on dictionaries:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3. Custom Package and __init__.py</title>
+      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</guid>
+      <description>&lt;p&gt;We can install packages from the Python Package Index (PyPI) through pip(PyPI Install Packages). Furthermore, we can import these through &lt;code&gt;import&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;But &amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;how can we create our custom package?
+Let&amp;rsquo;s walk through how to structure a custom Python package, add subpackages, the roles of &lt;code&gt;__init__.py&lt;/code&gt; and how to publish the custom package to &lt;a href=&#34;https://pypi.org/&#34;&gt;PyPI&lt;/a&gt;. Additionally, we look at setting up dependencies and version management using &lt;a href=&#34;https://python-poetry.org/&#34;&gt;Poetry&lt;/a&gt;.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-basic-package-structure&#34;&gt;1. Basic Package Structure&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s say we want to build a simple package named &lt;code&gt;mypackage&lt;/code&gt;. Here is a minimal project structure:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Big Data 3. Data Warehouses, Data Lakes, and Lake Houses</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd3/</link>
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/</guid>
+      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd3/</guid>
       <description>&lt;h2 id=&#34;1-data-warehouses&#34;&gt;1. Data Warehouses&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;Data Warehouse (DW)&lt;/em&gt; is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.&lt;/p&gt;
 &lt;p&gt;Unlike transactional databases (OLTP), data warehouses are built for &lt;strong&gt;analytical workloads (OLAP)&lt;/strong&gt;: they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.&lt;/p&gt;
 &lt;p&gt;Data warehouses typically use:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>DBT 4. Denormalized Schema in Data Warehouses</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt4/</link>
+      <title>Big Data 4. Denormalized Schema in Data Warehouses</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd4/</link>
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt4/</guid>
+      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd4/</guid>
       <description>&lt;h4 id=&#34;1-denormalized-schema&#34;&gt;1. Denormalized Schema&lt;/h4&gt;
 &lt;p&gt;A &lt;strong&gt;denormalized schema&lt;/strong&gt; is a database design that reduces the number of joins by &lt;strong&gt;combining related data into fewer tables&lt;/strong&gt;, often at the expense of some redundancy.&lt;/p&gt;
 &lt;ul&gt;
@@ -44,18 +102,18 @@
 &lt;p&gt;Two common denormalized designs are:&lt;/p&gt;</description>
     </item>
     <item>
-      <title>DBT 5. Modern Data Stack</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt5/</link>
+      <title>Big Data 5. Modern Data Stack</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd5/</link>
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt5/</guid>
+      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd5/</guid>
       <description>&lt;p&gt;As the cost of cloud storage and compute continues to fall and internet speeds rise, data engineers are rethinking how data is stored, processed, and analyzed. This shift has led to what we now call the &lt;strong&gt;modern data stack&lt;/strong&gt;: a flexible, scalable, cloud-native approach that replaces traditional monolithic systems.&lt;/p&gt;
 &lt;p&gt;In this post, we’ll explore key architectural changes that enabled the modern data stack, from the transition from &lt;strong&gt;SMP to MPP&lt;/strong&gt;, to the &lt;strong&gt;decoupling of storage and compute&lt;/strong&gt;, and the rise of &lt;strong&gt;columnar databases&lt;/strong&gt;, &lt;strong&gt;ELT workflows&lt;/strong&gt;, and the &lt;strong&gt;tooling ecosystem&lt;/strong&gt; that glues it all together.&lt;/p&gt;</description>
     </item>
     <item>
-      <title>DBT 1. Data Maturity Model</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/</link>
+      <title>Big Data 1. Data Maturity Model</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd1/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/</guid>
+      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd1/</guid>
       <description>&lt;h2 id=&#34;1-intro&#34;&gt;1. Intro&lt;/h2&gt;
 &lt;p&gt;The Maslow&amp;rsquo;s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.&lt;/p&gt;
 &lt;p&gt;Silmiarly, one can think of &lt;em&gt;data hierarchy of needs&lt;/em&gt;. The 5 levels are &lt;strong&gt;Data Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.&lt;/strong&gt;&lt;/p&gt;</description>

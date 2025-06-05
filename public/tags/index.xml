@@ -11,13 +11,118 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 04 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>__Init__.py</title>
+      <link>https://www.minjunjeon.com/tags/__init__.py/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/__init__.py/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Algorithm</title>
+      <link>https://www.minjunjeon.com/tags/algorithm/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/algorithm/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Array</title>
+      <link>https://www.minjunjeon.com/tags/array/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/array/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Basics</title>
       <link>https://www.minjunjeon.com/tags/basics/</link>
-      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/tags/basics/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Data Structure</title>
+      <link>https://www.minjunjeon.com/tags/data-structure/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/data-structure/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Filter</title>
+      <link>https://www.minjunjeon.com/tags/filter/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/filter/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview Prep</title>
+      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>List</title>
+      <link>https://www.minjunjeon.com/tags/list/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/list/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Map</title>
+      <link>https://www.minjunjeon.com/tags/map/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/map/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Packaging</title>
+      <link>https://www.minjunjeon.com/tags/packaging/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/packaging/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Poetry</title>
+      <link>https://www.minjunjeon.com/tags/poetry/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/poetry/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Programming Language</title>
+      <link>https://www.minjunjeon.com/tags/programming-language/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/programming-language/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Pypi</title>
+      <link>https://www.minjunjeon.com/tags/pypi/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/pypi/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Python</title>
+      <link>https://www.minjunjeon.com/tags/python/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/python/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Software Engineering</title>
+      <link>https://www.minjunjeon.com/tags/software-engineering/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/software-engineering/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Big Data</title>
+      <link>https://www.minjunjeon.com/tags/big-data/</link>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/big-data/</guid>
       <description></description>
     </item>
     <item>
@@ -46,13 +151,6 @@
       <link>https://www.minjunjeon.com/tags/dbt/</link>
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/tags/dbt/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Interview Prep</title>
-      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
-      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
       <description></description>
     </item>
     <item>
@@ -140,17 +238,10 @@
       <description></description>
     </item>
     <item>
-      <title>Algorithm</title>
-      <link>https://www.minjunjeon.com/tags/algorithm/</link>
+      <title>Big O</title>
+      <link>https://www.minjunjeon.com/tags/big-o/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/algorithm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Data Structure</title>
-      <link>https://www.minjunjeon.com/tags/data-structure/</link>
-      <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/data-structure/</guid>
+      <guid>https://www.minjunjeon.com/tags/big-o/</guid>
       <description></description>
     </item>
     <item>

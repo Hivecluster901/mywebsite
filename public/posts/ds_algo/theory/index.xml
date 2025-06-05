@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Theory on Minjun Jeon</title>
+    <title>1. Theory on Minjun Jeon</title>
     <link>https://www.minjunjeon.com/posts/ds_algo/theory/</link>
-    <description>Recent content in Theory on Minjun Jeon</description>
+    <description>Recent content in 1. Theory on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
       <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
@@ -11,8 +11,19 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/posts/ds_algo/theory/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>2. Array/List</title>
+      <link>https://www.minjunjeon.com/posts/ds_algo/theory/theory2/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/ds_algo/theory/theory2/</guid>
+      <description>&lt;p&gt;Arrays, more commonly known as &lt;strong&gt;lists&lt;/strong&gt; in Python, are one of the most fundamental and widely used data structures. They store items in a sequential, ordered manner, and support a wide range of operations efficiently.&lt;/p&gt;
+&lt;p&gt;This post is designed as a refresher for interviews or technical review, with code examples, time complexity analysis, and clarifications on memory behavior.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-what-is-an-array-list&#34;&gt;1. What is an Array (List)?&lt;/h2&gt;
+&lt;p&gt;In Python, the built-in &lt;code&gt;list&lt;/code&gt; type is a &lt;strong&gt;dynamic array&lt;/strong&gt; implementation. Arrays:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>1. Big O asymptotic analysis</title>
       <link>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</link>

@@ -14,10 +14,10 @@
     <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/data-maturity-model/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>DBT 1. Data Maturity Model</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/</link>
+      <title>Big Data 1. Data Maturity Model</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd1/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/</guid>
+      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd1/</guid>
       <description>&lt;h2 id=&#34;1-intro&#34;&gt;1. Intro&lt;/h2&gt;
 &lt;p&gt;The Maslow&amp;rsquo;s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.&lt;/p&gt;
 &lt;p&gt;Silmiarly, one can think of &lt;em&gt;data hierarchy of needs&lt;/em&gt;. The 5 levels are &lt;strong&gt;Data Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.&lt;/strong&gt;&lt;/p&gt;</description>

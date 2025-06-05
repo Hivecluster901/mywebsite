@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Map on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/map/</link>
+    <description>Recent content in Map on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/map/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Python: map</title>
+      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;map()&lt;/code&gt; function applies a given function to all items in an input list (or any other iterable) and returns a map object (an iterator). This is particularly useful for transforming data in a list comprehensively.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An iterable is any python object:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;capable of returning its members one at a time, permitting it to be iterated over in a for-loop.&lt;/li&gt;
+&lt;li&gt;implements &lt;code&gt;__iter__&lt;/code&gt; method, which returns an iterator, or &lt;code&gt;__getitem__&lt;/code&gt; method suitable for indexed lookup.&lt;/li&gt;
+&lt;li&gt;The examples are &lt;code&gt;list&lt;/code&gt;, &lt;code&gt;tuple&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt;, &lt;code&gt;dict&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An iterator is an object that:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -1,7 +1,9 @@
 ---
-title: "Leetcode 1"
+title: "1. Two Sum (LC #1)"
 date: 2025-05-26
 draft: true
 ShowToc: true
+tags: ["leetcode", "array", "list", "data structure", "algorithm", "interview prep"]
+categories: ["Tech", "leetcode", "data structure", "algorithm"]
 ---
-LeetCode 1
+Here I will explain the solution to [Two Sum](https://leetcode.com/problems/two-sum/).

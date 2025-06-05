@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Init.py on Minjun Jeon</title>
+    <link>http://localhost:1313/tags/init.py/</link>
+    <description>Recent content in Init.py on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/init.py/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>3. Custom Package and __init__.py</title>
+      <link>http://localhost:1313/posts/software_eng/python/python_concepts/python3/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/posts/software_eng/python/python_concepts/python3/</guid>
+      <description>&lt;p&gt;We can install packages from the Python Package Index (PyPI) through pip(PyPI Install Packages). Furthermore, we can import these through &lt;code&gt;import&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;But &amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;how can we create our custom package?
+Let&amp;rsquo;s walk through how to structure a custom Python package, add subpackages, the roles of &lt;code&gt;__init__.py&lt;/code&gt; and how to publish the custom package to PyPI.&lt;/p&gt;&lt;/blockquote&gt;</description>
+    </item>
+  </channel>
+</rss>

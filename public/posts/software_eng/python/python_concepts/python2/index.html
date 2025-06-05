@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>2. Python: filter | Minjun Jeon</title>
+<meta name="keywords" content="python, filter, programming language, software engineering, interview prep">
+<meta name="description" content="The filter() function constructs an iterator from elements of an iterable for which a function returns true. It is used to filter out items from a list (or any other iterable) based on a condition.
+The syntax is similar to map:
+filter(func1, iterable)
+Examples:
+num_list = [i for i in range(1, 13)] # [1, ..., 12] 
+print(list(filter(lambda x: x%2==0, num_list)))
+# output: [2, 4, 6, 8, 10, 12 ]
+You can filter with multiple conditions:
+num_list = [i for i in range(1,10)] #[1,2,...,9]
+even_and_greater_than_five = list(filter(lambda x: x&gt; 5 and x%2==0, num_list))
+print(even_and_greater_than_five) # output: [6, 8]
+You can perform filter operation on dictionaries:">
+<meta name="author" content="map[name:Minjun Jeon]">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Minjun Jeon",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "sameAs": [
+    "",
+    ""
+  ]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/software_eng\/python\/python_concepts\/python2\/"
+  },
+  "headline": "2. Python: filter",
+  "description": "\u003cp\u003eThe \u003ccode\u003efilter()\u003c\/code\u003e function constructs an iterator from elements of an iterable for which a function returns \u003ccode\u003etrue\u003c\/code\u003e. It is used to filter out items from a list (or any other iterable) based on a condition.\u003c\/p\u003e\n\u003cp\u003eThe syntax is similar to \u003ca href=\u0022\/posts\/software_eng\/python\/python_concepts\/python1\u0022\u003emap\u003c\/a\u003e:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-python\u0022 data-lang=\u0022python\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003efilter(func1, iterable)\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eExamples:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-python\u0022 data-lang=\u0022python\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003enum_list \u003cspan style=\u0022color:#f92672\u0022\u003e=\u003c\/span\u003e [i \u003cspan style=\u0022color:#66d9ef\u0022\u003efor\u003c\/span\u003e i \u003cspan style=\u0022color:#f92672\u0022\u003ein\u003c\/span\u003e range(\u003cspan style=\u0022color:#ae81ff\u0022\u003e1\u003c\/span\u003e, \u003cspan style=\u0022color:#ae81ff\u0022\u003e13\u003c\/span\u003e)] \u003cspan style=\u0022color:#75715e\u0022\u003e# [1, ..., 12] \u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003eprint(list(filter(\u003cspan style=\u0022color:#66d9ef\u0022\u003elambda\u003c\/span\u003e x: x\u003cspan style=\u0022color:#f92672\u0022\u003e%\u003c\/span\u003e\u003cspan style=\u0022color:#ae81ff\u0022\u003e2\u003c\/span\u003e\u003cspan style=\u0022color:#f92672\u0022\u003e==\u003c\/span\u003e\u003cspan style=\u0022color:#ae81ff\u0022\u003e0\u003c\/span\u003e, num_list)))\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#75715e\u0022\u003e# output: [2, 4, 6, 8, 10, 12 ]\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eYou can filter with multiple conditions:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-python\u0022 data-lang=\u0022python\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003enum_list \u003cspan style=\u0022color:#f92672\u0022\u003e=\u003c\/span\u003e [i \u003cspan style=\u0022color:#66d9ef\u0022\u003efor\u003c\/span\u003e i \u003cspan style=\u0022color:#f92672\u0022\u003ein\u003c\/span\u003e range(\u003cspan style=\u0022color:#ae81ff\u0022\u003e1\u003c\/span\u003e,\u003cspan style=\u0022color:#ae81ff\u0022\u003e10\u003c\/span\u003e)] \u003cspan style=\u0022color:#75715e\u0022\u003e#[1,2,...,9]\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003eeven_and_greater_than_five \u003cspan style=\u0022color:#f92672\u0022\u003e=\u003c\/span\u003e list(filter(\u003cspan style=\u0022color:#66d9ef\u0022\u003elambda\u003c\/span\u003e x: x\u003cspan style=\u0022color:#f92672\u0022\u003e\u0026gt;\u003c\/span\u003e \u003cspan style=\u0022color:#ae81ff\u0022\u003e5\u003c\/span\u003e \u003cspan style=\u0022color:#f92672\u0022\u003eand\u003c\/span\u003e x\u003cspan style=\u0022color:#f92672\u0022\u003e%\u003c\/span\u003e\u003cspan style=\u0022color:#ae81ff\u0022\u003e2\u003c\/span\u003e\u003cspan style=\u0022color:#f92672\u0022\u003e==\u003c\/span\u003e\u003cspan style=\u0022color:#ae81ff\u0022\u003e0\u003c\/span\u003e, num_list))\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003eprint(even_and_greater_than_five) \u003cspan style=\u0022color:#75715e\u0022\u003e# output: [6, 8]\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eYou can perform filter operation on dictionaries:\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "datePublished": "2025-06-05T00:00:00Z",
+  "dateModified": "2025-06-05T00:00:00Z"
+}
+</script>
+
+<meta property="og:url" content="https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="2. Python: filter">
+  <meta property="og:description" content="The filter() function constructs an iterator from elements of an iterable for which a function returns true. It is used to filter out items from a list (or any other iterable) based on a condition.
+The syntax is similar to map:
+filter(func1, iterable) Examples:
+num_list = [i for i in range(1, 13)] # [1, ..., 12] print(list(filter(lambda x: x%2==0, num_list))) # output: [2, 4, 6, 8, 10, 12 ] You can filter with multiple conditions:
+num_list = [i for i in range(1,10)] #[1,2,...,9] even_and_greater_than_five = list(filter(lambda x: x&gt; 5 and x%2==0, num_list)) print(even_and_greater_than_five) # output: [6, 8] You can perform filter operation on dictionaries:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-05T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-05T00:00:00+00:00">
+    <meta property="article:tag" content="Python">
+    <meta property="article:tag" content="Filter">
+    <meta property="article:tag" content="Programming Language">
+    <meta property="article:tag" content="Software Engineering">
+    <meta property="article:tag" content="Interview Prep">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:title" content="2. Python: filter">
+<meta name="twitter:description" content="The filter() function constructs an iterator from elements of an iterable for which a function returns true. It is used to filter out items from a list (or any other iterable) based on a condition.
+The syntax is similar to map:
+filter(func1, iterable)
+Examples:
+num_list = [i for i in range(1, 13)] # [1, ..., 12] 
+print(list(filter(lambda x: x%2==0, num_list)))
+# output: [2, 4, 6, 8, 10, 12 ]
+You can filter with multiple conditions:
+num_list = [i for i in range(1,10)] #[1,2,...,9]
+even_and_greater_than_five = list(filter(lambda x: x&gt; 5 and x%2==0, num_list))
+print(even_and_greater_than_five) # output: [6, 8]
+You can perform filter operation on dictionaries:">
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      2. Python: filter
+    </h1>
+    <div class="post-meta"><span title='2025-06-05 00:00:00 +0000 UTC'>June 5, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
+
+</div>
+  </header> 
+
+  <div class="post-content"><p>The <code>filter()</code> function constructs an iterator from elements of an iterable for which a function returns <code>true</code>. It is used to filter out items from a list (or any other iterable) based on a condition.</p>
+<p>The syntax is similar to <a href="/posts/software_eng/python/python_concepts/python1">map</a>:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>filter(func1, iterable)
+</span></span></code></pre></div><p>Examples:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>num_list <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">13</span>)] <span style="color:#75715e"># [1, ..., 12] </span>
+</span></span><span style="display:flex;"><span>print(list(filter(<span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>, num_list)))
+</span></span><span style="display:flex;"><span><span style="color:#75715e"># output: [2, 4, 6, 8, 10, 12 ]</span>
+</span></span></code></pre></div><p>You can filter with multiple conditions:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>num_list <span style="color:#f92672">=</span> [i <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">10</span>)] <span style="color:#75715e">#[1,2,...,9]</span>
+</span></span><span style="display:flex;"><span>even_and_greater_than_five <span style="color:#f92672">=</span> list(filter(<span style="color:#66d9ef">lambda</span> x: x<span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">and</span> x<span style="color:#f92672">%</span><span style="color:#ae81ff">2</span><span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>, num_list))
+</span></span><span style="display:flex;"><span>print(even_and_greater_than_five) <span style="color:#75715e"># output: [6, 8]</span>
+</span></span></code></pre></div><p>You can perform filter operation on dictionaries:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>dict_list <span style="color:#f92672">=</span> [{<span style="color:#e6db74">&#39;age&#39;</span>: <span style="color:#ae81ff">23</span>}, {<span style="color:#e6db74">&#39;age&#39;</span>: <span style="color:#ae81ff">15</span>}, {<span style="color:#e6db74">&#39;age&#39;</span>: <span style="color:#ae81ff">57</span>}]
+</span></span><span style="display:flex;"><span>print(list(filter(<span style="color:#66d9ef">lambda</span> d: d[<span style="color:#e6db74">&#39;age&#39;</span>] <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">25</span>,  dict_list))) <span style="color:#75715e"># output: [{&#39;age&#39;: 57}]</span>
+</span></span></code></pre></div>
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.minjunjeon.com/tags/python/">Python</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/filter/">Filter</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/programming-language/">Programming Language</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/software-engineering/">Software Engineering</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

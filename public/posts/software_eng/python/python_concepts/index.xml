@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>1. Python: Advanced Concepts on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/</link>
+    <description>Recent content in 1. Python: Advanced Concepts on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/posts/software_eng/python/python_concepts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>1. Python: map</title>
+      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;map()&lt;/code&gt; function applies a given function to all items in an input list (or any other iterable) and returns a map object (an iterator). This is particularly useful for transforming data in a list comprehensively.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An iterable is any python object:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;capable of returning its members one at a time, permitting it to be iterated over in a for-loop.&lt;/li&gt;
+&lt;li&gt;implements &lt;code&gt;__iter__&lt;/code&gt; method, which returns an iterator, or &lt;code&gt;__getitem__&lt;/code&gt; method suitable for indexed lookup.&lt;/li&gt;
+&lt;li&gt;The examples are &lt;code&gt;list&lt;/code&gt;, &lt;code&gt;tuple&lt;/code&gt;, &lt;code&gt;string&lt;/code&gt;, &lt;code&gt;dict&lt;/code&gt;, &lt;code&gt;set&lt;/code&gt;.&lt;/li&gt;
+&lt;/ul&gt;&lt;/blockquote&gt;
+&lt;blockquote&gt;
+&lt;p&gt;An iterator is an object that:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>2. Python: filter</title>
+      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/</guid>
+      <description>&lt;p&gt;The &lt;code&gt;filter()&lt;/code&gt; function constructs an iterator from elements of an iterable for which a function returns &lt;code&gt;true&lt;/code&gt;. It is used to filter out items from a list (or any other iterable) based on a condition.&lt;/p&gt;
+&lt;p&gt;The syntax is similar to &lt;a href=&#34;https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1&#34;&gt;map&lt;/a&gt;:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;filter(func1, iterable)
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Examples:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;num_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [i &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;)] &lt;span style=&#34;color:#75715e&#34;&gt;# [1, ..., 12] &lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(list(filter(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x: x&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, num_list)))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;# output: [2, 4, 6, 8, 10, 12 ]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can filter with multiple conditions:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;num_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [i &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;,&lt;span style=&#34;color:#ae81ff&#34;&gt;10&lt;/span&gt;)] &lt;span style=&#34;color:#75715e&#34;&gt;#[1,2,...,9]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;even_and_greater_than_five &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; list(filter(&lt;span style=&#34;color:#66d9ef&#34;&gt;lambda&lt;/span&gt; x: x&lt;span style=&#34;color:#f92672&#34;&gt;&amp;gt;&lt;/span&gt; &lt;span style=&#34;color:#ae81ff&#34;&gt;5&lt;/span&gt; &lt;span style=&#34;color:#f92672&#34;&gt;and&lt;/span&gt; x&lt;span style=&#34;color:#f92672&#34;&gt;%&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;2&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;==&lt;/span&gt;&lt;span style=&#34;color:#ae81ff&#34;&gt;0&lt;/span&gt;, num_list))
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;print(even_and_greater_than_five) &lt;span style=&#34;color:#75715e&#34;&gt;# output: [6, 8]&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;You can perform filter operation on dictionaries:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>3. Custom Package and __init__.py</title>
+      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</link>
+      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</guid>
+      <description>&lt;p&gt;We can install packages from the Python Package Index (PyPI) through pip(PyPI Install Packages). Furthermore, we can import these through &lt;code&gt;import&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;But &amp;hellip;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;how can we create our custom package?
+Let&amp;rsquo;s walk through how to structure a custom Python package, add subpackages, the roles of &lt;code&gt;__init__.py&lt;/code&gt; and how to publish the custom package to &lt;a href=&#34;https://pypi.org/&#34;&gt;PyPI&lt;/a&gt;. Additionally, we look at setting up dependencies and version management using &lt;a href=&#34;https://python-poetry.org/&#34;&gt;Poetry&lt;/a&gt;.&lt;/p&gt;&lt;/blockquote&gt;
+&lt;h2 id=&#34;1-basic-package-structure&#34;&gt;1. Basic Package Structure&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s say we want to build a simple package named &lt;code&gt;mypackage&lt;/code&gt;. Here is a minimal project structure:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

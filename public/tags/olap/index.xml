@@ -14,10 +14,10 @@
     <lastBuildDate>Tue, 03 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/olap/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>DBT 2. OLTP vs OLAP</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/</link>
+      <title>Big Data 2. OLTP vs OLAP</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd2/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/</guid>
+      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd2/</guid>
       <description>&lt;p&gt;When working with databases, it&amp;rsquo;s essential to distinguish between two fundamental system types: &lt;strong&gt;OLTP (Online Transaction Processing)&lt;/strong&gt; and &lt;strong&gt;OLAP (Online Analytical Processing)&lt;/strong&gt;. These systems serve very different purposes and are optimized accordingly.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;oltp--online-transaction-processing&#34;&gt;OLTP — Online Transaction Processing&lt;/h3&gt;

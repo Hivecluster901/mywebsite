@@ -197,7 +197,70 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">DBT 3. Data Warehouses, Data Lakes, and Lake Houses
+    <h2 class="entry-hint-parent">1. Python: map
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The map() function applies a given function to all items in an input list (or any other iterable) and returns a map object (an iterator). This is particularly useful for transforming data in a list comprehensively.
+An iterable is any python object:
+capable of returning its members one at a time, permitting it to be iterated over in a for-loop. implements __iter__ method, which returns an iterator, or __getitem__ method suitable for indexed lookup. The examples are list, tuple, string, dict, set. An iterator is an object that:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-05 00:00:00 +0000 UTC'>June 5, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to 1. Python: map" href="https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">2. Array/List
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Arrays, more commonly known as lists in Python, are one of the most fundamental and widely used data structures. They store items in a sequential, ordered manner, and support a wide range of operations efficiently.
+This post is designed as a refresher for interviews or technical review, with code examples, time complexity analysis, and clarifications on memory behavior.
+1. What is an Array (List)? In Python, the built-in list type is a dynamic array implementation. Arrays:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-05 00:00:00 +0000 UTC'>June 5, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to 2. Array/List" href="https://www.minjunjeon.com/posts/ds_algo/theory/theory2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">2. Python: filter
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>The filter() function constructs an iterator from elements of an iterable for which a function returns true. It is used to filter out items from a list (or any other iterable) based on a condition.
+The syntax is similar to map:
+filter(func1, iterable) Examples:
+num_list = [i for i in range(1, 13)] # [1, ..., 12] print(list(filter(lambda x: x%2==0, num_list))) # output: [2, 4, 6, 8, 10, 12 ] You can filter with multiple conditions:
+num_list = [i for i in range(1,10)] #[1,2,...,9] even_and_greater_than_five = list(filter(lambda x: x&gt; 5 and x%2==0, num_list)) print(even_and_greater_than_five) # output: [6, 8] You can perform filter operation on dictionaries:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-05 00:00:00 +0000 UTC'>June 5, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to 2. Python: filter" href="https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">3. Custom Package and __init__.py
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>We can install packages from the Python Package Index (PyPI) through pip(PyPI Install Packages). Furthermore, we can import these through import.
+But …
+how can we create our custom package? Let’s walk through how to structure a custom Python package, add subpackages, the roles of __init__.py and how to publish the custom package to PyPI. Additionally, we look at setting up dependencies and version management using Poetry.
+1. Basic Package Structure Let’s say we want to build a simple package named mypackage. Here is a minimal project structure:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-05 00:00:00 +0000 UTC'>June 5, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to 3. Custom Package and __init__.py" href="https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Big Data 3. Data Warehouses, Data Lakes, and Lake Houses
     </h2>
   </header>
   <div class="entry-content">
@@ -207,12 +270,12 @@ Data warehouses typically use:
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to DBT 3. Data Warehouses, Data Lakes, and Lake Houses" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt3/"></a>
+  <a class="entry-link" aria-label="post link to Big Data 3. Data Warehouses, Data Lakes, and Lake Houses" href="https://www.minjunjeon.com/posts/data_eng/bd/bd3/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">DBT 4. Denormalized Schema in Data Warehouses
+    <h2 class="entry-hint-parent">Big Data 4. Denormalized Schema in Data Warehouses
     </h2>
   </header>
   <div class="entry-content">
@@ -222,12 +285,12 @@ Data is modeled to maximize query performance and simplify analytics. This contr
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to DBT 4. Denormalized Schema in Data Warehouses" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt4/"></a>
+  <a class="entry-link" aria-label="post link to Big Data 4. Denormalized Schema in Data Warehouses" href="https://www.minjunjeon.com/posts/data_eng/bd/bd4/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">DBT 5. Modern Data Stack
+    <h2 class="entry-hint-parent">Big Data 5. Modern Data Stack
     </h2>
   </header>
   <div class="entry-content">
@@ -236,12 +299,12 @@ In this post, we’ll explore key architectural changes that enabled the modern 
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to DBT 5. Modern Data Stack" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt5/"></a>
+  <a class="entry-link" aria-label="post link to Big Data 5. Modern Data Stack" href="https://www.minjunjeon.com/posts/data_eng/bd/bd5/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">DBT 1. Data Maturity Model
+    <h2 class="entry-hint-parent">Big Data 1. Data Maturity Model
     </h2>
   </header>
   <div class="entry-content">
@@ -250,12 +313,12 @@ Silmiarly, one can think of data hierarchy of needs. The 5 levels are Data Colle
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to DBT 1. Data Maturity Model" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt1/"></a>
+  <a class="entry-link" aria-label="post link to Big Data 1. Data Maturity Model" href="https://www.minjunjeon.com/posts/data_eng/bd/bd1/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">DBT 2. OLTP vs OLAP
+    <h2 class="entry-hint-parent">Big Data 2. OLTP vs OLAP
     </h2>
   </header>
   <div class="entry-content">
@@ -265,7 +328,7 @@ Example Use Cases Banking systems E-commerce checkout Inventory management Booki
 ...</p>
   </div>
   <footer class="entry-footer"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to DBT 2. OLTP vs OLAP" href="https://www.minjunjeon.com/posts/data_eng/dbt/dbt2/"></a>
+  <a class="entry-link" aria-label="post link to Big Data 2. OLTP vs OLAP" href="https://www.minjunjeon.com/posts/data_eng/bd/bd2/"></a>
 </article>
 
 <article class="post-entry"> 
@@ -282,63 +345,6 @@ Columns are matched by the order. For example column_name1 and column_name3 don�
   </div>
   <footer class="entry-footer"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to SQL 9. Union and Subqueries" href="https://www.minjunjeon.com/posts/data_eng/sql/sql9/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">1. Big O asymptotic analysis
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>1. What is good code? Readability : How easily humans can understand, modify, and maintain a piece of code. Scalability: How well the code can handle increased load and complexity. Big O, a shorthand for Big O asymptotic analysis, measures the scalability of code. Scalability consists of runtime and memory. There is usally a trade-off between runtime and memory. In this post, we introduce the Big O notation in terms of runtime and look at how to measure the space complexity of an algorithm at the end.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-02 00:00:00 +0000 UTC'>June 2, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to 1. Big O asymptotic analysis" href="https://www.minjunjeon.com/posts/ds_algo/theory/theory1/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 8. Joins
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>JOIN is used to combine information from multiple tables in one query. There are four types of JOINs: INNER JOIN, OUTER JOIN, LEFT JOIN, and RIGHT JOIN. When combining two tables, you need one common column, so called reference column or join column.
-1. INNER JOIN INNER JOIN combines two tables only for the rows where the value in the join column occurs in both tables.
-If there are m matching rows in the first table and n matching rows in the second table for the join column value, the result will contain m × n rows for that value.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-02 00:00:00 +0000 UTC'>June 2, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 8. Joins" href="https://www.minjunjeon.com/posts/data_eng/sql/sql8/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 4. String Functions
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>In this post, we are going to look at basic string functions in SQL.
-1. UPPER, LOWER, LENGTH UPPER changes all lowercase alphabets to uppercase. LOWER changes all uppercase letters to lowercase. Finally, LENGTH gives the number of characters. The example is as follows:
-SELECT UPPER(first_name) LOWER(last_name) FROM customer WHERE LENGTH(first_name) &gt; 10 The above code outputs the first names in uppercase and last names in lowercase from the table customer where the length of the first name is more than 10.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 4. String Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql4/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 5. Date and Time Functions
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let’s look at standard date/time types.
-0. Data/Time types Types Description Examples date Just date without time ‘2025-06-01’ time (with/without time zone) Just time without date ‘01:02:03.678&#43;02’ timestamp (with/without time zone) Date and time ‘2022-11-28 01:02:03.678&#43;02’ intervals Time interval ‘3 days 01:02:03.678’ 1. EXTRACT EXTRACT is used to extract parts of timestamp/date. The syntax is as follows:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 5. Date and Time Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql5/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
