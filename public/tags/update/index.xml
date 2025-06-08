@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Update on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/update/</link>
+    <description>Recent content in Update on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 08 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/update/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL 11. Views &amp; Data Manipulation</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql11/</link>
+      <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql11/</guid>
+      <description>&lt;p&gt;If you&amp;rsquo;re prepping for a SQL or data engineering interview, it’s essential to be fluent not only in writing queries but also in understanding the impact of commands like &lt;code&gt;UPDATE&lt;/code&gt;, &lt;code&gt;DELETE&lt;/code&gt;, and views (both virtual and materialized). This post covers practical examples and deepens your understanding of data manipulation and view management in PostgreSQL.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-update-modifying-existing-rows&#34;&gt;1. &lt;code&gt;UPDATE&lt;/code&gt;: Modifying Existing Rows&lt;/h2&gt;
+&lt;p&gt;To modify data in a table, use the &lt;code&gt;UPDATE&lt;/code&gt; statement. Here&amp;rsquo;s the general syntax:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

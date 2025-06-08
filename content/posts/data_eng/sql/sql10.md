@@ -3,7 +3,7 @@ title: "SQL 10. Managing Tables & Databases"
 date: 2025-06-06
 draft: false
 ShowToc: true
-tags: ["sql", "table", "create", "drop", "foreign key", "primary key", "databases", "interview prep"]
+tags: ["sql", "data definition", "table", "create", "drop", "foreign key", "primary key", "databases", "interview prep"]
 categories: ["Tech", "Databases"]
 ---
 

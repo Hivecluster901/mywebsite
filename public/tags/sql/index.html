@@ -157,6 +157,20 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 11. Views &amp; Data Manipulation
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>If you’re prepping for a SQL or data engineering interview, it’s essential to be fluent not only in writing queries but also in understanding the impact of commands like UPDATE, DELETE, and views (both virtual and materialized). This post covers practical examples and deepens your understanding of data manipulation and view management in PostgreSQL.
+1. UPDATE: Modifying Existing Rows To modify data in a table, use the UPDATE statement. Here’s the general syntax:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-08 00:00:00 +0000 UTC'>June 8, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 11. Views & Data Manipulation" href="https://www.minjunjeon.com/posts/data_eng/sql/sql11/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">SQL 10. Managing Tables &amp; Databases
     </h2>
   </header>
@@ -288,23 +302,6 @@ SELECT SUM(column_name1) FROM table_name1 You usually need to specify the column
   </div>
   <footer class="entry-footer"><span title='2025-05-31 00:00:00 +0000 UTC'>May 31, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to SQL 3. Grouping" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 2. Filtering
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Here we go through other basic SQL commands for filtering:
-1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
-SELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.
-SELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.
-SELECT first_name, last_name FROM customer WHERE first_name = &#39;ADAM&#39; Enclose the texts around &#39;. We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-05-30 00:00:00 +0000 UTC'>May 30, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 2. Filtering" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
