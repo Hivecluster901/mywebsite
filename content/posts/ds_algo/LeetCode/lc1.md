@@ -1,6 +1,6 @@
 ---
 title: "1. Two Sum (LC #1)"
-date: 2025-05-26
+date: 2025-06-06
 draft: true
 ShowToc: true
 tags: ["leetcode", "array", "list", "data structure", "algorithm", "interview prep"]

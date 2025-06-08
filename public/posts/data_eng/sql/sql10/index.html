@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>SQL 10. Managing Tables &amp; Databases | Minjun Jeon</title>
+<meta name="keywords" content="sql, table, create, drop, foreign key, primary key, databases, interview prep">
+<meta name="description" content="In previous posts, we focused on querying tables. In this post, we’ll explore data definition in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.
+
+Mastering these operations shows that you not only know how to query data, but also how to design and manage the structures that hold it.
+We&rsquo;ll cover:
+
+Data types
+Constraints
+Primary and foreign keys
+Creating and altering tables and databases
+
+
+We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE) in separate posts.">
+<meta name="author" content="map[name:Minjun Jeon]">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql10/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql10/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Minjun Jeon",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "sameAs": [
+    "",
+    ""
+  ]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql10\/"
+  },
+  "headline": "SQL 10. Managing Tables \u0026 Databases",
+  "description": "\u003cp\u003eIn previous posts, we focused on querying tables. In this post, we’ll explore \u003cstrong\u003edata definition\u003c\/strong\u003e in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.\u003c\/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eMastering these operations shows that you not only know how to \u003cem\u003equery\u003c\/em\u003e data, but also how to \u003cem\u003edesign\u003c\/em\u003e and \u003cem\u003emanage\u003c\/em\u003e the structures that hold it.\u003c\/p\u003e\u003c\/blockquote\u003e\n\u003cp\u003eWe\u0026rsquo;ll cover:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eData types\u003c\/li\u003e\n\u003cli\u003eConstraints\u003c\/li\u003e\n\u003cli\u003ePrimary and foreign keys\u003c\/li\u003e\n\u003cli\u003eCreating and altering tables and databases\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cblockquote\u003e\n\u003cp\u003eWe\u0026rsquo;ll cover \u003cstrong\u003eviews\u003c\/strong\u003e, \u003cstrong\u003eindexes\u003c\/strong\u003e, and \u003cstrong\u003edata manipulation (INSERT, UPDATE, DELETE)\u003c\/strong\u003e in separate posts.\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "datePublished": "2025-06-06T00:00:00Z",
+  "dateModified": "2025-06-06T00:00:00Z"
+}
+</script>
+
+<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql10/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="SQL 10. Managing Tables & Databases">
+  <meta property="og:description" content="In previous posts, we focused on querying tables. In this post, we’ll explore data definition in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.
+Mastering these operations shows that you not only know how to query data, but also how to design and manage the structures that hold it.
+We’ll cover:
+Data types Constraints Primary and foreign keys Creating and altering tables and databases We’ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE) in separate posts.">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-06T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-06T00:00:00+00:00">
+    <meta property="article:tag" content="Sql">
+    <meta property="article:tag" content="Table">
+    <meta property="article:tag" content="Create">
+    <meta property="article:tag" content="Drop">
+    <meta property="article:tag" content="Foreign Key">
+    <meta property="article:tag" content="Primary Key">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:title" content="SQL 10. Managing Tables &amp; Databases">
+<meta name="twitter:description" content="In previous posts, we focused on querying tables. In this post, we’ll explore data definition in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.
+
+Mastering these operations shows that you not only know how to query data, but also how to design and manage the structures that hold it.
+We&rsquo;ll cover:
+
+Data types
+Constraints
+Primary and foreign keys
+Creating and altering tables and databases
+
+
+We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE) in separate posts.">
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      SQL 10. Managing Tables &amp; Databases
+    </h1>
+    <div class="post-meta"><span title='2025-06-06 00:00:00 +0000 UTC'>June 6, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-data-types" aria-label="1. Data Types">1. Data Types</a><ul>
+                        
+                <li>
+                    <a href="#11-numeric-data-types" aria-label="1.1 Numeric Data Types">1.1 Numeric Data Types</a></li>
+                <li>
+                    <a href="#12-string-data-types" aria-label="1.2 String Data Types">1.2 String Data Types</a></li>
+                <li>
+                    <a href="#13-datetime-data-types" aria-label="1.3 Date/Time Data Types">1.3 Date/Time Data Types</a></li>
+                <li>
+                    <a href="#14-other-data-types" aria-label="1.4 Other Data Types">1.4 Other Data Types</a></li></ul>
+                </li>
+                <li>
+                    <a href="#2-constraints" aria-label="2. Constraints">2. Constraints</a><ul>
+                        
+                <li>
+                    <a href="#example-column-level" aria-label="Example: Column-level">Example: Column-level</a></li>
+                <li>
+                    <a href="#example-table-level" aria-label="Example: Table-level">Example: Table-level</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-check-constraints" aria-label="3. CHECK Constraints">3. CHECK Constraints</a><ul>
+                        
+                <li>
+                    <a href="#example-column-level-1" aria-label="Example (Column-level):">Example (Column-level):</a></li>
+                <li>
+                    <a href="#with-custom-name" aria-label="With custom name:">With custom name:</a></li>
+                <li>
+                    <a href="#table-level" aria-label="Table-level:">Table-level:</a></li>
+                <li>
+                    <a href="#alter-to-add" aria-label="ALTER to add:">ALTER to add:</a></li>
+                <li>
+                    <a href="#alter-to-drop-or-rename" aria-label="ALTER to drop or rename:">ALTER to drop or rename:</a></li></ul>
+                </li>
+                <li>
+                    <a href="#4-primary-keys--foreign-keys" aria-label="4. Primary Keys &amp; Foreign Keys">4. Primary Keys &amp; Foreign Keys</a><ul>
+                        
+                <li>
+                    <a href="#primary-key" aria-label="Primary Key">Primary Key</a></li>
+                <li>
+                    <a href="#foreign-key" aria-label="Foreign Key">Foreign Key</a></li></ul>
+                </li>
+                <li>
+                    <a href="#5-creating-and-managing-databases--tables" aria-label="5. Creating and Managing Databases &amp; Tables">5. Creating and Managing Databases &amp; Tables</a><ul>
+                        
+                <li>
+                    <a href="#create-database" aria-label="CREATE DATABASE">CREATE DATABASE</a></li>
+                <li>
+                    <a href="#drop-database" aria-label="DROP DATABASE">DROP DATABASE</a></li>
+                <li>
+                    <a href="#create-table" aria-label="CREATE TABLE">CREATE TABLE</a></li>
+                <li>
+                    <a href="#insert-into" aria-label="INSERT INTO">INSERT INTO</a></li>
+                <li>
+                    <a href="#alter-table" aria-label="ALTER TABLE">ALTER TABLE</a></li>
+                <li>
+                    <a href="#drop-table-vs-truncate" aria-label="DROP TABLE vs. TRUNCATE">DROP TABLE vs. TRUNCATE</a></li></ul>
+                </li>
+                <li>
+                    <a href="#summary-key-interview-concepts" aria-label="Summary: Key Interview Concepts">Summary: Key Interview Concepts</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><p>In previous posts, we focused on querying tables. In this post, we’ll explore <strong>data definition</strong> in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.</p>
+<blockquote>
+<p>Mastering these operations shows that you not only know how to <em>query</em> data, but also how to <em>design</em> and <em>manage</em> the structures that hold it.</p></blockquote>
+<p>We&rsquo;ll cover:</p>
+<ul>
+<li>Data types</li>
+<li>Constraints</li>
+<li>Primary and foreign keys</li>
+<li>Creating and altering tables and databases</li>
+</ul>
+<blockquote>
+<p>We&rsquo;ll cover <strong>views</strong>, <strong>indexes</strong>, and <strong>data manipulation (INSERT, UPDATE, DELETE)</strong> in separate posts.</p></blockquote>
+<hr>
+<h2 id="1-data-types">1. Data Types<a hidden class="anchor" aria-hidden="true" href="#1-data-types">#</a></h2>
+<p>Choosing the correct data type ensures efficient storage and reliable data validation. PostgreSQL supports many types. Learn more from the <a href="https://www.postgresql.org/docs/current/datatype.html">official documentation</a>.</p>
+<h3 id="11-numeric-data-types">1.1 Numeric Data Types<a hidden class="anchor" aria-hidden="true" href="#11-numeric-data-types">#</a></h3>
+<div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Storage</th>
+          <th>Range</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>INT</code></td>
+          <td>4 bytes</td>
+          <td><code>-2^31</code> to <code>2^31-1</code></td>
+          <td>Common choice</td>
+      </tr>
+      <tr>
+          <td><code>SMALLINT</code></td>
+          <td>2 bytes</td>
+          <td><code>-2^15</code> to <code>2^15-1</code></td>
+          <td>Small integers</td>
+      </tr>
+      <tr>
+          <td><code>BIGINT</code></td>
+          <td>8 bytes</td>
+          <td><code>-2^63</code> to <code>2^63-1</code></td>
+          <td>Large integers</td>
+      </tr>
+      <tr>
+          <td><code>NUMERIC(p, s)</code></td>
+          <td>Variable</td>
+          <td>User-defined precision and scale</td>
+          <td>Exact values</td>
+      </tr>
+      <tr>
+          <td><code>SERIAL</code></td>
+          <td>4 bytes</td>
+          <td>Auto-increments (1 to <code>2^31</code>)</td>
+          <td>Often used for IDs</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div>
+<ul>
+<li>Use <code>NUMERIC(p, s)</code> for money or precise decimal values.</li>
+<li>Use <code>SERIAL</code> for auto-incrementing primary keys.</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>NUMERIC(<span style="color:#ae81ff">4</span>, <span style="color:#ae81ff">2</span>) <span style="color:#75715e">-- Allows values like 24.99 (4 total digits, 2 after decimal)
+</span></span></span></code></pre></div><h3 id="12-string-data-types">1.2 String Data Types<a hidden class="anchor" aria-hidden="true" href="#12-string-data-types">#</a></h3>
+<div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>VARCHAR(n)</code></td>
+          <td>Variable-length string (limit <code>n</code>)</td>
+          <td>Use when length cap needed</td>
+      </tr>
+      <tr>
+          <td><code>CHAR(n)</code></td>
+          <td>Fixed-length string, space-padded</td>
+          <td>Rarely used</td>
+      </tr>
+      <tr>
+          <td><code>TEXT</code></td>
+          <td>Unlimited-length string</td>
+          <td>Common and flexible</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div>
+<blockquote>
+<p>Store ZIP codes and phone numbers as <code>TEXT</code>, not integers — they are not meant for mathematical operations.</p></blockquote>
+<h3 id="13-datetime-data-types">1.3 Date/Time Data Types<a hidden class="anchor" aria-hidden="true" href="#13-datetime-data-types">#</a></h3>
+<div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Example</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>DATE</code></td>
+          <td>Date only</td>
+          <td><code>'2023-01-01'</code></td>
+      </tr>
+      <tr>
+          <td><code>TIME</code></td>
+          <td>Time only</td>
+          <td><code>'13:45:30'</code></td>
+      </tr>
+      <tr>
+          <td><code>TIMESTAMP</code></td>
+          <td>Date and time</td>
+          <td><code>'2023-01-01 13:45:30'</code></td>
+      </tr>
+      <tr>
+          <td><code>INTERVAL</code></td>
+          <td>Time span</td>
+          <td><code>'2 days 3 hours'</code></td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div>
+<h3 id="14-other-data-types">1.4 Other Data Types<a hidden class="anchor" aria-hidden="true" href="#14-other-data-types">#</a></h3>
+<div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Notes</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>BOOLEAN</code></td>
+          <td><code>TRUE</code>, <code>FALSE</code>, <code>NULL</code></td>
+          <td>Logical values</td>
+      </tr>
+      <tr>
+          <td><code>ENUM</code></td>
+          <td>Custom set of allowed values</td>
+          <td>Enforce strict categories</td>
+      </tr>
+      <tr>
+          <td><code>ARRAY</code></td>
+          <td>Multiple values of the same type</td>
+          <td>e.g., <code>TEXT[]</code>, <code>INT[]</code></td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TYPE</span> mppa_rating <span style="color:#66d9ef">AS</span> ENUM(<span style="color:#e6db74">&#39;G&#39;</span>, <span style="color:#e6db74">&#39;PG&#39;</span>, <span style="color:#e6db74">&#39;PG-13&#39;</span>, <span style="color:#e6db74">&#39;R&#39;</span>, <span style="color:#e6db74">&#39;NC-17&#39;</span>);
+</span></span></code></pre></div><p>Arrays are powerful for storing multiple values, e.g. phone numbers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> name, phone[<span style="color:#ae81ff">1</span>] <span style="color:#66d9ef">FROM</span> customers
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">WHERE</span> <span style="color:#e6db74">&#39;+44-66764453&#39;</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">ANY</span>(phone);
+</span></span></code></pre></div><hr>
+<h2 id="2-constraints">2. Constraints<a hidden class="anchor" aria-hidden="true" href="#2-constraints">#</a></h2>
+<p>Constraints enforce rules at the column or table level:</p>
+<ul>
+<li><code>NOT NULL</code>: Value must be provided.</li>
+<li><code>UNIQUE</code>: No duplicate values allowed.</li>
+<li><code>DEFAULT</code>: Value used if none provided.</li>
+<li><code>PRIMARY KEY</code>: Uniquely identifies each row (<code>NOT NULL + UNIQUE</code>).</li>
+<li><code>FOREIGN KEY</code>: Ensures values exist in another table.</li>
+<li><code>CHECK</code>: Ensures values meet a condition.</li>
+</ul>
+<h3 id="example-column-level">Example: Column-level<a hidden class="anchor" aria-hidden="true" href="#example-column-level">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span>name TEXT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#e6db74">&#39;Unknown&#39;</span>
+</span></span></code></pre></div><h3 id="example-table-level">Example: Table-level<a hidden class="anchor" aria-hidden="true" href="#example-table-level">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (id, <span style="color:#66d9ef">version</span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">UNIQUE</span> (email)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CHECK</span> (price <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>)
+</span></span></code></pre></div><hr>
+<h2 id="3-check-constraints">3. CHECK Constraints<a hidden class="anchor" aria-hidden="true" href="#3-check-constraints">#</a></h2>
+<p><code>CHECK</code> limits the values inserted into a table.</p>
+<h3 id="example-column-level-1">Example (Column-level):<a hidden class="anchor" aria-hidden="true" href="#example-column-level-1">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> director (
+</span></span><span style="display:flex;"><span>    name TEXT <span style="color:#66d9ef">CHECK</span> (<span style="color:#66d9ef">length</span>(name) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="with-custom-name">With custom name:<a hidden class="anchor" aria-hidden="true" href="#with-custom-name">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> director (
+</span></span><span style="display:flex;"><span>    name TEXT <span style="color:#66d9ef">CONSTRAINT</span> name_length <span style="color:#66d9ef">CHECK</span> (<span style="color:#66d9ef">length</span>(name) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="table-level">Table-level:<a hidden class="anchor" aria-hidden="true" href="#table-level">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CHECK</span> (end_date <span style="color:#f92672">&gt;</span> start_date)
+</span></span></code></pre></div><h3 id="alter-to-add">ALTER to add:<a hidden class="anchor" aria-hidden="true" href="#alter-to-add">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> director
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CONSTRAINT</span> date_check <span style="color:#66d9ef">CHECK</span> (start_date <span style="color:#f92672">&gt;</span> date_of_birth);
+</span></span></code></pre></div><h3 id="alter-to-drop-or-rename">ALTER to drop or rename:<a hidden class="anchor" aria-hidden="true" href="#alter-to-drop-or-rename">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> director <span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">CONSTRAINT</span> date_check;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> director <span style="color:#66d9ef">RENAME</span> <span style="color:#66d9ef">CONSTRAINT</span> date_check <span style="color:#66d9ef">TO</span> valid_dates;
+</span></span></code></pre></div><hr>
+<h2 id="4-primary-keys--foreign-keys">4. Primary Keys &amp; Foreign Keys<a hidden class="anchor" aria-hidden="true" href="#4-primary-keys--foreign-keys">#</a></h2>
+<h3 id="primary-key">Primary Key<a hidden class="anchor" aria-hidden="true" href="#primary-key">#</a></h3>
+<ul>
+<li>Uniquely identifies each row</li>
+<li>Implicitly <code>NOT NULL</code> + <code>UNIQUE</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> staff (
+</span></span><span style="display:flex;"><span>    staff_id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    name TEXT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><h3 id="foreign-key">Foreign Key<a hidden class="anchor" aria-hidden="true" href="#foreign-key">#</a></h3>
+<ul>
+<li>Points to a primary key in another table</li>
+<li>Enforces referential integrity</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> online_sales (
+</span></span><span style="display:flex;"><span>    transaction_id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    customer_id INT <span style="color:#66d9ef">REFERENCES</span> customer(customer_id),
+</span></span><span style="display:flex;"><span>    film_id INT <span style="color:#66d9ef">REFERENCES</span> film(film_id)
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><blockquote>
+<p>Foreign keys don’t need to be unique — multiple rows can reference the same parent.</p></blockquote>
+<hr>
+<h2 id="5-creating-and-managing-databases--tables">5. Creating and Managing Databases &amp; Tables<a hidden class="anchor" aria-hidden="true" href="#5-creating-and-managing-databases--tables">#</a></h2>
+<h3 id="create-database">CREATE DATABASE<a hidden class="anchor" aria-hidden="true" href="#create-database">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">DATABASE</span> shop <span style="color:#66d9ef">WITH</span> <span style="color:#66d9ef">ENCODING</span> <span style="color:#e6db74">&#39;UTF8&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">COMMENT</span> <span style="color:#66d9ef">ON</span> <span style="color:#66d9ef">DATABASE</span> shop <span style="color:#66d9ef">IS</span> <span style="color:#e6db74">&#39;Main e-commerce database&#39;</span>;
+</span></span></code></pre></div><h3 id="drop-database">DROP DATABASE<a hidden class="anchor" aria-hidden="true" href="#drop-database">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">DATABASE</span> shop;
+</span></span></code></pre></div><hr>
+<h3 id="create-table">CREATE TABLE<a hidden class="anchor" aria-hidden="true" href="#create-table">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">CREATE</span> <span style="color:#66d9ef">TABLE</span> customers (
+</span></span><span style="display:flex;"><span>    customer_id SERIAL <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span>,
+</span></span><span style="display:flex;"><span>    name TEXT <span style="color:#66d9ef">NOT</span> <span style="color:#66d9ef">NULL</span>,
+</span></span><span style="display:flex;"><span>    email TEXT <span style="color:#66d9ef">UNIQUE</span>
+</span></span><span style="display:flex;"><span>);
+</span></span></code></pre></div><hr>
+<h3 id="insert-into">INSERT INTO<a hidden class="anchor" aria-hidden="true" href="#insert-into">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> customers (name, email)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;Alice&#39;</span>, <span style="color:#e6db74">&#39;alice@example.com&#39;</span>);
+</span></span></code></pre></div><p>Insert multiple rows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">INSERT</span> <span style="color:#66d9ef">INTO</span> customers (name, email)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">VALUES</span> (<span style="color:#e6db74">&#39;Bob&#39;</span>, <span style="color:#e6db74">&#39;bob@example.com&#39;</span>), (<span style="color:#e6db74">&#39;Charlie&#39;</span>, <span style="color:#e6db74">&#39;charlie@example.com&#39;</span>);
+</span></span></code></pre></div><blockquote>
+<p><code>SERIAL</code> values continue incrementing even after deletes.</p></blockquote>
+<p>Reset sequence:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> SEQUENCE customers_customer_id_seq <span style="color:#66d9ef">RESTART</span> <span style="color:#66d9ef">WITH</span> <span style="color:#ae81ff">1</span>;
+</span></span></code></pre></div><hr>
+<h3 id="alter-table">ALTER TABLE<a hidden class="anchor" aria-hidden="true" href="#alter-table">#</a></h3>
+<p>Add a column:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> staff <span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">COLUMN</span> birth_date DATE;
+</span></span></code></pre></div><p>Rename column or table:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> staff <span style="color:#66d9ef">RENAME</span> <span style="color:#66d9ef">COLUMN</span> name <span style="color:#66d9ef">TO</span> full_name;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> staff <span style="color:#66d9ef">RENAME</span> <span style="color:#66d9ef">TO</span> employees;
+</span></span></code></pre></div><p>Change data type:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> staff <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> salary <span style="color:#66d9ef">TYPE</span> NUMERIC(<span style="color:#ae81ff">10</span>, <span style="color:#ae81ff">2</span>);
+</span></span></code></pre></div><p>Set or drop default:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> staff <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#66d9ef">role</span> <span style="color:#66d9ef">SET</span> <span style="color:#66d9ef">DEFAULT</span> <span style="color:#e6db74">&#39;Staff&#39;</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> staff <span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">COLUMN</span> <span style="color:#66d9ef">role</span> <span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">DEFAULT</span>;
+</span></span></code></pre></div><p>Add constraints:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">ALTER</span> <span style="color:#66d9ef">TABLE</span> staff
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CONSTRAINT</span> unique_email <span style="color:#66d9ef">UNIQUE</span> (email),
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ADD</span> <span style="color:#66d9ef">CONSTRAINT</span> staff_pk <span style="color:#66d9ef">PRIMARY</span> <span style="color:#66d9ef">KEY</span> (staff_id);
+</span></span></code></pre></div><blockquote>
+<p>You can add multiple constraints in a single <code>ALTER TABLE</code>, <strong>except for <code>RENAME</code></strong>, which must be done separately.</p></blockquote>
+<hr>
+<h3 id="drop-table-vs-truncate">DROP TABLE vs. TRUNCATE<a hidden class="anchor" aria-hidden="true" href="#drop-table-vs-truncate">#</a></h3>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sql" data-lang="sql"><span style="display:flex;"><span><span style="color:#66d9ef">DROP</span> <span style="color:#66d9ef">TABLE</span> orders;      <span style="color:#75715e">-- Removes table structure + data
+</span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">TRUNCATE</span> <span style="color:#66d9ef">TABLE</span> orders;  <span style="color:#75715e">-- Clears all rows, keeps structure
+</span></span></span></code></pre></div><hr>
+<h2 id="summary-key-interview-concepts">Summary: Key Interview Concepts<a hidden class="anchor" aria-hidden="true" href="#summary-key-interview-concepts">#</a></h2>
+<h2 id="hahahugoshortcode19s4hbhb"><div class="custom-table-wrapper">
+    <table>
+      <table>
+  <thead>
+      <tr>
+          <th>Concept</th>
+          <th>Must Know For Interviews</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><code>SERIAL</code> &amp; sequences</td>
+          <td>Auto-increment behavior</td>
+      </tr>
+      <tr>
+          <td><code>CHECK</code> constraints</td>
+          <td>Column vs. table-level</td>
+      </tr>
+      <tr>
+          <td><code>ALTER TABLE</code> usage</td>
+          <td>Syntax for modifying tables</td>
+      </tr>
+      <tr>
+          <td><code>PRIMARY</code> / <code>FOREIGN</code> keys</td>
+          <td>Relationship modeling</td>
+      </tr>
+      <tr>
+          <td><code>VARCHAR</code> vs <code>TEXT</code></td>
+          <td>When to use each</td>
+      </tr>
+      <tr>
+          <td><code>TRUNCATE</code> vs <code>DELETE</code> vs <code>DROP</code></td>
+          <td>Effects on data and schema</td>
+      </tr>
+  </tbody>
+</table>
+
+    </table>
+</div></h2>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.minjunjeon.com/tags/sql/">Sql</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/table/">Table</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/create/">Create</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/drop/">Drop</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/foreign-key/">Foreign Key</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/primary-key/">Primary Key</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/databases/">Databases</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

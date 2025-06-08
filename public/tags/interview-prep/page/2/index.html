@@ -157,6 +157,22 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 9. Union and Subqueries
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. UNION/UNION ALL In contrast to JOINS, UNION combines rows instead of columns.
+a) Basic Syntax The syntax is as follows:
+SELECT column_name1, column_name2 FROM table_name1 UNION SELECT column_name3, column_name4 FROM table_name2 The number of columns from the first table should match the number of columns from the second table.
+Columns are matched by the order. For example column_name1 and column_name3 don’t need to be identitcal. The merged table will have column names of the first table, i.e. column_name1 and column_name2.
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 9. Union and Subqueries" href="https://www.minjunjeon.com/posts/data_eng/sql/sql9/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">1. Big O asymptotic analysis
     </h2>
   </header>
@@ -286,27 +302,12 @@ a) Dialects of SQL All DMBS’s have slightly different dialects even though the
   <footer class="entry-footer"><span title='2025-05-29 00:00:00 +0000 UTC'>May 29, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to Intro to SQL" href="https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/"></a>
 </article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 1. Basics
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Here, we go through basic SQL commands:
-1. SELECT SELECT is used to select and return data. For a single column, the syntax is as below:
-SELECT column_name FROM table_name1 For multiple columns, you just list the column names with ,.
-SELECT column_name1, column_name2 FROM table_name1 To select all columns, use *.
-SELECT * FROM table_name1 Note that the exact format doesn’t matter, e.g. the two examples are the same:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-05-29 00:00:00 +0000 UTC'>May 29, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 1. Basics" href="https://www.minjunjeon.com/posts/data_eng/sql/sql1/"></a>
-</article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://www.minjunjeon.com/tags/interview-prep/">
       «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://www.minjunjeon.com/tags/interview-prep/page/3/">Next&nbsp;&nbsp;»
     </a>
   </nav>
 </footer>

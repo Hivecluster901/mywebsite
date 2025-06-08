@@ -11,8 +11,64 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Create</title>
+      <link>https://www.minjunjeon.com/tags/create/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/create/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Databases</title>
+      <link>https://www.minjunjeon.com/tags/databases/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/databases/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Drop</title>
+      <link>https://www.minjunjeon.com/tags/drop/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/drop/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Foreign Key</title>
+      <link>https://www.minjunjeon.com/tags/foreign-key/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/foreign-key/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview Prep</title>
+      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Primary Key</title>
+      <link>https://www.minjunjeon.com/tags/primary-key/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/primary-key/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>https://www.minjunjeon.com/tags/sql/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Table</title>
+      <link>https://www.minjunjeon.com/tags/table/</link>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/table/</guid>
+      <description></description>
+    </item>
     <item>
       <title>__Init__.py</title>
       <link>https://www.minjunjeon.com/tags/__init__.py/</link>
@@ -56,13 +112,6 @@
       <description></description>
     </item>
     <item>
-      <title>Databases</title>
-      <link>https://www.minjunjeon.com/tags/databases/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/databases/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Dbt</title>
       <link>https://www.minjunjeon.com/tags/dbt/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
@@ -74,13 +123,6 @@
       <link>https://www.minjunjeon.com/tags/filter/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/tags/filter/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Interview Prep</title>
-      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
       <description></description>
     </item>
     <item>
@@ -207,13 +249,6 @@
       <link>https://www.minjunjeon.com/tags/oltp/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/tags/oltp/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sql</title>
-      <link>https://www.minjunjeon.com/tags/sql/</link>
-      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/sql/</guid>
       <description></description>
     </item>
     <item>
