@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Lead on Minjun Jeon</title>
+    <link>https://www.minjunjeon.com/tags/lead/</link>
+    <description>Recent content in Lead on Minjun Jeon</description>
+    <image>
+      <title>Minjun Jeon</title>
+      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
+      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+    </image>
+    <generator>Hugo -- 0.147.5</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://www.minjunjeon.com/tags/lead/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL 12. Window Functions</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql12/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql12/</guid>
+      <description>&lt;p&gt;Window functions in PostgreSQL allow you to perform calculations across sets of rows &lt;strong&gt;related to the current row&lt;/strong&gt;, without collapsing rows like &lt;code&gt;GROUP BY&lt;/code&gt; does. They’re essential for solving ranking, running totals, moving averages, and row-by-row comparisons.&lt;/p&gt;
+&lt;p&gt;This post reviews key window functions with practical, interview-friendly examples.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-over-partition-by-&#34;&gt;1. &lt;code&gt;OVER (PARTITION BY ...)&lt;/code&gt;&lt;/h2&gt;
+&lt;p&gt;Window functions let you run aggregations &lt;strong&gt;without reducing the number of rows&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;A correlated subquery alternative:&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-postgresql&#34; data-lang=&#34;postgresql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  transaction_id,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  payment_type,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  customer_id,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  price_in_transaction,
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  (&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; SUM(price_in_transaction)
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; sales s2
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;   &lt;span style=&#34;color:#66d9ef&#34;&gt;WHERE&lt;/span&gt; s1&lt;span style=&#34;color:#ae81ff&#34;&gt;.&lt;/span&gt;customer_id &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; s2&lt;span style=&#34;color:#ae81ff&#34;&gt;.&lt;/span&gt;customer_id) &lt;span style=&#34;color:#66d9ef&#34;&gt;AS&lt;/span&gt; total_by_customer
+&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; sales s1;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;This works but is inefficient. Instead, use:&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

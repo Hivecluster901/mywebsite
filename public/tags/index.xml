@@ -11,8 +11,64 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 08 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>First_value</title>
+      <link>https://www.minjunjeon.com/tags/first_value/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/first_value/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Interview Prep</title>
+      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lag</title>
+      <link>https://www.minjunjeon.com/tags/lag/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/lag/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Lead</title>
+      <link>https://www.minjunjeon.com/tags/lead/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/lead/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Over</title>
+      <link>https://www.minjunjeon.com/tags/over/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/over/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rank</title>
+      <link>https://www.minjunjeon.com/tags/rank/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/rank/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>https://www.minjunjeon.com/tags/sql/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Window Function</title>
+      <link>https://www.minjunjeon.com/tags/window-function/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/window-function/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Data Manipulation</title>
       <link>https://www.minjunjeon.com/tags/data-manipulation/</link>
@@ -28,24 +84,10 @@
       <description></description>
     </item>
     <item>
-      <title>Interview Prep</title>
-      <link>https://www.minjunjeon.com/tags/interview-prep/</link>
-      <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Materialized Views</title>
       <link>https://www.minjunjeon.com/tags/materialized-views/</link>
       <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/tags/materialized-views/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sql</title>
-      <link>https://www.minjunjeon.com/tags/sql/</link>
-      <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/sql/</guid>
       <description></description>
     </item>
     <item>

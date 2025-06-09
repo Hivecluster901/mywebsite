@@ -157,6 +157,23 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 12. Window Functions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Window functions in PostgreSQL allow you to perform calculations across sets of rows related to the current row, without collapsing rows like GROUP BY does. They’re essential for solving ranking, running totals, moving averages, and row-by-row comparisons.
+This post reviews key window functions with practical, interview-friendly examples.
+1. OVER (PARTITION BY ...) Window functions let you run aggregations without reducing the number of rows.
+A correlated subquery alternative:
+SELECT transaction_id, payment_type, customer_id, price_in_transaction, (SELECT SUM(price_in_transaction) FROM sales s2 WHERE s1.customer_id = s2.customer_id) AS total_by_customer FROM sales s1; This works but is inefficient. Instead, use:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-09 00:00:00 +0000 UTC'>June 9, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 12. Window Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql12/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">SQL 11. Views &amp; Data Manipulation
     </h2>
   </header>
@@ -285,21 +302,6 @@ If there are m matching rows in the first table and n matching rows in the secon
   </div>
   <footer class="entry-footer"><span title='2025-06-02 00:00:00 +0000 UTC'>June 2, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to SQL 8. Joins" href="https://www.minjunjeon.com/posts/data_eng/sql/sql8/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 4. String Functions
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>In this post, we are going to look at basic string functions in SQL.
-1. UPPER, LOWER, LENGTH UPPER changes all lowercase alphabets to uppercase. LOWER changes all uppercase letters to lowercase. Finally, LENGTH gives the number of characters. The example is as follows:
-SELECT UPPER(first_name) LOWER(last_name) FROM customer WHERE LENGTH(first_name) &gt; 10 The above code outputs the first names in uppercase and last names in lowercase from the table customer where the length of the first name is more than 10.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 4. String Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql4/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

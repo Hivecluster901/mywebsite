@@ -164,6 +164,23 @@ The lecture introduces SQL and database using PostgreSQL.</p>
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 12. Window Functions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Window functions in PostgreSQL allow you to perform calculations across sets of rows related to the current row, without collapsing rows like GROUP BY does. They’re essential for solving ranking, running totals, moving averages, and row-by-row comparisons.
+This post reviews key window functions with practical, interview-friendly examples.
+1. OVER (PARTITION BY ...) Window functions let you run aggregations without reducing the number of rows.
+A correlated subquery alternative:
+SELECT transaction_id, payment_type, customer_id, price_in_transaction, (SELECT SUM(price_in_transaction) FROM sales s2 WHERE s1.customer_id = s2.customer_id) AS total_by_customer FROM sales s1; This works but is inefficient. Instead, use:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-09 00:00:00 +0000 UTC'>June 9, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 12. Window Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql12/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">SQL 11. Views &amp; Data Manipulation
     </h2>
   </header>
@@ -294,23 +311,6 @@ SELECT SUM(column_name1) FROM table_name1 You usually need to specify the column
   </div>
   <footer class="entry-footer"><span title='2025-05-31 00:00:00 +0000 UTC'>May 31, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to SQL 3. Grouping" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 2. Filtering
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Here we go through other basic SQL commands for filtering:
-1. WHERE WHERE is used to filter the data in the output. It always comes after FROM. The syntax is:
-SELECT column_name1, column_name2 FROM table_name1 WHERE condition For example, we can filter out all columns where the amount is 10.99.
-SELECT * FROM payment WHERE amount = 10.99 Furthermore, we can filter out certain columns.
-SELECT first_name, last_name FROM customer WHERE first_name = &#39;ADAM&#39; Enclose the texts around &#39;. We can use other operators to filter the data, e.g. &gt;,&lt;, &lt;=, &gt;=, != or &lt;&gt;,
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-05-30 00:00:00 +0000 UTC'>May 30, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 2. Filtering" href="https://www.minjunjeon.com/posts/data_eng/sql/sql2/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

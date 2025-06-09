@@ -197,6 +197,23 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 12. Window Functions
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Window functions in PostgreSQL allow you to perform calculations across sets of rows related to the current row, without collapsing rows like GROUP BY does. They’re essential for solving ranking, running totals, moving averages, and row-by-row comparisons.
+This post reviews key window functions with practical, interview-friendly examples.
+1. OVER (PARTITION BY ...) Window functions let you run aggregations without reducing the number of rows.
+A correlated subquery alternative:
+SELECT transaction_id, payment_type, customer_id, price_in_transaction, (SELECT SUM(price_in_transaction) FROM sales s2 WHERE s1.customer_id = s2.customer_id) AS total_by_customer FROM sales s1; This works but is inefficient. Instead, use:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-09 00:00:00 +0000 UTC'>June 9, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 12. Window Functions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql12/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">SQL 11. Views &amp; Data Manipulation
     </h2>
   </header>
@@ -329,20 +346,6 @@ Data is modeled to maximize query performance and simplify analytics. This contr
   </div>
   <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to Big Data 4. Denormalized Schema in Data Warehouses" href="https://www.minjunjeon.com/posts/data_eng/bd/bd4/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Big Data 5. Modern Data Stack
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>As the cost of cloud storage and compute continues to fall and internet speeds rise, data engineers are rethinking how data is stored, processed, and analyzed. This shift has led to what we now call the modern data stack: a flexible, scalable, cloud-native approach that replaces traditional monolithic systems.
-In this post, we’ll explore key architectural changes that enabled the modern data stack, from the transition from SMP to MPP, to the decoupling of storage and compute, and the rise of columnar databases, ELT workflows, and the tooling ecosystem that glues it all together.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to Big Data 5. Modern Data Stack" href="https://www.minjunjeon.com/posts/data_eng/bd/bd5/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
