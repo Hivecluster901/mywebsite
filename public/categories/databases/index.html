@@ -157,6 +157,34 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 13. Grouping Sets, Rollups, and Self-Joins: A Practical Interview Refresher
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Overview In SQL interviews, understanding advanced grouping and join techniques is crucial. This post dives into GROUPING SETS, ROLLUP, CUBE, and types of joins like self-joins, CROSS JOIN, and NATURAL JOIN. We also touch on how to interpret NULLs in grouping results and share interview tips along the way.
+1. GROUPING SETS GROUPING SETS let you define multiple GROUP BY combinations in a single query—ideal for multi-dimensional reports.
+Problem You want to calculate:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-11 00:00:00 +0000 UTC'>June 11, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 13. Grouping Sets, Rollups, and Self-Joins: A Practical Interview Refresher" href="https://www.minjunjeon.com/posts/data_eng/sql/sql13/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 13. Grouping sets, rollups, self-joins
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. GROPUING SETS GROUPING SETS allows us to define all of the combinations that our data should be grouped by in one query. For example, let’s say we want to get the revenue obtained by each staff for each month, revenue obtained for each month, and the revenue obtained by each staff for the entire database in one table. These are combinations of many GROUP BY’s with different columns. This can certainly be achieved by using multiple GROPU BY’s and UNION’s. For the above example, one can execute the following code:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-11 00:00:00 +0000 UTC'>June 11, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 13. Grouping sets, rollups, self-joins" href="https://www.minjunjeon.com/posts/data_eng/sql/sql13_original/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">SQL 12. Window Functions
     </h2>
   </header>
@@ -271,37 +299,6 @@ Silmiarly, one can think of data hierarchy of needs. The 5 levels are Data Colle
   </div>
   <footer class="entry-footer"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to Big Data 1. Data Maturity Model" href="https://www.minjunjeon.com/posts/data_eng/bd/bd1/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 9. Union and Subqueries
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>1. UNION/UNION ALL In contrast to JOINS, UNION combines rows instead of columns.
-a) Basic Syntax The syntax is as follows:
-SELECT column_name1, column_name2 FROM table_name1 UNION SELECT column_name3, column_name4 FROM table_name2 The number of columns from the first table should match the number of columns from the second table.
-Columns are matched by the order. For example column_name1 and column_name3 don’t need to be identitcal. The merged table will have column names of the first table, i.e. column_name1 and column_name2.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-03 00:00:00 +0000 UTC'>June 3, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 9. Union and Subqueries" href="https://www.minjunjeon.com/posts/data_eng/sql/sql9/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 8. Joins
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>JOIN is used to combine information from multiple tables in one query. There are four types of JOINs: INNER JOIN, OUTER JOIN, LEFT JOIN, and RIGHT JOIN. When combining two tables, you need one common column, so called reference column or join column.
-1. INNER JOIN INNER JOIN combines two tables only for the rows where the value in the join column occurs in both tables.
-If there are m matching rows in the first table and n matching rows in the second table for the join column value, the result will contain m × n rows for that value.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-02 00:00:00 +0000 UTC'>June 2, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 8. Joins" href="https://www.minjunjeon.com/posts/data_eng/sql/sql8/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

@@ -11,20 +11,69 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
-      <title>First_value</title>
-      <link>https://www.minjunjeon.com/tags/first_value/</link>
-      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/first_value/</guid>
+      <title>Cross Join</title>
+      <link>https://www.minjunjeon.com/tags/cross-join/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/cross-join/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Cube</title>
+      <link>https://www.minjunjeon.com/tags/cube/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/cube/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Grouping Sets</title>
+      <link>https://www.minjunjeon.com/tags/grouping-sets/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/grouping-sets/</guid>
       <description></description>
     </item>
     <item>
       <title>Interview Prep</title>
       <link>https://www.minjunjeon.com/tags/interview-prep/</link>
-      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/tags/interview-prep/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Natural Join</title>
+      <link>https://www.minjunjeon.com/tags/natural-join/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/natural-join/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Rollup</title>
+      <link>https://www.minjunjeon.com/tags/rollup/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/rollup/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Self Joins</title>
+      <link>https://www.minjunjeon.com/tags/self-joins/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/self-joins/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Sql</title>
+      <link>https://www.minjunjeon.com/tags/sql/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/sql/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>First_value</title>
+      <link>https://www.minjunjeon.com/tags/first_value/</link>
+      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/tags/first_value/</guid>
       <description></description>
     </item>
     <item>
@@ -53,13 +102,6 @@
       <link>https://www.minjunjeon.com/tags/rank/</link>
       <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/tags/rank/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Sql</title>
-      <link>https://www.minjunjeon.com/tags/sql/</link>
-      <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/tags/sql/</guid>
       <description></description>
     </item>
     <item>

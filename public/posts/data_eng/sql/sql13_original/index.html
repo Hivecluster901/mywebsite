@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>SQL 13. Grouping sets, rollups, self-joins | Minjun Jeon</title>
+<meta name="keywords" content="sql, grouping sets, rollup, cube, self joins, cross join, natural join, interview prep">
+<meta name="description" content="1. GROPUING SETS
+GROUPING SETS allows us to define all of the combinations that our data should be grouped by in one query. For example, let&rsquo;s say we want to get the revenue obtained by each staff for each month, revenue obtained for each month, and the revenue obtained by each staff for the entire database in one table. These are combinations of many GROUP BY&rsquo;s with different columns. This can certainly be achieved by using multiple GROPU BY&rsquo;s and UNION&rsquo;s. For the above example, one can execute the following code:">
+<meta name="author" content="map[name:Minjun Jeon]">
+<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql13_original/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
+<link rel="icon" href="/favicon.ico" type="image/x-icon">
+<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql13_original/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+</noscript>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "name": "Minjun Jeon",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+}
+</script>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Minjun Jeon",
+  "url": "https:\/\/www.minjunjeon.com\/",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "sameAs": [
+    "",
+    ""
+  ]
+}
+</script>
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql13_original\/"
+  },
+  "headline": "SQL 13. Grouping sets, rollups, self-joins",
+  "description": "\u003ch2 id=\u00221-gropuing-sets\u0022\u003e1. GROPUING SETS\u003c\/h2\u003e\n\u003cp\u003e\u003ccode\u003eGROUPING SETS\u003c\/code\u003e allows us to define all of the combinations that our data should be grouped by in one query. For example, let\u0026rsquo;s say we want to get the revenue obtained by each staff for each month, revenue obtained for each month, and the revenue obtained by each staff for the entire database in one table. These are combinations of many \u003ccode\u003eGROUP BY\u003c\/code\u003e\u0026rsquo;s with different columns. This can certainly be achieved by using multiple \u003ccode\u003eGROPU BY\u003c\/code\u003e\u0026rsquo;s and \u003ccode\u003eUNION\u003c\/code\u003e\u0026rsquo;s. For the above example, one can execute the following code:\u003c\/p\u003e",
+  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "author": {
+    "@type": "Person",
+    "name": "Minjun Jeon"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Minjun Jeon",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+    }
+  },
+  "datePublished": "2025-06-11T00:00:00Z",
+  "dateModified": "2025-06-11T00:00:00Z"
+}
+</script>
+
+<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql13_original/">
+  <meta property="og:site_name" content="Minjun Jeon">
+  <meta property="og:title" content="SQL 13. Grouping sets, rollups, self-joins">
+  <meta property="og:description" content="1. GROPUING SETS GROUPING SETS allows us to define all of the combinations that our data should be grouped by in one query. For example, let’s say we want to get the revenue obtained by each staff for each month, revenue obtained for each month, and the revenue obtained by each staff for the entire database in one table. These are combinations of many GROUP BY’s with different columns. This can certainly be achieved by using multiple GROPU BY’s and UNION’s. For the above example, one can execute the following code:">
+  <meta property="og:locale" content="en-us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-06-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-06-11T00:00:00+00:00">
+    <meta property="article:tag" content="Sql">
+    <meta property="article:tag" content="Grouping Sets">
+    <meta property="article:tag" content="Rollup">
+    <meta property="article:tag" content="Cube">
+    <meta property="article:tag" content="Self Joins">
+    <meta property="article:tag" content="Cross Join">
+      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:title" content="SQL 13. Grouping sets, rollups, self-joins">
+<meta name="twitter:description" content="1. GROPUING SETS
+GROUPING SETS allows us to define all of the combinations that our data should be grouped by in one query. For example, let&rsquo;s say we want to get the revenue obtained by each staff for each month, revenue obtained for each month, and the revenue obtained by each staff for the entire database in one table. These are combinations of many GROUP BY&rsquo;s with different columns. This can certainly be achieved by using multiple GROPU BY&rsquo;s and UNION&rsquo;s. For the above example, one can execute the following code:">
+
+</head>
+
+<body class=" dark" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://www.minjunjeon.com/" title="Home">
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                    <span>About</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                    <span>Blog</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                    <span>Projects</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                    <span>Contact</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                    <span>Resume</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    
+    <h1 class="post-title entry-hint-parent">
+      SQL 13. Grouping sets, rollups, self-joins
+    </h1>
+    <div class="post-meta"><span title='2025-06-11 00:00:00 +0000 UTC'>June 11, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]
+
+</div>
+  </header> <div class="toc">
+    <details >
+        <summary accesskey="c" title="(Alt + C)">
+            <span class="details">Table of Contents</span>
+        </summary>
+
+        <div class="inner"><ul>
+                <li>
+                    <a href="#1-gropuing-sets" aria-label="1. GROPUING SETS">1. GROPUING SETS</a></li>
+                <li>
+                    <a href="#2-cube--rollup" aria-label="2. CUBE &amp; ROLLUP">2. CUBE &amp; ROLLUP</a><ul>
+                        
+                <li>
+                    <a href="#1-rollup" aria-label="1. ROLLUP">1. ROLLUP</a></li>
+                <li>
+                    <a href="#2-cube" aria-label="2. CUBE">2. CUBE</a></li></ul>
+                </li>
+                <li>
+                    <a href="#3-self-join" aria-label="3. Self-join">3. Self-join</a></li>
+                <li>
+                    <a href="#4-cross-join" aria-label="4. CROSS JOIN">4. CROSS JOIN</a></li>
+                <li>
+                    <a href="#5-natural-join" aria-label="5. NATURAL JOIN">5. NATURAL JOIN</a>
+                </li>
+            </ul>
+        </div>
+    </details>
+</div>
+
+  <div class="post-content"><h2 id="1-gropuing-sets">1. GROPUING SETS<a hidden class="anchor" aria-hidden="true" href="#1-gropuing-sets">#</a></h2>
+<p><code>GROUPING SETS</code> allows us to define all of the combinations that our data should be grouped by in one query. For example, let&rsquo;s say we want to get the revenue obtained by each staff for each month, revenue obtained for each month, and the revenue obtained by each staff for the entire database in one table. These are combinations of many <code>GROUP BY</code>&rsquo;s with different columns. This can certainly be achieved by using multiple <code>GROPU BY</code>&rsquo;s and <code>UNION</code>&rsquo;s. For the above example, one can execute the following code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">month</span>,
+</span></span><span style="display:flex;"><span>staff_id,
+</span></span><span style="display:flex;"><span>SUM(amount)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> staff_id
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">UNION</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">month</span>,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">NULL</span> <span style="color:#66d9ef">AS</span> staff_id,
+</span></span><span style="display:flex;"><span>SUM(amount)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> <span style="color:#66d9ef">month</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">UNION</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">month</span>,
+</span></span><span style="display:flex;"><span>staff_id,
+</span></span><span style="display:flex;"><span>SUM(amount)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">month</span>, staff_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><p>Here, we are grouping the table by <code>staff_id</code>, <code>month</code>, <code>staff_id</code> and <code>month</code>. Note that we need to make a <code>NULL</code> column for the grouped table by <code>staff_id</code> and <code>month</code> because one of the two columns will not be present for each gropued table.</p>
+<p>Though the above code achieves what we want, the above query is inefficient. Alternatively, we can use <code>GROUPING SETS</code> to achieve the same result.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">month</span>,
+</span></span><span style="display:flex;"><span>staff_id,
+</span></span><span style="display:flex;"><span>SUM(amount)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>
+</span></span><span style="display:flex;"><span>    GROUPING SETS (
+</span></span><span style="display:flex;"><span>        (staff_id),
+</span></span><span style="display:flex;"><span>        (<span style="color:#66d9ef">month</span>),
+</span></span><span style="display:flex;"><span>        (staff_id, <span style="color:#66d9ef">month</span>) 
+</span></span><span style="display:flex;"><span>    )
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>
+</span></span></code></pre></div><h2 id="2-cube--rollup">2. CUBE &amp; ROLLUP<a hidden class="anchor" aria-hidden="true" href="#2-cube--rollup">#</a></h2>
+<p>We can use <code>CUBE</code> and <code>ROLLUP</code> to get a predefined grouping set.</p>
+<h3 id="1-rollup">1. ROLLUP<a hidden class="anchor" aria-hidden="true" href="#1-rollup">#</a></h3>
+<p><code>ROLLUP</code> is used to create a hierarchy in the grouping set: If a set of columns are connected via one-to-many relationships, then this forms a natural hierarchy.</p>
+<p>The syntax is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> 
+</span></span><span style="display:flex;"><span>ROLLUP(column1, column2, column3)
+</span></span></code></pre></div><p><code>column1</code> is at the top of the hierarchy, followed by <code>column2</code> and <code>column3</code>.</p>
+<p>The above is equivalent to the code below:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>
+</span></span><span style="display:flex;"><span>GROUPING SETS (
+</span></span><span style="display:flex;"><span>    (column1, column2, column3),
+</span></span><span style="display:flex;"><span>    (column1, column2),
+</span></span><span style="display:flex;"><span>    (column1),
+</span></span><span style="display:flex;"><span>    ()
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>Suppose that you want to calculate the total revenue of a quarter, month, and date.
+They form a hierarchy because a date should be in one month, and a month should be in one quater. We can use the following command to calculate those:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span><span style="color:#e6db74">&#39;Q&#39;</span> <span style="color:#f92672">||</span> TO_CHAR(payment_date, <span style="color:#e6db74">&#39;Q&#39;</span>) <span style="color:#66d9ef">AS</span> quarter,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">EXTRACT</span>(<span style="color:#66d9ef">month</span> <span style="color:#66d9ef">from</span> payment_date) <span style="color:#66d9ef">AS</span> <span style="color:#66d9ef">month</span>,
+</span></span><span style="display:flex;"><span>DATE(payment_date),
+</span></span><span style="display:flex;"><span>SUM(amount)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>
+</span></span><span style="display:flex;"><span>ROLLUP (<span style="color:#e6db74">&#39;Q&#39;</span> <span style="color:#f92672">||</span> TO_CHAR(payment_date, <span style="color:#e6db74">&#39;Q&#39;</span>), 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">EXTRACT</span>(<span style="color:#66d9ef">month</span> <span style="color:#66d9ef">from</span> payment_date), 
+</span></span><span style="display:flex;"><span>DATE(payment_date))
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><h3 id="2-cube">2. CUBE<a hidden class="anchor" aria-hidden="true" href="#2-cube">#</a></h3>
+<p><code>CUBE</code> also gives you a predefined grouping set but for columns that are not strictly in a hierarchical order.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span> 
+</span></span><span style="display:flex;"><span>CUBE (column1, column2, column3)
+</span></span></code></pre></div><p>In this case, you get all possible combinations from the three columns:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>
+</span></span><span style="display:flex;"><span>GROUPING SETS (
+</span></span><span style="display:flex;"><span>    (column1, column2, column3),
+</span></span><span style="display:flex;"><span>    (column1, column2),
+</span></span><span style="display:flex;"><span>    (column1, column3),
+</span></span><span style="display:flex;"><span>    (column2, column3),
+</span></span><span style="display:flex;"><span>    (column1),
+</span></span><span style="display:flex;"><span>    (column2),
+</span></span><span style="display:flex;"><span>    (column3),
+</span></span><span style="display:flex;"><span>    ()
+</span></span><span style="display:flex;"><span>)
+</span></span></code></pre></div><p>For example, suppose that you want to calculate the amount paid per customer per staff_id per day. There is no natural hierarchy between these three columns, i.e. they are connected many-to-many relationships. We can use the following command:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>customer_id,
+</span></span><span style="display:flex;"><span>staff_id,
+</span></span><span style="display:flex;"><span>DATE(payment_date),
+</span></span><span style="display:flex;"><span>SUM(amount)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> payment
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">GROUP</span> <span style="color:#66d9ef">BY</span>
+</span></span><span style="display:flex;"><span>CUBE(
+</span></span><span style="display:flex;"><span>customer_id,
+</span></span><span style="display:flex;"><span>staff_id,
+</span></span><span style="display:flex;"><span>DATE(payment_date)
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ORDER</span> <span style="color:#66d9ef">BY</span> <span style="color:#ae81ff">1</span>,<span style="color:#ae81ff">2</span>,<span style="color:#ae81ff">3</span>
+</span></span></code></pre></div><h2 id="3-self-join">3. Self-join<a hidden class="anchor" aria-hidden="true" href="#3-self-join">#</a></h2>
+<p><em>Self-join</em> is the join of the table with itself. The syntax is the same as the normal join except we have the same table appearing twice:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>t1<span style="color:#ae81ff">.</span>column1,
+</span></span><span style="display:flex;"><span>t2<span style="color:#ae81ff">.</span>column2,
+</span></span><span style="display:flex;"><span>[, <span style="color:#ae81ff">...</span>]
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table1 t1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> table1 t2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> t1<span style="color:#ae81ff">.</span>column1 <span style="color:#f92672">=</span> t2<span style="color:#ae81ff">.</span>column1
+</span></span></code></pre></div><p>For example, if we have a table, <code>employee</code>, which has three columns, <code>employee_id</code>, <code>name</code>, and <code>manager_id</code>. The <code>manager_id</code> column is just referencing the <code>employee_id</code>.</p>
+<p>To get the name of the manager for each employee, one need to do self-join:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>e<span style="color:#ae81ff">.</span>employee_id, 
+</span></span><span style="display:flex;"><span>e<span style="color:#ae81ff">.</span><span style="color:#66d9ef">name</span>,
+</span></span><span style="display:flex;"><span>m<span style="color:#ae81ff">.</span><span style="color:#66d9ef">name</span> <span style="color:#66d9ef">AS</span> manager,
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> employee e
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> employee m
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> e<span style="color:#ae81ff">.</span>manager_id <span style="color:#f92672">=</span> m<span style="color:#ae81ff">.</span>employee_id
+</span></span></code></pre></div><p>You can also get the manager of managers:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>e<span style="color:#ae81ff">.</span>employee_id,
+</span></span><span style="display:flex;"><span>e<span style="color:#ae81ff">.</span><span style="color:#66d9ef">name</span>,
+</span></span><span style="display:flex;"><span>m1<span style="color:#ae81ff">.</span><span style="color:#66d9ef">name</span> <span style="color:#66d9ef">AS</span> manager,
+</span></span><span style="display:flex;"><span>m2<span style="color:#ae81ff">.</span><span style="color:#66d9ef">name</span> <span style="color:#66d9ef">AS</span> manger_of_manager
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> employee e
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> employee m1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> e<span style="color:#ae81ff">.</span>manager_id <span style="color:#f92672">=</span> m1<span style="color:#ae81ff">.</span>employee_id
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> employee m2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">ON</span> m1<span style="color:#ae81ff">.</span>manager_id <span style="color:#f92672">=</span> m2<span style="color:#ae81ff">.</span>employee_id
+</span></span></code></pre></div><h2 id="4-cross-join">4. CROSS JOIN<a hidden class="anchor" aria-hidden="true" href="#4-cross-join">#</a></h2>
+<p>With the <code>CROSS JOIN</code>, we get the cartesian product of two tables, i.e. all combinations of rows.</p>
+<p>The syntax is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span>
+</span></span><span style="display:flex;"><span>t1<span style="color:#ae81ff">.</span>column1,
+</span></span><span style="display:flex;"><span>t2<span style="color:#ae81ff">.</span>column2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table1 t1
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">CROSS</span> <span style="color:#66d9ef">JOIN</span> table2 t2
+</span></span></code></pre></div><p>Since this is a combination of all rows, but a combination of all values, you can have duplicate values.</p>
+<h2 id="5-natural-join">5. NATURAL JOIN<a hidden class="anchor" aria-hidden="true" href="#5-natural-join">#</a></h2>
+<p><code>NATURAL JOIN</code> is like a normal join except it automatically joins tables using the columns of the same name. The synatx is as follows:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-postgresql" data-lang="postgresql"><span style="display:flex;"><span><span style="color:#66d9ef">SELECT</span> 
+</span></span><span style="display:flex;"><span><span style="color:#f92672">*</span> 
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">FROM</span> table2
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">NATURAL</span> <span style="color:#66d9ef">LEFT</span> <span style="color:#66d9ef">JOIN</span> table2
+</span></span></code></pre></div><p>You have to make sure that <code>NATURAL JOIN</code> is using the right columns. If we have multiple columns with same names in both tables, natural join is confused and join the two tables using a wrong column.</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://www.minjunjeon.com/tags/sql/">Sql</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/grouping-sets/">Grouping Sets</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/rollup/">Rollup</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/cube/">Cube</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/self-joins/">Self Joins</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/cross-join/">Cross Join</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/natural-join/">Natural Join</a></li>
+      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<footer class="footer">
+        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+
+    <span>
+        Powered by
+        <a href="https://gohugo.io/" rel="noopener noreferrer" target="_blank">Hugo</a> &
+        <a href="https://github.com/adityatelange/hugo-PaperMod/" rel="noopener" target="_blank">PaperMod</a>
+    </span>
+</footer>
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

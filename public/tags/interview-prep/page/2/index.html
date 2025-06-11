@@ -157,6 +157,36 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">Big Data 3. Data Warehouses, Data Lakes, and Lake Houses
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. Data Warehouses A Data Warehouse (DW) is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.
+Unlike transactional databases (OLTP), data warehouses are built for analytical workloads (OLAP): they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.
+Data warehouses typically use:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to Big Data 3. Data Warehouses, Data Lakes, and Lake Houses" href="https://www.minjunjeon.com/posts/data_eng/bd/bd3/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">Big Data 4. Denormalized Schema in Data Warehouses
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. Denormalized Schema A denormalized schema is a database design that reduces the number of joins by combining related data into fewer tables, often at the expense of some redundancy.
+Optimized for read-heavy analytical workloads Not ideal for OLTP systems (which benefit from normalization) In a typical data warehouse:
+Data is modeled to maximize query performance and simplify analytics. This contrasts with normalized schemas used in transactional databases, where the goal is data integrity and avoiding redundancy. 2. Star and Snowflake Schemas Two common denormalized designs are:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to Big Data 4. Denormalized Schema in Data Warehouses" href="https://www.minjunjeon.com/posts/data_eng/bd/bd4/"></a>
+</article>
+
+<article class="post-entry tag-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">Big Data 5. Modern Data Stack
     </h2>
   </header>
@@ -267,37 +297,6 @@ SELECT UPPER(first_name) LOWER(last_name) FROM customer WHERE LENGTH(first_name)
   </div>
   <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to SQL 6. Numerical Functions and Operators" href="https://www.minjunjeon.com/posts/data_eng/sql/sql6/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 7. Conditional Expressions
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Here, we go through conditional expressions.
-1. CASE WHEN CASE WHEN goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:
-CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN THEN resultN ELSE result END Start the statement with CASE and end with END. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both condition1 and condition2 are true, only result1 will be returned. If there is no ELSE statement, and all the conditions after WHEN are not met, NULL is returned.
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-01 00:00:00 +0000 UTC'>June 1, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 7. Conditional Expressions" href="https://www.minjunjeon.com/posts/data_eng/sql/sql7/"></a>
-</article>
-
-<article class="post-entry tag-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">SQL 3. Grouping
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>Here we go through other basic SQL commands for grouping:
-1. Aggregate Functions Aggregate functions aggregate values in multiple rows to one value. COUNT in SQL 1. Basics is one of aggregate functions. Here are commonly used aggregate functions:
-SUM() AVG() MIN() MAX() COUNT() The examples are as follows:
-SELECT SUM(column_name1) FROM table_name1 You usually need to specify the column name inside the parentheses. COUNT accepts *. Aggregate functions cannot be used with other columns that are not aggregated. This is because aggregation results in only one value while other columns may have multiple values. Thus, the syntax below is not possible:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-05-31 00:00:00 +0000 UTC'>May 31, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to SQL 3. Grouping" href="https://www.minjunjeon.com/posts/data_eng/sql/sql3/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

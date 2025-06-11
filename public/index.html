@@ -197,6 +197,34 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 13. Grouping Sets, Rollups, and Self-Joins: A Practical Interview Refresher
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>Overview In SQL interviews, understanding advanced grouping and join techniques is crucial. This post dives into GROUPING SETS, ROLLUP, CUBE, and types of joins like self-joins, CROSS JOIN, and NATURAL JOIN. We also touch on how to interpret NULLs in grouping results and share interview tips along the way.
+1. GROUPING SETS GROUPING SETS let you define multiple GROUP BY combinations in a single query—ideal for multi-dimensional reports.
+Problem You want to calculate:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-11 00:00:00 +0000 UTC'>June 11, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 13. Grouping Sets, Rollups, and Self-Joins: A Practical Interview Refresher" href="https://www.minjunjeon.com/posts/data_eng/sql/sql13/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2 class="entry-hint-parent">SQL 13. Grouping sets, rollups, self-joins
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. GROPUING SETS GROUPING SETS allows us to define all of the combinations that our data should be grouped by in one query. For example, let’s say we want to get the revenue obtained by each staff for each month, revenue obtained for each month, and the revenue obtained by each staff for the entire database in one table. These are combinations of many GROUP BY’s with different columns. This can certainly be achieved by using multiple GROPU BY’s and UNION’s. For the above example, one can execute the following code:
+...</p>
+  </div>
+  <footer class="entry-footer"><span title='2025-06-11 00:00:00 +0000 UTC'>June 11, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
+  <a class="entry-link" aria-label="post link to SQL 13. Grouping sets, rollups, self-joins" href="https://www.minjunjeon.com/posts/data_eng/sql/sql13_original/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">SQL 12. Window Functions
     </h2>
   </header>
@@ -316,36 +344,6 @@ how can we create our custom package? Let’s walk through how to structure a cu
   </div>
   <footer class="entry-footer"><span title='2025-06-05 00:00:00 +0000 UTC'>June 5, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
   <a class="entry-link" aria-label="post link to Big Data 6. Slowly Changing Dimensions (SCD)" href="https://www.minjunjeon.com/posts/data_eng/bd/bd6/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Big Data 3. Data Warehouses, Data Lakes, and Lake Houses
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>1. Data Warehouses A Data Warehouse (DW) is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.
-Unlike transactional databases (OLTP), data warehouses are built for analytical workloads (OLAP): they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.
-Data warehouses typically use:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to Big Data 3. Data Warehouses, Data Lakes, and Lake Houses" href="https://www.minjunjeon.com/posts/data_eng/bd/bd3/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">Big Data 4. Denormalized Schema in Data Warehouses
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>1. Denormalized Schema A denormalized schema is a database design that reduces the number of joins by combining related data into fewer tables, often at the expense of some redundancy.
-Optimized for read-heavy analytical workloads Not ideal for OLTP systems (which benefit from normalization) In a typical data warehouse:
-Data is modeled to maximize query performance and simplify analytics. This contrasts with normalized schemas used in transactional databases, where the goal is data integrity and avoiding redundancy. 2. Star and Snowflake Schemas Two common denormalized designs are:
-...</p>
-  </div>
-  <footer class="entry-footer"><span title='2025-06-04 00:00:00 +0000 UTC'>June 4, 2025</span>&nbsp;·&nbsp;map[name:Minjun Jeon]</footer>
-  <a class="entry-link" aria-label="post link to Big Data 4. Denormalized Schema in Data Warehouses" href="https://www.minjunjeon.com/posts/data_eng/bd/bd4/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

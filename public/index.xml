@@ -11,8 +11,29 @@
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 09 Jun 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://www.minjunjeon.com/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>SQL 13. Grouping Sets, Rollups, and Self-Joins: A Practical Interview Refresher</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql13/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql13/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;p&gt;In SQL interviews, understanding advanced grouping and join techniques is crucial. This post dives into &lt;code&gt;GROUPING SETS&lt;/code&gt;, &lt;code&gt;ROLLUP&lt;/code&gt;, &lt;code&gt;CUBE&lt;/code&gt;, and types of joins like self-joins, &lt;code&gt;CROSS JOIN&lt;/code&gt;, and &lt;code&gt;NATURAL JOIN&lt;/code&gt;. We also touch on how to interpret &lt;code&gt;NULL&lt;/code&gt;s in grouping results and share interview tips along the way.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;1-grouping-sets&#34;&gt;1. GROUPING SETS&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;GROUPING SETS&lt;/code&gt; let you define multiple &lt;code&gt;GROUP BY&lt;/code&gt; combinations in a single query—ideal for multi-dimensional reports.&lt;/p&gt;
+&lt;h3 id=&#34;problem&#34;&gt;Problem&lt;/h3&gt;
+&lt;p&gt;You want to calculate:&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>SQL 13. Grouping sets, rollups, self-joins</title>
+      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql13_original/</link>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql13_original/</guid>
+      <description>&lt;h2 id=&#34;1-gropuing-sets&#34;&gt;1. GROPUING SETS&lt;/h2&gt;
+&lt;p&gt;&lt;code&gt;GROUPING SETS&lt;/code&gt; allows us to define all of the combinations that our data should be grouped by in one query. For example, let&amp;rsquo;s say we want to get the revenue obtained by each staff for each month, revenue obtained for each month, and the revenue obtained by each staff for the entire database in one table. These are combinations of many &lt;code&gt;GROUP BY&lt;/code&gt;&amp;rsquo;s with different columns. This can certainly be achieved by using multiple &lt;code&gt;GROPU BY&lt;/code&gt;&amp;rsquo;s and &lt;code&gt;UNION&lt;/code&gt;&amp;rsquo;s. For the above example, one can execute the following code:&lt;/p&gt;</description>
+    </item>
     <item>
       <title>SQL 12. Window Functions</title>
       <link>https://www.minjunjeon.com/posts/data_eng/sql/sql12/</link>
