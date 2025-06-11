@@ -1,5 +1,5 @@
 ---
-title: "SQL 13. Grouping Sets, Rollups, and Self-Joins: A Practical Interview Refresher"
+title: "SQL 13. Grouping Sets, Rollups, and Self-Joins"
 date: 2025-06-11
 draft: false
 ShowToc: true
