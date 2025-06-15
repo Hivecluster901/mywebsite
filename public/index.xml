@@ -996,8 +996,11 @@ method=&#34;POST&#34;
       <link>https://www.minjunjeon.com/about_me/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       <guid>https://www.minjunjeon.com/about_me/</guid>
-      <description>&lt;p&gt;Hi there! I&amp;rsquo;m currently in the third year of my DPhil (PhD) in Quantum Computing at the University of Oxford. Over the past few years, I&amp;rsquo;ve spent a lot of time writing Python code — from simulating quantum dots to building machine learning models for quantum devices. Through it all, I’ve realized how much I enjoy working with data and building software that actually &lt;em&gt;works&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;I’m now shifting gears toward the world of &lt;strong&gt;data engineering&lt;/strong&gt; and &lt;strong&gt;data science&lt;/strong&gt;, where I hope to keep solving real problems with code, just in a different context.&lt;/p&gt;</description>
+      <description>&lt;p&gt;Hi there! I&amp;rsquo;m currently in the third year of my DPhil (PhD) in Quantum Computing at the University of Oxford. Over the past few years, I&amp;rsquo;ve spent a lot of time writing Python code — from simulating quantum dots to building machine learning models for quantum devices.&lt;/p&gt;
+&lt;!-- Through it all, I’ve realized how much I enjoy working with data and building software that actually *works*.
+
+I’m now shifting gears toward the world of **data engineering** and **data science**, where I hope to keep solving real problems with code, just in a different context. --&gt;
+&lt;p&gt;Outside of tech, you’ll probably find me in the kitchen experimenting with new recipes, playing the piano (mostly classical), or trying to hit a new PR at the gym. I’m always up for a challenge — whether it’s debugging a pipeline or learning a new Chopin piece!&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
