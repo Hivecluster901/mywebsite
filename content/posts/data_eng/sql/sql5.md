@@ -3,7 +3,7 @@ title: "SQL 5. Date and Time Functions"
 date: 2025-06-01
 tags: ["sql", "function", "date", "time", "databases", "interview prep"]
 categories: ["Tech", "Databases"]
-draft: false
+draft: true
 ShowToc: true
 
 ---

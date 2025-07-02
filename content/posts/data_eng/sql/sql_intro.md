@@ -1,7 +1,7 @@
 ---
 title: "Intro to SQL"
 date: 2025-05-29
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

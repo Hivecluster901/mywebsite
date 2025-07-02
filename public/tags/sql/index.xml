@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Sql on Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/tags/sql/</link>
+    <link>http://localhost:1313/tags/sql/</link>
     <description>Recent content in Sql on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
-      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
-      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/tags/sql/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/sql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL 13. Grouping Sets, Rollups, and Self-Joins</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql13/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql13/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql13/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql13/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;In SQL interviews, understanding advanced grouping and join techniques is crucial. This post dives into &lt;code&gt;GROUPING SETS&lt;/code&gt;, &lt;code&gt;ROLLUP&lt;/code&gt;, &lt;code&gt;CUBE&lt;/code&gt;, and types of joins like self-joins, &lt;code&gt;CROSS JOIN&lt;/code&gt;, and &lt;code&gt;NATURAL JOIN&lt;/code&gt;. We also touch on how to interpret &lt;code&gt;NULL&lt;/code&gt;s in grouping results and share interview tips along the way.&lt;/p&gt;
 &lt;hr&gt;
@@ -28,9 +28,9 @@
     </item>
     <item>
       <title>SQL 12. Window Functions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql12/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql12/</link>
       <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql12/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql12/</guid>
       <description>&lt;p&gt;Window functions in PostgreSQL allow you to perform calculations across sets of rows &lt;strong&gt;related to the current row&lt;/strong&gt;, without collapsing rows like &lt;code&gt;GROUP BY&lt;/code&gt; does. They’re essential for solving ranking, running totals, moving averages, and row-by-row comparisons.&lt;/p&gt;
 &lt;p&gt;This post reviews key window functions with practical, interview-friendly examples.&lt;/p&gt;
 &lt;hr&gt;
@@ -50,9 +50,9 @@
     </item>
     <item>
       <title>SQL 11. Views &amp; Data Manipulation</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql11/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql11/</link>
       <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql11/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql11/</guid>
       <description>&lt;p&gt;If you&amp;rsquo;re prepping for a SQL or data engineering interview, it’s essential to be fluent not only in writing queries but also in understanding the impact of commands like &lt;code&gt;UPDATE&lt;/code&gt;, &lt;code&gt;DELETE&lt;/code&gt;, and views (both virtual and materialized). This post covers practical examples and deepens your understanding of data manipulation and view management in PostgreSQL.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;1-update-modifying-existing-rows&#34;&gt;1. &lt;code&gt;UPDATE&lt;/code&gt;: Modifying Existing Rows&lt;/h2&gt;
@@ -60,9 +60,9 @@
     </item>
     <item>
       <title>SQL 10. Managing Tables &amp; Databases</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql10/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql10/</link>
       <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql10/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql10/</guid>
       <description>&lt;p&gt;In previous posts, we focused on querying tables. In this post, we’ll explore &lt;strong&gt;data definition&lt;/strong&gt; in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Mastering these operations shows that you not only know how to &lt;em&gt;query&lt;/em&gt; data, but also how to &lt;em&gt;design&lt;/em&gt; and &lt;em&gt;manage&lt;/em&gt; the structures that hold it.&lt;/p&gt;&lt;/blockquote&gt;
@@ -78,9 +78,9 @@
     </item>
     <item>
       <title>Big Data 2. OLTP vs OLAP</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd2/</link>
+      <link>http://localhost:1313/posts/data_eng/bd/bd2/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd2/</guid>
+      <guid>http://localhost:1313/posts/data_eng/bd/bd2/</guid>
       <description>&lt;p&gt;When working with databases, it&amp;rsquo;s essential to distinguish between two fundamental system types: &lt;strong&gt;OLTP (Online Transaction Processing)&lt;/strong&gt; and &lt;strong&gt;OLAP (Online Analytical Processing)&lt;/strong&gt;. These systems serve very different purposes and are optimized accordingly.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id=&#34;oltp--online-transaction-processing&#34;&gt;OLTP — Online Transaction Processing&lt;/h3&gt;
@@ -149,11 +149,11 @@
     </item>
     <item>
       <title>SQL 9. Union and Subqueries</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql9/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql9/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql9/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql9/</guid>
       <description>&lt;h2 id=&#34;1-unionunion-all&#34;&gt;1. UNION/UNION ALL&lt;/h2&gt;
-&lt;p&gt;In contrast to &lt;a href=&#34;https://www.minjunjeon.com/posts/data_eng/sql/sql8&#34;&gt;&lt;em&gt;JOINS&lt;/em&gt;&lt;/a&gt;, &lt;em&gt;UNION&lt;/em&gt; combines rows instead of columns.&lt;/p&gt;
+&lt;p&gt;In contrast to &lt;a href=&#34;http://localhost:1313/posts/data_eng/sql/sql8&#34;&gt;&lt;em&gt;JOINS&lt;/em&gt;&lt;/a&gt;, &lt;em&gt;UNION&lt;/em&gt; combines rows instead of columns.&lt;/p&gt;
 &lt;h3 id=&#34;a-basic-syntax&#34;&gt;a) Basic Syntax&lt;/h3&gt;
 &lt;p&gt;The syntax is as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; column_name1, column_name2 &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
@@ -168,9 +168,9 @@
     </item>
     <item>
       <title>SQL 8. Joins</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql8/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql8/</guid>
       <description>&lt;p&gt;&lt;code&gt;JOIN&lt;/code&gt; is used to combine information from multiple tables in one query. There are four types of &lt;code&gt;JOIN&lt;/code&gt;s: &lt;code&gt;INNER JOIN&lt;/code&gt;, &lt;code&gt;OUTER JOIN&lt;/code&gt;, &lt;code&gt;LEFT JOIN&lt;/code&gt;, and &lt;code&gt;RIGHT JOIN&lt;/code&gt;. When combining two tables, you need one common column, so called reference column or join column.&lt;/p&gt;
 &lt;h2 id=&#34;1-inner-join&#34;&gt;1. INNER JOIN&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;INNER JOIN&lt;/em&gt; combines two tables only for the rows where the value in the join column occurs in both tables.&lt;/p&gt;
@@ -178,9 +178,9 @@
     </item>
     <item>
       <title>SQL 4. String Functions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql4/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql4/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql4/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql4/</guid>
       <description>&lt;p&gt;In this post, we are going to look at basic string functions in SQL.&lt;/p&gt;
 &lt;h2 id=&#34;1-upper-lower-length&#34;&gt;1. UPPER, LOWER, LENGTH&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;UPPER&lt;/em&gt; changes all lowercase alphabets to uppercase. &lt;em&gt;LOWER&lt;/em&gt; changes all uppercase letters to lowercase. Finally, &lt;em&gt;LENGTH&lt;/em&gt; gives the number of characters. The example is as follows:&lt;/p&gt;
@@ -193,9 +193,9 @@
     </item>
     <item>
       <title>SQL 5. Date and Time Functions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql5/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql5/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql5/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql5/</guid>
       <description>&lt;p&gt;In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&amp;rsquo;s look at standard date/time types.&lt;/p&gt;
 &lt;h3 id=&#34;0-datatime-types&#34;&gt;0. Data/Time types&lt;/h3&gt;
 &lt;div class=&#34;custom-table-wrapper&#34;&gt;
@@ -239,9 +239,9 @@
     </item>
     <item>
       <title>SQL 6. Numerical Functions and Operators</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql6/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql6/</guid>
       <description>&lt;h2 id=&#34;1-operators&#34;&gt;1. Operators&lt;/h2&gt;
 &lt;div class=&#34;custom-table-wrapper&#34;&gt;
     &lt;table&gt;
@@ -342,9 +342,9 @@
     </item>
     <item>
       <title>SQL 7. Conditional Expressions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql7/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql7/</guid>
       <description>&lt;p&gt;Here, we go through conditional expressions.&lt;/p&gt;
 &lt;h2 id=&#34;1-case-when&#34;&gt;1. CASE WHEN&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;CASE WHEN&lt;/em&gt; goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:&lt;/p&gt;
@@ -358,12 +358,12 @@
     </item>
     <item>
       <title>SQL 3. Grouping</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql3/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql3/</guid>
       <description>&lt;p&gt;Here we go through other basic SQL commands for grouping:&lt;/p&gt;
 &lt;h2 id=&#34;1-aggregate-functions&#34;&gt;1. Aggregate Functions&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Aggregate functions&lt;/em&gt; aggregate values in multiple rows to one value. &lt;code&gt;COUNT&lt;/code&gt; in &lt;a href=&#34;https://www.minjunjeon.com/posts/data_eng/sql/sql1/#6-count&#34;&gt;SQL 1. Basics&lt;/a&gt; is one of aggregate functions. Here are commonly used aggregate functions:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Aggregate functions&lt;/em&gt; aggregate values in multiple rows to one value. &lt;code&gt;COUNT&lt;/code&gt; in &lt;a href=&#34;http://localhost:1313/posts/data_eng/sql/sql1/#6-count&#34;&gt;SQL 1. Basics&lt;/a&gt; is one of aggregate functions. Here are commonly used aggregate functions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SUM()&lt;/li&gt;
 &lt;li&gt;AVG()&lt;/li&gt;
@@ -379,9 +379,9 @@
     </item>
     <item>
       <title>SQL 2. Filtering</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql2/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql2/</link>
       <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql2/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql2/</guid>
       <description>&lt;p&gt;Here we go through other basic SQL commands for filtering:&lt;/p&gt;
 &lt;h2 id=&#34;1-where&#34;&gt;1. WHERE&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;WHERE&lt;/em&gt; is used to filter the data in the output. It always comes after FROM. The syntax is:&lt;/p&gt;
@@ -406,9 +406,9 @@ We can use other operators to filter the data, e.g. &lt;code&gt;&amp;gt;&lt;/cod
     </item>
     <item>
       <title>Intro to SQL</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql_intro/</link>
       <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql_intro/</guid>
       <description>&lt;h2 id=&#34;1-sql&#34;&gt;1. SQL&lt;/h2&gt;
 &lt;p&gt;SQL stands for structured query language. It is a language to interact with &lt;em&gt;databases&lt;/em&gt;.
 &lt;em&gt;Database&lt;/em&gt; is an organized collection of structured information, or data, typically stored electronically in a computer system.
@@ -419,9 +419,9 @@ Database is managed by Database Management Systems(DBMS). One example of DMBS is
     </item>
     <item>
       <title>SQL 1. Basics</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql1/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql1/</link>
       <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql1/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql1/</guid>
       <description>&lt;p&gt;Here, we go through basic SQL commands:&lt;/p&gt;
 &lt;h2 id=&#34;1-select&#34;&gt;1. SELECT&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;SELECT&lt;/em&gt; is used to select and return data.

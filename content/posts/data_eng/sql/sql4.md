@@ -1,7 +1,7 @@
 ---
 title: "SQL 4. String Functions"
 date: 2025-06-01
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "function", "string", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

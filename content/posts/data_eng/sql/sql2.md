@@ -1,7 +1,7 @@
 ---
 title: "SQL 2. Filtering"
 date: 2025-05-30
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "filtering", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

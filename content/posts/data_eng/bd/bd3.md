@@ -1,7 +1,7 @@
 ---
 title: "Big Data 3. Data Warehouses, Data Lakes, and Lake Houses"
 date: 2025-06-04
-draft: false
+draft: true
 ShowToc: true
 tags: ["big data", "dbt", "basics", "data warehouse", "data lake", "lakehouse", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

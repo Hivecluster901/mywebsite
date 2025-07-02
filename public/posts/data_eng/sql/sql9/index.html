@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -21,16 +21,16 @@ The number of columns from the first table should match the number of columns fr
 
 Columns are matched by the order. For example column_name1 and column_name3 don&rsquo;t need to be identitcal. The merged table will have column names of the first table, i.e. column_name1 and column_name2.">
 <meta name="author" content="map[name:Minjun Jeon]">
-<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql9/">
+<link rel="canonical" href="http://localhost:1313/posts/data_eng/sql/sql9/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
-<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql9/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/data_eng/sql/sql9/">
 <noscript>
     <style>
         #theme-toggle,
@@ -46,17 +46,17 @@ Columns are matched by the order. For example column_name1 and column_name3 don&
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": "https:\/\/www.minjunjeon.com\/",
+  "url": "http:\/\/localhost:1313\/",
   "name": "Minjun Jeon",
   "publisher": {
     "@type": "Organization",
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+      "url": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
     }
   },
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
 }
 </script>
 
@@ -66,8 +66,8 @@ Columns are matched by the order. For example column_name1 and column_name3 don&
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Minjun Jeon",
-  "url": "https:\/\/www.minjunjeon.com\/",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "url": "http:\/\/localhost:1313\/",
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png",
   "sameAs": [
     "",
     ""
@@ -83,11 +83,11 @@ Columns are matched by the order. For example column_name1 and column_name3 don&
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql9\/"
+    "@id": "http:\/\/localhost:1313\/posts\/data_eng\/sql\/sql9\/"
   },
   "headline": "SQL 9. Union and Subqueries",
   "description": "\u003ch2 id=\u00221-unionunion-all\u0022\u003e1. UNION\/UNION ALL\u003c\/h2\u003e\n\u003cp\u003eIn contrast to \u003ca href=\u0022\/posts\/data_eng\/sql\/sql8\u0022\u003e\u003cem\u003eJOINS\u003c\/em\u003e\u003c\/a\u003e, \u003cem\u003eUNION\u003c\/em\u003e combines rows instead of columns.\u003c\/p\u003e\n\u003ch3 id=\u0022a-basic-syntax\u0022\u003ea) Basic Syntax\u003c\/h3\u003e\n\u003cp\u003eThe syntax is as follows:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-sql\u0022 data-lang=\u0022sql\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eSELECT\u003c\/span\u003e column_name1, column_name2 \u003cspan style=\u0022color:#66d9ef\u0022\u003eFROM\u003c\/span\u003e table_name1\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eUNION\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eSELECT\u003c\/span\u003e column_name3, column_name4 \u003cspan style=\u0022color:#66d9ef\u0022\u003eFROM\u003c\/span\u003e table_name2\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cul\u003e\n\u003cli\u003e\n\u003cp\u003eThe number of columns from the first table should match the number of columns from the second table.\u003c\/p\u003e\n\u003c\/li\u003e\n\u003cli\u003e\n\u003cp\u003eColumns are matched by the order. For example \u003ccode\u003ecolumn_name1\u003c\/code\u003e and \u003ccode\u003ecolumn_name3\u003c\/code\u003e don\u0026rsquo;t need to be identitcal. The merged table will have column names of the first table, i.e. \u003ccode\u003ecolumn_name1\u003c\/code\u003e and \u003ccode\u003ecolumn_name2\u003c\/code\u003e.\u003c\/p\u003e",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png",
   "author": {
     "@type": "Person",
     "name": "Minjun Jeon"
@@ -97,7 +97,7 @@ Columns are matched by the order. For example column_name1 and column_name3 don&
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+      "url": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
     }
   },
   "datePublished": "2025-06-03T00:00:00Z",
@@ -105,7 +105,7 @@ Columns are matched by the order. For example column_name1 and column_name3 don&
 }
 </script>
 
-<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql9/">
+<meta property="og:url" content="http://localhost:1313/posts/data_eng/sql/sql9/">
   <meta property="og:site_name" content="Minjun Jeon">
   <meta property="og:title" content="SQL 9. Union and Subqueries">
   <meta property="og:description" content="1. UNION/UNION ALL In contrast to JOINS, UNION combines rows instead of columns.
@@ -123,9 +123,9 @@ Columns are matched by the order. For example column_name1 and column_name3 don�
     <meta property="article:tag" content="Join">
     <meta property="article:tag" content="Subquery">
     <meta property="article:tag" content="Databases">
-      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+      <meta property="og:image" content="http://localhost:1313/assets/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:image" content="http://localhost:1313/assets/android-chrome-512x512.png">
 <meta name="twitter:title" content="SQL 9. Union and Subqueries">
 <meta name="twitter:description" content="1. UNION/UNION ALL
 In contrast to JOINS, UNION combines rows instead of columns.
@@ -154,7 +154,7 @@ Columns are matched by the order. For example column_name1 and column_name3 don&
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -180,32 +180,32 @@ Columns are matched by the order. For example column_name1 and column_name3 don&
         </div>
         <ul id="menu">
             <li>
-                <a href="https://www.minjunjeon.com/" title="Home">
+                <a href="http://localhost:1313/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                <a href="http://localhost:1313/about_me/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                <a href="http://localhost:1313/" title="Archive">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                <a href="http://localhost:1313/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                <a href="http://localhost:1313/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                <a href="http://localhost:1313/resume/" title="Resume">
                     <span>Resume</span>
                 </a>
             </li>
@@ -392,20 +392,20 @@ Columns are matched by the order. For example column_name1 and column_name3 don&
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://www.minjunjeon.com/tags/sql/">Sql</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/union/">Union</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/union-all/">Union All</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/join/">Join</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/subquery/">Subquery</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/databases/">Databases</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+      <li><a href="http://localhost:1313/tags/sql/">Sql</a></li>
+      <li><a href="http://localhost:1313/tags/union/">Union</a></li>
+      <li><a href="http://localhost:1313/tags/union-all/">Union All</a></li>
+      <li><a href="http://localhost:1313/tags/join/">Join</a></li>
+      <li><a href="http://localhost:1313/tags/subquery/">Subquery</a></li>
+      <li><a href="http://localhost:1313/tags/databases/">Databases</a></li>
+      <li><a href="http://localhost:1313/tags/interview-prep/">Interview Prep</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Minjun Jeon</a></span> · 
 
     <span>
         Powered by

@@ -1,5 +1,5 @@
 ---
 title: "3. Software Engineering"
-draft: false
+draft: true
 ---
 These are my notes of learning software engineering concepts and general purpose programming languages.

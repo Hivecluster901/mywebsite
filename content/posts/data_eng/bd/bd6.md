@@ -1,7 +1,7 @@
 ---
 title: "Big Data 6. Slowly Changing Dimensions (SCD)"
 date: 2025-06-05
-draft: false
+draft: true
 ShowToc: true
 tags: ["Big Data", "dbt", "basics", "modern data stack", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

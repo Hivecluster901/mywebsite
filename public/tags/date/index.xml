@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Date on Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/tags/date/</link>
+    <link>http://localhost:1313/tags/date/</link>
     <description>Recent content in Date on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
-      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
-      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/tags/date/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/date/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL 5. Date and Time Functions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql5/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql5/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql5/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql5/</guid>
       <description>&lt;p&gt;In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&amp;rsquo;s look at standard date/time types.&lt;/p&gt;
 &lt;h3 id=&#34;0-datatime-types&#34;&gt;0. Data/Time types&lt;/h3&gt;
 &lt;div class=&#34;custom-table-wrapper&#34;&gt;

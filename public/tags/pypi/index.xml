@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Pypi on Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/tags/pypi/</link>
+    <link>http://localhost:1313/tags/pypi/</link>
     <description>Recent content in Pypi on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
-      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
-      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 05 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/tags/pypi/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/pypi/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>3. Custom Package and __init__.py</title>
-      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</link>
+      <link>http://localhost:1313/posts/software_eng/python/python_concepts/python3/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</guid>
+      <guid>http://localhost:1313/posts/software_eng/python/python_concepts/python3/</guid>
       <description>&lt;p&gt;We can install packages from the Python Package Index (PyPI) through pip(PyPI Install Packages). Furthermore, we can import these through &lt;code&gt;import&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;But &amp;hellip;&lt;/p&gt;
 &lt;blockquote&gt;

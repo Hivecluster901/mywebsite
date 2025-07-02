@@ -1,7 +1,7 @@
 ---
 title: "SQL 13. Grouping Sets, Rollups, and Self-Joins"
 date: 2025-06-11
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "grouping sets", "rollup", "cube", "self joins", "cross join", "natural join", "interview prep"]
 categories: ["Tech", "Databases"]

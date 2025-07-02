@@ -1,7 +1,7 @@
 ---
 title: "1. Python: map"
 date: 2025-06-05
-draft: false
+draft: true
 ShowToc: true
 tags: ["python", "map", "programming language" , "software engineering", "interview prep"]
 categories: ["Tech", "python"]

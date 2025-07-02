@@ -2,51 +2,15 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/categories/</link>
+    <link>http://localhost:1313/categories/</link>
     <description>Recent content in Categories on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
-      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
-      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
-    <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/categories/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Databases</title>
-      <link>https://www.minjunjeon.com/categories/databases/</link>
-      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/categories/databases/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Tech</title>
-      <link>https://www.minjunjeon.com/categories/tech/</link>
-      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/categories/tech/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Algorithm</title>
-      <link>https://www.minjunjeon.com/categories/algorithm/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/categories/algorithm/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Data Structure</title>
-      <link>https://www.minjunjeon.com/categories/data-structure/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/categories/data-structure/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Python</title>
-      <link>https://www.minjunjeon.com/categories/python/</link>
-      <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/categories/python/</guid>
-      <description></description>
-    </item>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

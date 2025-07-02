@@ -1,7 +1,7 @@
 ---
 title: "SQL 1. Basics"
 date: 2025-05-29
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "basics", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

@@ -1,7 +1,7 @@
 ---
 title: "SQL 12. Window Functions"
 date: 2025-06-09
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "window function", "over", "rank", "first_value", "lead", "lag", "interview prep"]
 categories: ["Tech", "Databases"]

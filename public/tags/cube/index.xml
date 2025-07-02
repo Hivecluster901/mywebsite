@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cube on Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/tags/cube/</link>
+    <link>http://localhost:1313/tags/cube/</link>
     <description>Recent content in Cube on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
-      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
-      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/tags/cube/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/cube/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL 13. Grouping Sets, Rollups, and Self-Joins</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql13/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql13/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql13/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql13/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;In SQL interviews, understanding advanced grouping and join techniques is crucial. This post dives into &lt;code&gt;GROUPING SETS&lt;/code&gt;, &lt;code&gt;ROLLUP&lt;/code&gt;, &lt;code&gt;CUBE&lt;/code&gt;, and types of joins like self-joins, &lt;code&gt;CROSS JOIN&lt;/code&gt;, and &lt;code&gt;NATURAL JOIN&lt;/code&gt;. We also touch on how to interpret &lt;code&gt;NULL&lt;/code&gt;s in grouping results and share interview tips along the way.&lt;/p&gt;
 &lt;hr&gt;

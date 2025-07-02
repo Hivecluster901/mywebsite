@@ -1,7 +1,7 @@
 ---
 title: "Big Data 2. OLTP vs OLAP"
 date: 2025-06-03
-draft: false
+draft: true
 ShowToc: true
 tags: ["big data", "OLTP", "OLAP", "dbt", "Database", "Data Warehousing", "SQL"]
 ---

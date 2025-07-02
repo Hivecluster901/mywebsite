@@ -1,7 +1,7 @@
 ---
 title: "Big Data 5. Modern Data Stack"
 date: 2025-06-04
-draft: false
+draft: true
 ShowToc: true
 tags: ["Big Data", "dbt", "basics", "modern data stack", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

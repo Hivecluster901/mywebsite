@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -20,16 +20,16 @@ Creating and altering tables and databases
 
 We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE) in separate posts.">
 <meta name="author" content="map[name:Minjun Jeon]">
-<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql10/">
+<link rel="canonical" href="http://localhost:1313/posts/data_eng/sql/sql10/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
-<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql10/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/data_eng/sql/sql10/">
 <noscript>
     <style>
         #theme-toggle,
@@ -45,17 +45,17 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": "https:\/\/www.minjunjeon.com\/",
+  "url": "http:\/\/localhost:1313\/",
   "name": "Minjun Jeon",
   "publisher": {
     "@type": "Organization",
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+      "url": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
     }
   },
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
 }
 </script>
 
@@ -65,8 +65,8 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Minjun Jeon",
-  "url": "https:\/\/www.minjunjeon.com\/",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "url": "http:\/\/localhost:1313\/",
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png",
   "sameAs": [
     "",
     ""
@@ -82,11 +82,11 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql10\/"
+    "@id": "http:\/\/localhost:1313\/posts\/data_eng\/sql\/sql10\/"
   },
   "headline": "SQL 10. Managing Tables \u0026 Databases",
   "description": "\u003cp\u003eIn previous posts, we focused on querying tables. In this post, we’ll explore \u003cstrong\u003edata definition\u003c\/strong\u003e in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.\u003c\/p\u003e\n\u003cblockquote\u003e\n\u003cp\u003eMastering these operations shows that you not only know how to \u003cem\u003equery\u003c\/em\u003e data, but also how to \u003cem\u003edesign\u003c\/em\u003e and \u003cem\u003emanage\u003c\/em\u003e the structures that hold it.\u003c\/p\u003e\u003c\/blockquote\u003e\n\u003cp\u003eWe\u0026rsquo;ll cover:\u003c\/p\u003e\n\u003cul\u003e\n\u003cli\u003eData types\u003c\/li\u003e\n\u003cli\u003eConstraints\u003c\/li\u003e\n\u003cli\u003ePrimary and foreign keys\u003c\/li\u003e\n\u003cli\u003eCreating and altering tables and databases\u003c\/li\u003e\n\u003c\/ul\u003e\n\u003cblockquote\u003e\n\u003cp\u003eWe\u0026rsquo;ll cover \u003cstrong\u003eviews\u003c\/strong\u003e, \u003cstrong\u003eindexes\u003c\/strong\u003e, and \u003cstrong\u003edata manipulation (INSERT, UPDATE, DELETE)\u003c\/strong\u003e in separate posts.\u003c\/p\u003e",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png",
   "author": {
     "@type": "Person",
     "name": "Minjun Jeon"
@@ -96,7 +96,7 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+      "url": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
     }
   },
   "datePublished": "2025-06-06T00:00:00Z",
@@ -104,7 +104,7 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
 }
 </script>
 
-<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql10/">
+<meta property="og:url" content="http://localhost:1313/posts/data_eng/sql/sql10/">
   <meta property="og:site_name" content="Minjun Jeon">
   <meta property="og:title" content="SQL 10. Managing Tables & Databases">
   <meta property="og:description" content="In previous posts, we focused on querying tables. In this post, we’ll explore data definition in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.
@@ -122,9 +122,9 @@ Data types Constraints Primary and foreign keys Creating and altering tables and
     <meta property="article:tag" content="Create">
     <meta property="article:tag" content="Drop">
     <meta property="article:tag" content="Foreign Key">
-      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+      <meta property="og:image" content="http://localhost:1313/assets/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:image" content="http://localhost:1313/assets/android-chrome-512x512.png">
 <meta name="twitter:title" content="SQL 10. Managing Tables &amp; Databases">
 <meta name="twitter:description" content="In previous posts, we focused on querying tables. In this post, we’ll explore data definition in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.
 
@@ -152,7 +152,7 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -178,32 +178,32 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
         </div>
         <ul id="menu">
             <li>
-                <a href="https://www.minjunjeon.com/" title="Home">
+                <a href="http://localhost:1313/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                <a href="http://localhost:1313/about_me/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                <a href="http://localhost:1313/" title="Archive">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                <a href="http://localhost:1313/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                <a href="http://localhost:1313/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                <a href="http://localhost:1313/resume/" title="Resume">
                     <span>Resume</span>
                 </a>
             </li>
@@ -577,7 +577,7 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
 </span></span></span><span style="display:flex;"><span><span style="color:#75715e"></span><span style="color:#66d9ef">TRUNCATE</span> <span style="color:#66d9ef">TABLE</span> orders;  <span style="color:#75715e">-- Clears all rows, keeps structure
 </span></span></span></code></pre></div><hr>
 <h2 id="summary-key-interview-concepts">Summary: Key Interview Concepts<a hidden class="anchor" aria-hidden="true" href="#summary-key-interview-concepts">#</a></h2>
-<h2 id="hahahugoshortcode13s4hbhb"><div class="custom-table-wrapper">
+<h2 id="hahahugoshortcode15s4hbhb"><div class="custom-table-wrapper">
     <table>
       <table>
   <thead>
@@ -622,22 +622,22 @@ We&rsquo;ll cover views, indexes, and data manipulation (INSERT, UPDATE, DELETE)
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://www.minjunjeon.com/tags/sql/">Sql</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/data-definition/">Data Definition</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/table/">Table</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/create/">Create</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/drop/">Drop</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/foreign-key/">Foreign Key</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/primary-key/">Primary Key</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/databases/">Databases</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+      <li><a href="http://localhost:1313/tags/sql/">Sql</a></li>
+      <li><a href="http://localhost:1313/tags/data-definition/">Data Definition</a></li>
+      <li><a href="http://localhost:1313/tags/table/">Table</a></li>
+      <li><a href="http://localhost:1313/tags/create/">Create</a></li>
+      <li><a href="http://localhost:1313/tags/drop/">Drop</a></li>
+      <li><a href="http://localhost:1313/tags/foreign-key/">Foreign Key</a></li>
+      <li><a href="http://localhost:1313/tags/primary-key/">Primary Key</a></li>
+      <li><a href="http://localhost:1313/tags/databases/">Databases</a></li>
+      <li><a href="http://localhost:1313/tags/interview-prep/">Interview Prep</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Minjun Jeon</a></span> · 
 
     <span>
         Powered by

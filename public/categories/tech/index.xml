@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tech on Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/categories/tech/</link>
+    <link>http://localhost:1313/categories/tech/</link>
     <description>Recent content in Tech on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
-      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
-      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Wed, 11 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/categories/tech/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/categories/tech/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL 13. Grouping Sets, Rollups, and Self-Joins</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql13/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql13/</link>
       <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql13/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql13/</guid>
       <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
 &lt;p&gt;In SQL interviews, understanding advanced grouping and join techniques is crucial. This post dives into &lt;code&gt;GROUPING SETS&lt;/code&gt;, &lt;code&gt;ROLLUP&lt;/code&gt;, &lt;code&gt;CUBE&lt;/code&gt;, and types of joins like self-joins, &lt;code&gt;CROSS JOIN&lt;/code&gt;, and &lt;code&gt;NATURAL JOIN&lt;/code&gt;. We also touch on how to interpret &lt;code&gt;NULL&lt;/code&gt;s in grouping results and share interview tips along the way.&lt;/p&gt;
 &lt;hr&gt;
@@ -28,9 +28,9 @@
     </item>
     <item>
       <title>SQL 12. Window Functions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql12/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql12/</link>
       <pubDate>Mon, 09 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql12/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql12/</guid>
       <description>&lt;p&gt;Window functions in PostgreSQL allow you to perform calculations across sets of rows &lt;strong&gt;related to the current row&lt;/strong&gt;, without collapsing rows like &lt;code&gt;GROUP BY&lt;/code&gt; does. They’re essential for solving ranking, running totals, moving averages, and row-by-row comparisons.&lt;/p&gt;
 &lt;p&gt;This post reviews key window functions with practical, interview-friendly examples.&lt;/p&gt;
 &lt;hr&gt;
@@ -50,9 +50,9 @@
     </item>
     <item>
       <title>SQL 11. Views &amp; Data Manipulation</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql11/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql11/</link>
       <pubDate>Sun, 08 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql11/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql11/</guid>
       <description>&lt;p&gt;If you&amp;rsquo;re prepping for a SQL or data engineering interview, it’s essential to be fluent not only in writing queries but also in understanding the impact of commands like &lt;code&gt;UPDATE&lt;/code&gt;, &lt;code&gt;DELETE&lt;/code&gt;, and views (both virtual and materialized). This post covers practical examples and deepens your understanding of data manipulation and view management in PostgreSQL.&lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&#34;1-update-modifying-existing-rows&#34;&gt;1. &lt;code&gt;UPDATE&lt;/code&gt;: Modifying Existing Rows&lt;/h2&gt;
@@ -60,9 +60,9 @@
     </item>
     <item>
       <title>SQL 10. Managing Tables &amp; Databases</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql10/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql10/</link>
       <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql10/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql10/</guid>
       <description>&lt;p&gt;In previous posts, we focused on querying tables. In this post, we’ll explore &lt;strong&gt;data definition&lt;/strong&gt; in SQL: how to create, modify, and delete database objects like tables, constraints, and databases themselves.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;Mastering these operations shows that you not only know how to &lt;em&gt;query&lt;/em&gt; data, but also how to &lt;em&gt;design&lt;/em&gt; and &lt;em&gt;manage&lt;/em&gt; the structures that hold it.&lt;/p&gt;&lt;/blockquote&gt;
@@ -78,9 +78,9 @@
     </item>
     <item>
       <title>1. Python: map</title>
-      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/</link>
+      <link>http://localhost:1313/posts/software_eng/python/python_concepts/python1/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1/</guid>
+      <guid>http://localhost:1313/posts/software_eng/python/python_concepts/python1/</guid>
       <description>&lt;p&gt;The &lt;code&gt;map()&lt;/code&gt; function applies a given function to all items in an input list (or any other iterable) and returns a map object (an iterator). This is particularly useful for transforming data in a list comprehensively.&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;An iterable is any python object:&lt;/p&gt;
@@ -94,9 +94,9 @@
     </item>
     <item>
       <title>2. Array/List</title>
-      <link>https://www.minjunjeon.com/posts/ds_algo/theory/theory2/</link>
+      <link>http://localhost:1313/posts/ds_algo/theory/theory2/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/ds_algo/theory/theory2/</guid>
+      <guid>http://localhost:1313/posts/ds_algo/theory/theory2/</guid>
       <description>&lt;p&gt;Arrays, more commonly known as &lt;strong&gt;lists&lt;/strong&gt; in Python, are one of the most fundamental and widely used data structures. They store items in a sequential, ordered manner, and support a wide range of operations efficiently.&lt;/p&gt;
 &lt;p&gt;This post is designed as a refresher for interviews or technical review, with code examples, time complexity analysis, and clarifications on memory behavior.&lt;/p&gt;
 &lt;hr&gt;
@@ -105,11 +105,11 @@
     </item>
     <item>
       <title>2. Python: filter</title>
-      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/</link>
+      <link>http://localhost:1313/posts/software_eng/python/python_concepts/python2/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python2/</guid>
+      <guid>http://localhost:1313/posts/software_eng/python/python_concepts/python2/</guid>
       <description>&lt;p&gt;The &lt;code&gt;filter()&lt;/code&gt; function constructs an iterator from elements of an iterable for which a function returns &lt;code&gt;true&lt;/code&gt;. It is used to filter out items from a list (or any other iterable) based on a condition.&lt;/p&gt;
-&lt;p&gt;The syntax is similar to &lt;a href=&#34;https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python1&#34;&gt;map&lt;/a&gt;:&lt;/p&gt;
+&lt;p&gt;The syntax is similar to &lt;a href=&#34;http://localhost:1313/posts/software_eng/python/python_concepts/python1&#34;&gt;map&lt;/a&gt;:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;filter(func1, iterable)
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Examples:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-python&#34; data-lang=&#34;python&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;num_list &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; [i &lt;span style=&#34;color:#66d9ef&#34;&gt;for&lt;/span&gt; i &lt;span style=&#34;color:#f92672&#34;&gt;in&lt;/span&gt; range(&lt;span style=&#34;color:#ae81ff&#34;&gt;1&lt;/span&gt;, &lt;span style=&#34;color:#ae81ff&#34;&gt;13&lt;/span&gt;)] &lt;span style=&#34;color:#75715e&#34;&gt;# [1, ..., 12] &lt;/span&gt;
@@ -123,9 +123,9 @@
     </item>
     <item>
       <title>3. Custom Package and __init__.py</title>
-      <link>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</link>
+      <link>http://localhost:1313/posts/software_eng/python/python_concepts/python3/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/software_eng/python/python_concepts/python3/</guid>
+      <guid>http://localhost:1313/posts/software_eng/python/python_concepts/python3/</guid>
       <description>&lt;p&gt;We can install packages from the Python Package Index (PyPI) through pip(PyPI Install Packages). Furthermore, we can import these through &lt;code&gt;import&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;But &amp;hellip;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -136,17 +136,17 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>Big Data 6. Slowly Changing Dimensions (SCD)</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd6/</link>
+      <link>http://localhost:1313/posts/data_eng/bd/bd6/</link>
       <pubDate>Thu, 05 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd6/</guid>
+      <guid>http://localhost:1313/posts/data_eng/bd/bd6/</guid>
       <description>&lt;h2 id=&#34;slowly-changing-dimensions-scd&#34;&gt;Slowly Changing Dimensions (SCD)&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;Slowly Changing Dimensions (SCDs)&lt;/strong&gt; refer to attributes in a data warehouse dimension table that change infrequently—yet unpredictably—over time. When a source system updates a dimension attribute, we need a strategy to decide how that change will be reflected (or not) in the data warehouse. In some cases, storing historical values isn’t necessary; in others, retaining a full history is critical for reporting, auditing, or trend analysis.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Big Data 3. Data Warehouses, Data Lakes, and Lake Houses</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd3/</link>
+      <link>http://localhost:1313/posts/data_eng/bd/bd3/</link>
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd3/</guid>
+      <guid>http://localhost:1313/posts/data_eng/bd/bd3/</guid>
       <description>&lt;h2 id=&#34;1-data-warehouses&#34;&gt;1. Data Warehouses&lt;/h2&gt;
 &lt;p&gt;A &lt;em&gt;Data Warehouse (DW)&lt;/em&gt; is a centralized repository that aggregates data from multiple sources into a unified, consistent store optimized for analytics and business intelligence (BI) activities, such as reporting, forecasting, and data mining.&lt;/p&gt;
 &lt;p&gt;Unlike transactional databases (OLTP), data warehouses are built for &lt;strong&gt;analytical workloads (OLAP)&lt;/strong&gt;: they support complex queries over large volumes of data, often using denormalized schemas, dimensions, and facts for performance.&lt;/p&gt;
@@ -154,9 +154,9 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>Big Data 4. Denormalized Schema in Data Warehouses</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd4/</link>
+      <link>http://localhost:1313/posts/data_eng/bd/bd4/</link>
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd4/</guid>
+      <guid>http://localhost:1313/posts/data_eng/bd/bd4/</guid>
       <description>&lt;h4 id=&#34;1-denormalized-schema&#34;&gt;1. Denormalized Schema&lt;/h4&gt;
 &lt;p&gt;A &lt;strong&gt;denormalized schema&lt;/strong&gt; is a database design that reduces the number of joins by &lt;strong&gt;combining related data into fewer tables&lt;/strong&gt;, often at the expense of some redundancy.&lt;/p&gt;
 &lt;ul&gt;
@@ -174,28 +174,28 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>Big Data 5. Modern Data Stack</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd5/</link>
+      <link>http://localhost:1313/posts/data_eng/bd/bd5/</link>
       <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd5/</guid>
+      <guid>http://localhost:1313/posts/data_eng/bd/bd5/</guid>
       <description>&lt;p&gt;As the cost of cloud storage and compute continues to fall and internet speeds rise, data engineers are rethinking how data is stored, processed, and analyzed. This shift has led to what we now call the &lt;strong&gt;modern data stack&lt;/strong&gt;: a flexible, scalable, cloud-native approach that replaces traditional monolithic systems.&lt;/p&gt;
 &lt;p&gt;In this post, we’ll explore key architectural changes that enabled the modern data stack, from the transition from &lt;strong&gt;SMP to MPP&lt;/strong&gt;, to the &lt;strong&gt;decoupling of storage and compute&lt;/strong&gt;, and the rise of &lt;strong&gt;columnar databases&lt;/strong&gt;, &lt;strong&gt;ELT workflows&lt;/strong&gt;, and the &lt;strong&gt;tooling ecosystem&lt;/strong&gt; that glues it all together.&lt;/p&gt;</description>
     </item>
     <item>
       <title>Big Data 1. Data Maturity Model</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/bd/bd1/</link>
+      <link>http://localhost:1313/posts/data_eng/bd/bd1/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/bd/bd1/</guid>
+      <guid>http://localhost:1313/posts/data_eng/bd/bd1/</guid>
       <description>&lt;h2 id=&#34;1-intro&#34;&gt;1. Intro&lt;/h2&gt;
 &lt;p&gt;The Maslow&amp;rsquo;s hierarchy of needs models the basic needs of humans as a hierarchy of 5 levels from the bottom to higher-level needs at the top. In this model, one cannot proceed to the next level unless the basic needs of the current level is met.&lt;/p&gt;
 &lt;p&gt;Silmiarly, one can think of &lt;em&gt;data hierarchy of needs&lt;/em&gt;. The 5 levels are &lt;strong&gt;Data Collection, Data Wrangling, Data Integration, BI and Analytics, and Artificail Intellgence.&lt;/strong&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>SQL 9. Union and Subqueries</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql9/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql9/</link>
       <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql9/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql9/</guid>
       <description>&lt;h2 id=&#34;1-unionunion-all&#34;&gt;1. UNION/UNION ALL&lt;/h2&gt;
-&lt;p&gt;In contrast to &lt;a href=&#34;https://www.minjunjeon.com/posts/data_eng/sql/sql8&#34;&gt;&lt;em&gt;JOINS&lt;/em&gt;&lt;/a&gt;, &lt;em&gt;UNION&lt;/em&gt; combines rows instead of columns.&lt;/p&gt;
+&lt;p&gt;In contrast to &lt;a href=&#34;http://localhost:1313/posts/data_eng/sql/sql8&#34;&gt;&lt;em&gt;JOINS&lt;/em&gt;&lt;/a&gt;, &lt;em&gt;UNION&lt;/em&gt; combines rows instead of columns.&lt;/p&gt;
 &lt;h3 id=&#34;a-basic-syntax&#34;&gt;a) Basic Syntax&lt;/h3&gt;
 &lt;p&gt;The syntax is as follows:&lt;/p&gt;
 &lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-sql&#34; data-lang=&#34;sql&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;SELECT&lt;/span&gt; column_name1, column_name2 &lt;span style=&#34;color:#66d9ef&#34;&gt;FROM&lt;/span&gt; table_name1
@@ -210,9 +210,9 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>1. Big O asymptotic analysis</title>
-      <link>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</link>
+      <link>http://localhost:1313/posts/ds_algo/theory/theory1/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</guid>
+      <guid>http://localhost:1313/posts/ds_algo/theory/theory1/</guid>
       <description>&lt;h2 id=&#34;1-what-is-good-code&#34;&gt;1. What is good code?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Readability : How easily humans can understand, modify, and maintain a piece of code.&lt;/li&gt;
@@ -222,9 +222,9 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>SQL 8. Joins</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql8/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql8/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql8/</guid>
       <description>&lt;p&gt;&lt;code&gt;JOIN&lt;/code&gt; is used to combine information from multiple tables in one query. There are four types of &lt;code&gt;JOIN&lt;/code&gt;s: &lt;code&gt;INNER JOIN&lt;/code&gt;, &lt;code&gt;OUTER JOIN&lt;/code&gt;, &lt;code&gt;LEFT JOIN&lt;/code&gt;, and &lt;code&gt;RIGHT JOIN&lt;/code&gt;. When combining two tables, you need one common column, so called reference column or join column.&lt;/p&gt;
 &lt;h2 id=&#34;1-inner-join&#34;&gt;1. INNER JOIN&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;INNER JOIN&lt;/em&gt; combines two tables only for the rows where the value in the join column occurs in both tables.&lt;/p&gt;
@@ -232,9 +232,9 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>SQL 4. String Functions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql4/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql4/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql4/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql4/</guid>
       <description>&lt;p&gt;In this post, we are going to look at basic string functions in SQL.&lt;/p&gt;
 &lt;h2 id=&#34;1-upper-lower-length&#34;&gt;1. UPPER, LOWER, LENGTH&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;UPPER&lt;/em&gt; changes all lowercase alphabets to uppercase. &lt;em&gt;LOWER&lt;/em&gt; changes all uppercase letters to lowercase. Finally, &lt;em&gt;LENGTH&lt;/em&gt; gives the number of characters. The example is as follows:&lt;/p&gt;
@@ -247,9 +247,9 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>SQL 5. Date and Time Functions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql5/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql5/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql5/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql5/</guid>
       <description>&lt;p&gt;In this post, we are going to look at basic date and time functions in SQL. Before we dive deeper into the date and time functions, let&amp;rsquo;s look at standard date/time types.&lt;/p&gt;
 &lt;h3 id=&#34;0-datatime-types&#34;&gt;0. Data/Time types&lt;/h3&gt;
 &lt;div class=&#34;custom-table-wrapper&#34;&gt;
@@ -293,9 +293,9 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>SQL 6. Numerical Functions and Operators</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql6/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql6/</guid>
       <description>&lt;h2 id=&#34;1-operators&#34;&gt;1. Operators&lt;/h2&gt;
 &lt;div class=&#34;custom-table-wrapper&#34;&gt;
     &lt;table&gt;
@@ -396,9 +396,9 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>SQL 7. Conditional Expressions</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql7/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql7/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql7/</guid>
       <description>&lt;p&gt;Here, we go through conditional expressions.&lt;/p&gt;
 &lt;h2 id=&#34;1-case-when&#34;&gt;1. CASE WHEN&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;CASE WHEN&lt;/em&gt; goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:&lt;/p&gt;
@@ -412,12 +412,12 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>SQL 3. Grouping</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql3/</link>
       <pubDate>Sat, 31 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql3/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql3/</guid>
       <description>&lt;p&gt;Here we go through other basic SQL commands for grouping:&lt;/p&gt;
 &lt;h2 id=&#34;1-aggregate-functions&#34;&gt;1. Aggregate Functions&lt;/h2&gt;
-&lt;p&gt;&lt;em&gt;Aggregate functions&lt;/em&gt; aggregate values in multiple rows to one value. &lt;code&gt;COUNT&lt;/code&gt; in &lt;a href=&#34;https://www.minjunjeon.com/posts/data_eng/sql/sql1/#6-count&#34;&gt;SQL 1. Basics&lt;/a&gt; is one of aggregate functions. Here are commonly used aggregate functions:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Aggregate functions&lt;/em&gt; aggregate values in multiple rows to one value. &lt;code&gt;COUNT&lt;/code&gt; in &lt;a href=&#34;http://localhost:1313/posts/data_eng/sql/sql1/#6-count&#34;&gt;SQL 1. Basics&lt;/a&gt; is one of aggregate functions. Here are commonly used aggregate functions:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;SUM()&lt;/li&gt;
 &lt;li&gt;AVG()&lt;/li&gt;
@@ -433,9 +433,9 @@ Let&amp;rsquo;s walk through how to structure a custom Python package, add subpa
     </item>
     <item>
       <title>SQL 2. Filtering</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql2/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql2/</link>
       <pubDate>Fri, 30 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql2/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql2/</guid>
       <description>&lt;p&gt;Here we go through other basic SQL commands for filtering:&lt;/p&gt;
 &lt;h2 id=&#34;1-where&#34;&gt;1. WHERE&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;WHERE&lt;/em&gt; is used to filter the data in the output. It always comes after FROM. The syntax is:&lt;/p&gt;
@@ -460,9 +460,9 @@ We can use other operators to filter the data, e.g. &lt;code&gt;&amp;gt;&lt;/cod
     </item>
     <item>
       <title>Intro to SQL</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql_intro/</link>
       <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql_intro/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql_intro/</guid>
       <description>&lt;h2 id=&#34;1-sql&#34;&gt;1. SQL&lt;/h2&gt;
 &lt;p&gt;SQL stands for structured query language. It is a language to interact with &lt;em&gt;databases&lt;/em&gt;.
 &lt;em&gt;Database&lt;/em&gt; is an organized collection of structured information, or data, typically stored electronically in a computer system.
@@ -473,9 +473,9 @@ Database is managed by Database Management Systems(DBMS). One example of DMBS is
     </item>
     <item>
       <title>SQL 1. Basics</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql1/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql1/</link>
       <pubDate>Thu, 29 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql1/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql1/</guid>
       <description>&lt;p&gt;Here, we go through basic SQL commands:&lt;/p&gt;
 &lt;h2 id=&#34;1-select&#34;&gt;1. SELECT&lt;/h2&gt;
 &lt;p&gt;&lt;em&gt;SELECT&lt;/em&gt; is used to select and return data.

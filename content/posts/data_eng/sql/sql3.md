@@ -1,7 +1,7 @@
 ---
 title: "SQL 3. Grouping"
 date: 2025-05-31
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "grouping", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

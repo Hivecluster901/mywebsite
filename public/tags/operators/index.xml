@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Operators on Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/tags/operators/</link>
+    <link>http://localhost:1313/tags/operators/</link>
     <description>Recent content in Operators on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
-      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
-      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 01 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/tags/operators/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/operators/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>SQL 6. Numerical Functions and Operators</title>
-      <link>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</link>
+      <link>http://localhost:1313/posts/data_eng/sql/sql6/</link>
       <pubDate>Sun, 01 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/data_eng/sql/sql6/</guid>
+      <guid>http://localhost:1313/posts/data_eng/sql/sql6/</guid>
       <description>&lt;h2 id=&#34;1-operators&#34;&gt;1. Operators&lt;/h2&gt;
 &lt;div class=&#34;custom-table-wrapper&#34;&gt;
     &lt;table&gt;

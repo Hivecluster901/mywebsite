@@ -1,7 +1,7 @@
 ---
 title: "Big Data 4. Denormalized Schema in Data Warehouses"
 date: 2025-06-04
-draft: false
+draft: true
 ShowToc: true
 tags: ["big data", "dbt", "basics", "modern data stack", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

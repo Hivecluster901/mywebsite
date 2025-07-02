@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -18,16 +18,16 @@ CASE
 END
 Start the statement with CASE and end with END. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both condition1 and condition2 are true, only result1 will be returned. If there is no ELSE statement, and all the conditions after WHEN are not met, NULL is returned.">
 <meta name="author" content="map[name:Minjun Jeon]">
-<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/sql/sql7/">
+<link rel="canonical" href="http://localhost:1313/posts/data_eng/sql/sql7/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
-<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/sql/sql7/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/data_eng/sql/sql7/">
 <noscript>
     <style>
         #theme-toggle,
@@ -43,17 +43,17 @@ Start the statement with CASE and end with END. In between, the statement has co
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": "https:\/\/www.minjunjeon.com\/",
+  "url": "http:\/\/localhost:1313\/",
   "name": "Minjun Jeon",
   "publisher": {
     "@type": "Organization",
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+      "url": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
     }
   },
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
 }
 </script>
 
@@ -63,8 +63,8 @@ Start the statement with CASE and end with END. In between, the statement has co
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Minjun Jeon",
-  "url": "https:\/\/www.minjunjeon.com\/",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "url": "http:\/\/localhost:1313\/",
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png",
   "sameAs": [
     "",
     ""
@@ -80,11 +80,11 @@ Start the statement with CASE and end with END. In between, the statement has co
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/sql\/sql7\/"
+    "@id": "http:\/\/localhost:1313\/posts\/data_eng\/sql\/sql7\/"
   },
   "headline": "SQL 7. Conditional Expressions",
   "description": "\u003cp\u003eHere, we go through conditional expressions.\u003c\/p\u003e\n\u003ch2 id=\u00221-case-when\u0022\u003e1. CASE WHEN\u003c\/h2\u003e\n\u003cp\u003e\u003cem\u003eCASE WHEN\u003c\/em\u003e goes through a set of conditions and returns a value if a condition is met. The syntax is as follows:\u003c\/p\u003e\n\u003cdiv class=\u0022highlight\u0022\u003e\u003cpre tabindex=\u00220\u0022 style=\u0022color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;\u0022\u003e\u003ccode class=\u0022language-sql\u0022 data-lang=\u0022sql\u0022\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eCASE\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#66d9ef\u0022\u003eWHEN\u003c\/span\u003e condition1 \u003cspan style=\u0022color:#66d9ef\u0022\u003eTHEN\u003c\/span\u003e result1\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#66d9ef\u0022\u003eWHEN\u003c\/span\u003e condition2 \u003cspan style=\u0022color:#66d9ef\u0022\u003eTHEN\u003c\/span\u003e result2\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#66d9ef\u0022\u003eWHEN\u003c\/span\u003e conditionN \u003cspan style=\u0022color:#66d9ef\u0022\u003eTHEN\u003c\/span\u003e resultN\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e    \u003cspan style=\u0022color:#66d9ef\u0022\u003eELSE\u003c\/span\u003e \u003cspan style=\u0022color:#66d9ef\u0022\u003eresult\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003cspan style=\u0022display:flex;\u0022\u003e\u003cspan\u003e\u003cspan style=\u0022color:#66d9ef\u0022\u003eEND\u003c\/span\u003e\n\u003c\/span\u003e\u003c\/span\u003e\u003c\/code\u003e\u003c\/pre\u003e\u003c\/div\u003e\u003cp\u003eStart the statement with \u003ccode\u003eCASE\u003c\/code\u003e and \u003cstrong\u003eend with \u003ccode\u003eEND\u003c\/code\u003e\u003c\/strong\u003e. In between, the statement has conditions and results. If multiple conditions are met, the result of the highest priority is returned. For example, if both \u003ccode\u003econdition1\u003c\/code\u003e and \u003ccode\u003econdition2\u003c\/code\u003e are true, only \u003ccode\u003eresult1\u003c\/code\u003e will be returned. If there is no \u003ccode\u003eELSE\u003c\/code\u003e statement, and all the conditions after \u003ccode\u003eWHEN\u003c\/code\u003e are not met, \u003ccode\u003eNULL\u003c\/code\u003e is returned.\u003c\/p\u003e",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png",
   "author": {
     "@type": "Person",
     "name": "Minjun Jeon"
@@ -94,7 +94,7 @@ Start the statement with CASE and end with END. In between, the statement has co
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+      "url": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
     }
   },
   "datePublished": "2025-06-01T00:00:00Z",
@@ -102,7 +102,7 @@ Start the statement with CASE and end with END. In between, the statement has co
 }
 </script>
 
-<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/sql/sql7/">
+<meta property="og:url" content="http://localhost:1313/posts/data_eng/sql/sql7/">
   <meta property="og:site_name" content="Minjun Jeon">
   <meta property="og:title" content="SQL 7. Conditional Expressions">
   <meta property="og:description" content="Here, we go through conditional expressions.
@@ -117,9 +117,9 @@ CASE WHEN condition1 THEN result1 WHEN condition2 THEN result2 WHEN conditionN T
     <meta property="article:tag" content="Conditions">
     <meta property="article:tag" content="Databases">
     <meta property="article:tag" content="Interview Prep">
-      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+      <meta property="og:image" content="http://localhost:1313/assets/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:image" content="http://localhost:1313/assets/android-chrome-512x512.png">
 <meta name="twitter:title" content="SQL 7. Conditional Expressions">
 <meta name="twitter:description" content="Here, we go through conditional expressions.
 1. CASE WHEN
@@ -145,7 +145,7 @@ Start the statement with CASE and end with END. In between, the statement has co
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -171,32 +171,32 @@ Start the statement with CASE and end with END. In between, the statement has co
         </div>
         <ul id="menu">
             <li>
-                <a href="https://www.minjunjeon.com/" title="Home">
+                <a href="http://localhost:1313/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                <a href="http://localhost:1313/about_me/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                <a href="http://localhost:1313/" title="Archive">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                <a href="http://localhost:1313/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                <a href="http://localhost:1313/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                <a href="http://localhost:1313/resume/" title="Resume">
                     <span>Resume</span>
                 </a>
             </li>
@@ -277,17 +277,17 @@ Start the statement with CASE and end with END. In between, the statement has co
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://www.minjunjeon.com/tags/sql/">Sql</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/conditions/">Conditions</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/databases/">Databases</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+      <li><a href="http://localhost:1313/tags/sql/">Sql</a></li>
+      <li><a href="http://localhost:1313/tags/conditions/">Conditions</a></li>
+      <li><a href="http://localhost:1313/tags/databases/">Databases</a></li>
+      <li><a href="http://localhost:1313/tags/interview-prep/">Interview Prep</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Minjun Jeon</a></span> · 
 
     <span>
         Powered by

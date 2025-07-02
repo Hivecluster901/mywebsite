@@ -1,7 +1,7 @@
 ---
 title: "1. Big O asymptotic analysis"
 date: 2025-06-02
-draft: false
+draft: true
 ShowToc: false
 tags: ["basics", "Big O", "data structure", "algorithm", "interview prep"]
 categories: ["Tech", "data structure", "algorithm"]

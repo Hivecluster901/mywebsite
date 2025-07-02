@@ -11,7 +11,7 @@ params:
     imageWidth: 200;
     imageHeight: 200;
     Content: >-
-      Quantum Physicist, ML Practitioner, Data Enthusiast.
+      Quantum Physicist.
   socialIcons:
     - name: email
       url: 'mailto:minjun.jeon@materials.ox.ac.uk'
@@ -20,9 +20,9 @@ params:
     - name: github
       url: 'https://github.com/Hivecluster901'
   images: ["assets/android-chrome-512x512.png"]
-  author:
-    name:
-      "Minjun Jeon"
+  # author:
+  #     name:
+  #       "Minjun Jeon"
   env: production
 
   assets:
@@ -66,10 +66,10 @@ menu:
     parent: posts
     pageRef: /quantum/
     weight: 4
-  - identifier: projects
-    name: Projects
-    url: /projects/
-    weight: 4
+  # - identifier: publications
+  #   name: Publications
+  #   url: /publications/
+  #   weight: 4
   - identifier: contact
     name: Contact
     url: /contact/

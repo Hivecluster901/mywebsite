@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Big O on Minjun Jeon</title>
-    <link>https://www.minjunjeon.com/tags/big-o/</link>
+    <link>http://localhost:1313/tags/big-o/</link>
     <description>Recent content in Big O on Minjun Jeon</description>
     <image>
       <title>Minjun Jeon</title>
-      <url>https://www.minjunjeon.com/assets/android-chrome-512x512.png</url>
-      <link>https://www.minjunjeon.com/assets/android-chrome-512x512.png</link>
+      <url>http://localhost:1313/assets/android-chrome-512x512.png</url>
+      <link>http://localhost:1313/assets/android-chrome-512x512.png</link>
     </image>
     <generator>Hugo -- 0.147.5</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 02 Jun 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://www.minjunjeon.com/tags/big-o/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/big-o/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>1. Big O asymptotic analysis</title>
-      <link>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</link>
+      <link>http://localhost:1313/posts/ds_algo/theory/theory1/</link>
       <pubDate>Mon, 02 Jun 2025 00:00:00 +0000</pubDate>
-      <guid>https://www.minjunjeon.com/posts/ds_algo/theory/theory1/</guid>
+      <guid>http://localhost:1313/posts/ds_algo/theory/theory1/</guid>
       <description>&lt;h2 id=&#34;1-what-is-good-code&#34;&gt;1. What is good code?&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;Readability : How easily humans can understand, modify, and maintain a piece of code.&lt;/li&gt;

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -10,16 +10,16 @@
 <meta name="description" content="Slowly Changing Dimensions (SCD)
 Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimension table that change infrequently—yet unpredictably—over time. When a source system updates a dimension attribute, we need a strategy to decide how that change will be reflected (or not) in the data warehouse. In some cases, storing historical values isn’t necessary; in others, retaining a full history is critical for reporting, auditing, or trend analysis.">
 <meta name="author" content="map[name:Minjun Jeon]">
-<link rel="canonical" href="https://www.minjunjeon.com/posts/data_eng/bd/bd6/">
+<link rel="canonical" href="http://localhost:1313/posts/data_eng/bd/bd6/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.e074db631f584fe5975f0d0631f38a7639c9a38457467d1f3c1dcaec9fe4f040.css" integrity="sha256-4HTbYx9YT&#43;WXXw0GMfOKdjnJo4RXRn0fPB3K7J/k8EA=" rel="preload stylesheet" as="style">
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
-<link rel="icon" type="image/png" sizes="16x16" href="https://www.minjunjeon.com/assets/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://www.minjunjeon.com/assets/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://www.minjunjeon.com/assets/apple-touch-icon.png">
-<link rel="mask-icon" href="https://www.minjunjeon.com/safari-pinned-tab.svg">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon-32x32.png">
+<link rel="apple-touch-icon" href="http://localhost:1313/assets/apple-touch-icon.png">
+<link rel="mask-icon" href="http://localhost:1313/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://www.minjunjeon.com/posts/data_eng/bd/bd6/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/posts/data_eng/bd/bd6/">
 <noscript>
     <style>
         #theme-toggle,
@@ -35,17 +35,17 @@ Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimens
 {
   "@context": "https://schema.org",
   "@type": "WebSite",
-  "url": "https:\/\/www.minjunjeon.com\/",
+  "url": "http:\/\/localhost:1313\/",
   "name": "Minjun Jeon",
   "publisher": {
     "@type": "Organization",
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+      "url": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
     }
   },
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
 }
 </script>
 
@@ -55,8 +55,8 @@ Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimens
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Minjun Jeon",
-  "url": "https:\/\/www.minjunjeon.com\/",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "url": "http:\/\/localhost:1313\/",
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png",
   "sameAs": [
     "",
     ""
@@ -72,11 +72,11 @@ Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimens
   "@type": "BlogPosting",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https:\/\/www.minjunjeon.com\/posts\/data_eng\/bd\/bd6\/"
+    "@id": "http:\/\/localhost:1313\/posts\/data_eng\/bd\/bd6\/"
   },
   "headline": "Big Data 6. Slowly Changing Dimensions (SCD)",
   "description": "\u003ch2 id=\u0022slowly-changing-dimensions-scd\u0022\u003eSlowly Changing Dimensions (SCD)\u003c\/h2\u003e\n\u003cp\u003e\u003cstrong\u003eSlowly Changing Dimensions (SCDs)\u003c\/strong\u003e refer to attributes in a data warehouse dimension table that change infrequently—yet unpredictably—over time. When a source system updates a dimension attribute, we need a strategy to decide how that change will be reflected (or not) in the data warehouse. In some cases, storing historical values isn’t necessary; in others, retaining a full history is critical for reporting, auditing, or trend analysis.\u003c\/p\u003e",
-  "image": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png",
+  "image": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png",
   "author": {
     "@type": "Person",
     "name": "Minjun Jeon"
@@ -86,7 +86,7 @@ Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimens
     "name": "Minjun Jeon",
     "logo": {
       "@type": "ImageObject",
-      "url": "https:\/\/www.minjunjeon.com\/assets\/android-chrome-512x512.png"
+      "url": "http:\/\/localhost:1313\/assets\/android-chrome-512x512.png"
     }
   },
   "datePublished": "2025-06-05T00:00:00Z",
@@ -94,7 +94,7 @@ Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimens
 }
 </script>
 
-<meta property="og:url" content="https://www.minjunjeon.com/posts/data_eng/bd/bd6/">
+<meta property="og:url" content="http://localhost:1313/posts/data_eng/bd/bd6/">
   <meta property="og:site_name" content="Minjun Jeon">
   <meta property="og:title" content="Big Data 6. Slowly Changing Dimensions (SCD)">
   <meta property="og:description" content="Slowly Changing Dimensions (SCD) Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimension table that change infrequently—yet unpredictably—over time. When a source system updates a dimension attribute, we need a strategy to decide how that change will be reflected (or not) in the data warehouse. In some cases, storing historical values isn’t necessary; in others, retaining a full history is critical for reporting, auditing, or trend analysis.">
@@ -109,9 +109,9 @@ Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimens
     <meta property="article:tag" content="Modern Data Stack">
     <meta property="article:tag" content="Databases">
     <meta property="article:tag" content="Interview Prep">
-      <meta property="og:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+      <meta property="og:image" content="http://localhost:1313/assets/android-chrome-512x512.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://www.minjunjeon.com/assets/android-chrome-512x512.png">
+<meta name="twitter:image" content="http://localhost:1313/assets/android-chrome-512x512.png">
 <meta name="twitter:title" content="Big Data 6. Slowly Changing Dimensions (SCD)">
 <meta name="twitter:description" content="Slowly Changing Dimensions (SCD)
 Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimension table that change infrequently—yet unpredictably—over time. When a source system updates a dimension attribute, we need a strategy to decide how that change will be reflected (or not) in the data warehouse. In some cases, storing historical values isn’t necessary; in others, retaining a full history is critical for reporting, auditing, or trend analysis.">
@@ -129,7 +129,7 @@ Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimens
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://www.minjunjeon.com/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
+            <a href="http://localhost:1313/" accesskey="h" title="Minjun Jeon (Alt + H)">Minjun Jeon</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -155,32 +155,32 @@ Slowly Changing Dimensions (SCDs) refer to attributes in a data warehouse dimens
         </div>
         <ul id="menu">
             <li>
-                <a href="https://www.minjunjeon.com/" title="Home">
+                <a href="http://localhost:1313/" title="Home">
                     <span>Home</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/about_me/" title="About">
+                <a href="http://localhost:1313/about_me/" title="About">
                     <span>About</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/posts/" title="Archive">
+                <a href="http://localhost:1313/" title="Archive">
                     <span>Blog</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/projects/" title="Projects">
+                <a href="http://localhost:1313/projects/" title="Projects">
                     <span>Projects</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/contact/" title="Contact">
+                <a href="http://localhost:1313/contact/" title="Contact">
                     <span>Contact</span>
                 </a>
             </li>
             <li>
-                <a href="https://www.minjunjeon.com/resume/" title="Resume">
+                <a href="http://localhost:1313/resume/" title="Resume">
                     <span>Resume</span>
                 </a>
             </li>
@@ -452,19 +452,19 @@ If you need just a snapshot of “previous” + “current,” use Type 3.</p></
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://www.minjunjeon.com/tags/big-data/">Big Data</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/dbt/">Dbt</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/basics/">Basics</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/modern-data-stack/">Modern Data Stack</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/databases/">Databases</a></li>
-      <li><a href="https://www.minjunjeon.com/tags/interview-prep/">Interview Prep</a></li>
+      <li><a href="http://localhost:1313/tags/big-data/">Big Data</a></li>
+      <li><a href="http://localhost:1313/tags/dbt/">Dbt</a></li>
+      <li><a href="http://localhost:1313/tags/basics/">Basics</a></li>
+      <li><a href="http://localhost:1313/tags/modern-data-stack/">Modern Data Stack</a></li>
+      <li><a href="http://localhost:1313/tags/databases/">Databases</a></li>
+      <li><a href="http://localhost:1313/tags/interview-prep/">Interview Prep</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
 <footer class="footer">
-        <span>&copy; 2025 <a href="https://www.minjunjeon.com/">Minjun Jeon</a></span> · 
+        <span>&copy; 2025 <a href="http://localhost:1313/">Minjun Jeon</a></span> · 
 
     <span>
         Powered by

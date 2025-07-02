@@ -1,7 +1,7 @@
 ---
 title: "2. Python: filter"
 date: 2025-06-05
-draft: false
+draft: true
 ShowToc: true
 tags: ["python", "filter", "programming language" , "software engineering", "interview prep"]
 categories: ["Tech", "python"]

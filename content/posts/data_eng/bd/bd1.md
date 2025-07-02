@@ -1,7 +1,7 @@
 ---
 title: "Big Data 1. Data Maturity Model"
 date: 2025-06-03
-draft: false
+draft: true
 ShowToc: true
 tags: ["big data", "dbt", "basics", "data maturity model", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

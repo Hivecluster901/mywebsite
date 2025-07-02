@@ -1,7 +1,7 @@
 ---
 title: "2. Array/List"
 date: 2025-06-05
-draft: false
+draft: true
 ShowToc: true
 tags: ["basics", "array", "list", "data structure", "algorithm", "interview prep"]
 categories: ["Tech", "data structure", "algorithm"]

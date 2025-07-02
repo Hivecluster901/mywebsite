@@ -1,7 +1,7 @@
 ---
 title: "SQL 8. Joins"
 date: 2025-06-02
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "join", "databases", "interview prep"]
 categories: ["Tech", "Databases"]

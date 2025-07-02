@@ -1,7 +1,7 @@
 ---
 title: "SQL 11. Views & Data Manipulation"
 date: 2025-06-08
-draft: false
+draft: true
 ShowToc: true
 tags: ["sql", "data manipulation", "update", "delete", "views", "materialized views", "interview prep"]
 categories: ["Tech", "Databases"]
